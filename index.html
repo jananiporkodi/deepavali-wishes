@@ -1398,13 +1398,13 @@
     <div class="warm night" id="t-warmIn" style="opacity:1"></div>
 
     <div class="bubble anna" id="t-bubble" role="status"><b>Anna</b><span id="t-text">Pattasu time! Grab a sparkler and light the flower pots!</span></div>
-    <button class="sparkBtn" id="sparkBtn" type="button">🎇 Hold a sparkler</button>
     <div class="hint" id="t-hint">Keep scrolling <i>↓</i></div>
   </div>
 </section>
 
 <canvas id="fx" aria-hidden="true"></canvas>
 <div id="sparkLayer" hidden></div>
+<button class="sparkBtn" id="sparkBtn" type="button">🎇 Hold a sparkler</button>
 
 <!-- ================= SCENE 6 · THE FINALE ================= -->
 <section id="finale" aria-label="The finale: light the big rocket">
@@ -2322,7 +2322,7 @@
     navigator.vibrate && navigator.vibrate(30);
     floorGlow.setAttribute('opacity', .8);
     setTimeout(() => { floorGlow.setAttribute('opacity', litCount === CR.length ? .25 : 0); c.g.style.opacity = .55; }, c.kind === 'pot' ? 4800 : 4000);
-    if (litCount === CR.length) { text.textContent = 'Semma! Now for the biggest one. Look up at the sky!'; }
+    if (litCount === CR.length) { text.textContent = 'Semma! Now for the biggest one. Look up at the sky!'; setTimeout(() => { if (sparkler.on) setSparkler(false); }, 1600); }
     render();
   }
 
