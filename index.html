@@ -225,6 +225,23 @@
 (() => {
   let ac, musicGain, out, started = false;
   window.MUTED = false;
+
+  // ---- anonymous counters: only numbers ("one more sweet eaten"), no names or personal data ----
+  const COUNTER = 'https://abacus.jasoncameron.dev/hit/jananip-deepavali-live/';
+  const LIVE = location.hostname.endsWith('github.io');   // never count test copies on the laptop
+  window.track = key => { if (!LIVE) return; try { fetch(COUNTER + key, { mode: 'cors', keepalive: true }).catch(() => {}); } catch (e) {} };
+  const once = new Set();
+  window.trackOnce = key => {
+    if (once.has(key)) return; once.add(key);
+    try { if (sessionStorage.getItem('t_' + key)) return; sessionStorage.setItem('t_' + key, 1); } catch (e) {}
+    window.track(key);
+  };
+  window.trackOnce('visit');
+  if (new URLSearchParams(location.search).get('to')) window.trackOnce('visit_named');
+  const SCENES = ['hall', 'pooja', 'kitchen', 'terrace', 'finale'];
+  addEventListener('scroll', () => {
+    for (const id of SCENES) { const s = document.getElementById(id); if (!s) continue; const r = s.getBoundingClientRect(); if (r.top <= 1 && r.bottom > 0) window.trackOnce('reach_' + id); }
+  }, { passive: true });
   window.getAudio = () => {
     if (window.MUTED) return null;
     if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } }
@@ -295,7 +312,7 @@
   function start() {
     if (started || window.MUTED) return;
     const a = window.getAudio(); if (!a) return;
-    started = true; setup(a);
+    started = true; setup(a); window.trackOnce('music');
     const t = a.currentTime + .1; tanT = t; mel = t + BEAT * 4; beatT = t + BEAT * 8;
     setInterval(schedule, 150); schedule();
     const h = document.getElementById('musicHint'); if (h) h.classList.add('gone');
@@ -1622,7 +1639,7 @@
   const hint = $('h-hint'), text = $('h-text');
   function lightWick(i) {
     if (wickEls[i].classList.contains('lit')) return;
-    wickEls[i].classList.add('lit'); lit++;
+    wickEls[i].classList.add('lit'); lit++; window.track('wick'); if (lit === 5) window.track('lamp_complete');
     chime(1046 * Math.pow(2, [0, 2, 4, 7, 9][lit - 1] / 12));
     navigator.vibrate && navigator.vibrate(15);
     if (lit === 5) {
@@ -1778,7 +1795,7 @@
   const text = $('p-text'), hint = $('p-hint');
   function light(d) {
     if (d.g.classList.contains('lit')) return;
-    d.g.classList.add('lit'); lit++;
+    d.g.classList.add('lit'); lit++; window.track('diya'); if (lit === diyas.length) window.track('kolam_complete');
     chime(784 * Math.pow(2, scale[lit - 1] / 12));
     navigator.vibrate && navigator.vibrate(12);
     if (lit === diyas.length) { text.textContent = 'Romba azhagu! So beautiful. Now come to the kitchen, I made sweets for you!'; setTimeout(templeBell, 250); }
@@ -1983,6 +2000,7 @@
     stage.animate([{ transform: 'scale(1)', opacity: 1 }, { transform: 'scale(.3) translateY(80px)', opacity: 0 }], { duration: 650, delay: 350, easing: 'ease-in', fill: 'forwards' });
     eat.animate([{ background: 'rgba(24,10,4,.6)' }, { background: 'rgba(24,10,4,0)' }], { duration: 400, delay: 900, fill: 'forwards' }).onfinish = () => {
       eat.hidden = true; stage.getAnimations().forEach(a => a.cancel()); eat.getAnimations().forEach(a => a.cancel());
+      window.track('sweet_' + current.id);
       current.g.classList.add('gone'); current.g.style.opacity = '';
       current = null; busy = false; eaten++;
       $('k-text').textContent = eaten === 1 ? 'Innum onnu? Have one more!' : eaten < 4 ? 'Careful, save some room for the crackers!' : 'Aiyo, you finished the plate! Go, the kids are waiting on the terrace!';
@@ -2231,7 +2249,7 @@
   const text = $('t-text'), hint = $('t-hint'), floorGlow = $('t-floorGlow'), dim = $('t-dim');
   function light(c) {
     if (c.lit) return;
-    c.lit = true; c.g.classList.add('lit'); litCount++;
+    c.lit = true; c.g.classList.add('lit'); litCount++; window.track(c.kind === 'pot' ? 'flowerpot' : 'chakkaram');
     const e = { c, until: performance.now() + (c.kind === 'pot' ? 4800 : 4000), ang: 0, scale: () => clamp(c.g.getBoundingClientRect().width / 60, .5, 2.2) };
     emitters.push(e);
     if (c.kind === 'pot') fountainSound(); else { chakraSound(); c.wheel.style.animation = 'spinW .25s linear 16'; }
@@ -2372,7 +2390,7 @@
   const btn = $('rocketBtn'), panel = $('panel');
   let launched = false;
   function launch() {
-    if (launched) return; launched = true;
+    if (launched) return; launched = true; window.track('rocket');
     btn.classList.add('gone');
     whoosh();
     FX.rockets.push({
@@ -2391,6 +2409,7 @@
   }
   btn.addEventListener('click', launch);
   $('moreBtn').addEventListener('click', () => {
+    window.track('more_fireworks');
     for (let i = 0; i < 8; i++) setTimeout(() => FX.rockets.push({ x: rnd(.08, .92) * FX.W, y: FX.H * .9, vy: -rnd(8, 11), ty: rnd(.06, .45) * FX.H }), i * 260);
   });
   $('againBtn').addEventListener('click', () => { location.href = location.href.split('#')[0]; });
@@ -2399,6 +2418,7 @@
   $('shareForm').addEventListener('submit', async e => {
     e.preventDefault();
     const who = $('toName').value.replace(/[<>]/g, '').trim().slice(0, 24);
+    window.track('share');
     const base = location.href.split('?')[0].split('#')[0];
     const url = who ? `${base}?to=${encodeURIComponent(who)}` : base;
     const text = who ? `${who}, come celebrate Deepavali with our family 🪔✨` : 'Come celebrate Deepavali with our family 🪔✨';
