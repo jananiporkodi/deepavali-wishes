@@ -238,9 +238,25 @@
   };
   window.trackOnce('visit');
   if (new URLSearchParams(location.search).get('to')) window.trackOnce('visit_named');
+
+  // Who opened their personalised link: only a scrambled code of the name is sent (first 16 hex
+  // characters of SHA-256 of the lower-cased name), never the name itself. The report matches
+  // codes against the list of names Janani sent links to.
+  const toName = (new URLSearchParams(location.search).get('to') || '').replace(/[<>]/g, '').trim().slice(0, 24);
+  let nameCode = null;
+  if (toName && window.crypto && crypto.subtle) {
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(toName.toLowerCase().replace(/\s+/g, ' ').trim()))
+      .then(b => { nameCode = [...new Uint8Array(b)].slice(0, 8).map(x => x.toString(16).padStart(2, '0')).join(''); window.trackOnce('n_' + nameCode); })
+      .catch(() => {});
+  }
+
   const SCENES = ['hall', 'pooja', 'kitchen', 'terrace', 'finale'];
   addEventListener('scroll', () => {
-    for (const id of SCENES) { const s = document.getElementById(id); if (!s) continue; const r = s.getBoundingClientRect(); if (r.top <= 1 && r.bottom > 0) window.trackOnce('reach_' + id); }
+    for (const id of SCENES) {
+      const s = document.getElementById(id); if (!s) continue;
+      const r = s.getBoundingClientRect();
+      if (r.top <= 1 && r.bottom > 0) { window.trackOnce('reach_' + id); if (id === 'finale' && nameCode) window.trackOnce('f_' + nameCode); }
+    }
   }, { passive: true });
   window.getAudio = () => {
     if (window.MUTED) return null;
