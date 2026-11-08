@@ -1,0 +1,2431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Deepavali</title>
+<meta name="description" content="Come celebrate Deepavali with our family.">
+<meta name="theme-color" content="#121640">
+<meta property="og:title" content="Happy Deepavali! 🪔">
+<meta property="og:description" content="You're invited home. Light the diyas, eat some sweets and burst crackers with our family, 90s style.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --skin:#b97c53; --skin2:#a06842; --hair:#22160f; --line:#3a2216; --lip:#8a3a2e; --cheek:#ef8f7f;
+    --gold-c:#e8ad3a; --pav:#1f8a5b; --blouse2:#e64f84; --jas:#fffaf0; --red:#c8102e; --hl:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#6a86c0}
+  body{font-family:Inter,system-ui,sans-serif;color:#fff6e6;overflow-x:hidden}
+
+  /* character parts */
+  .skin{fill:var(--skin)} .skin2{fill:var(--skin2)} .hair{fill:var(--hair)} .hairS{stroke:var(--hair);fill:none;stroke-linecap:round}
+  .gold{fill:var(--gold-c)} .pav{fill:var(--pav)} .blouse2{fill:var(--blouse2)} .jas{fill:var(--jas)} .red{fill:var(--red)}
+  .armS{fill:none;stroke-linecap:round} .a-skin{stroke:var(--skin)} .a-blouse2{stroke:var(--blouse2)}
+  .pleat{stroke:#000;opacity:.13;stroke-width:3;fill:none}
+  .cheek{fill:var(--cheek);opacity:.45} .lip{fill:var(--lip)} .eye{fill:var(--line)} .hl{fill:var(--hl)}
+  .prop-spark{display:var(--spk,inline)}
+  .raise{transform-box:view-box;transform-origin:690px 290px;animation:wave 1.3s ease-in-out infinite}
+  .blink{transform-box:fill-box;transform-origin:50% 50%;animation:blink 4.2s infinite}
+  @keyframes wave{0%,100%{transform:rotate(4deg)}50%{transform:rotate(-14deg)}}
+  @keyframes blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+
+  /* scene 1 */
+  #arrive{position:relative;height:260svh}
+  .sticky{position:sticky;top:0;height:100svh;overflow:hidden}
+  #world{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .sunwash{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;background:radial-gradient(circle at 82% 12%,#ffd79a 0,#ffb86a55 35%,transparent 70%)}
+  .vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 55%,transparent 55%,#2a0f0a55 100%)}
+  .warm{position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,#fff4d6,#ffc777);opacity:0;pointer-events:none}
+
+  .intro{position:absolute;top:0;left:0;right:0;padding:clamp(28px,8vh,72px) 20px 0;text-align:center;pointer-events:none;text-shadow:0 2px 14px #3a4a7a66}
+  .intro small{display:block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;opacity:.95}
+  .intro h1{font-family:Fraunces,serif;font-weight:700;font-size:clamp(34px,9.5vw,64px);line-height:1.02;margin-top:8px}
+  .intro p{margin-top:10px;font-size:16px;opacity:.95}
+
+  .bubble{position:absolute;left:50%;top:max(62px,calc(env(safe-area-inset-top) + 58px));width:min(92vw,380px);background:#fff8ec;color:#3a2216;border-radius:18px;padding:12px 16px 14px;
+    box-shadow:0 10px 30px #0004;transform:translate(-50%,-12px) scale(.96);opacity:0;transition:.45s cubic-bezier(.2,.9,.3,1.2);pointer-events:none}
+  .bubble.show{opacity:1;transform:translate(-50%,0) scale(1)}
+  .bubble b{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:#e64f84;color:#fff;border-radius:99px;padding:2px 10px;margin-bottom:6px}
+  .bubble span{display:block;font-family:Fraunces,serif;font-size:19px;line-height:1.3}
+
+  .hint{position:absolute;bottom:max(20px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:#2a1208bb;color:#fff3dc;padding:9px 16px;border-radius:99px;font-size:14px;white-space:nowrap;transition:opacity .4s;backdrop-filter:blur(6px)}
+  .hint i{display:inline-block;font-style:normal;animation:nudge 1.4s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+  /* ambient */
+  .cloud{animation:drift 80s linear infinite}
+  .cloud.c2{animation-duration:110s;animation-delay:-50s}
+  .cloud.c3{animation-duration:140s;animation-delay:-90s}
+  @keyframes drift{from{transform:translateX(-500px)}to{transform:translateX(900px)}}
+  .bird{animation:fly 26s linear infinite}
+  .bird.b2{animation-delay:-9s;animation-duration:30s}
+  .bird.b3{animation-delay:-17s;animation-duration:34s}
+  @keyframes fly{from{transform:translate(0,0)}to{transform:translate(1100px,-120px)}}
+  .flap{transform-box:fill-box;transform-origin:50% 100%;animation:flap .45s ease-in-out infinite alternate}
+  @keyframes flap{to{transform:scaleY(.3)}}
+  .sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite}
+  .sway.s2{animation-delay:-1.7s;animation-duration:6s}.sway.s3{animation-delay:-3.1s}
+  @keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+  .swing{transform-box:fill-box;transform-origin:50% 0;animation:swing 3.4s ease-in-out infinite}
+  @keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+  .flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick .16s ease-in-out infinite alternate}
+  @keyframes flick{to{transform:scale(.88,1.15)}}
+  .mote{animation:mote 9s ease-in-out infinite}
+  @keyframes mote{0%,100%{transform:translate(0,0);opacity:.15}50%{transform:translate(14px,-22px);opacity:.9}}
+
+  /* scene 2 */
+  :root{--shirt:#f3ddb2;--shirtD:#d9bd8a;--veshti:#fbf6ea}
+  .shirt{fill:var(--shirt)} .shirtD{fill:var(--shirtD)} .veshti{fill:var(--veshti)} .a-shirt{stroke:var(--shirt)}
+  .lipS{stroke:var(--lip);fill:none;stroke-width:3.5;stroke-linecap:round}
+  /* overlap the previous scene's last screen so there is no dead scroll between scenes */
+  #hall{position:relative;height:290svh;margin-top:-100svh}
+  #hall>.sticky{visibility:hidden;background:#5e3218}
+  #hallSvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .dim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 55% 60%,#2a0f0533,#1a0804aa);transition:opacity .8s}
+  .warm.orange{background:radial-gradient(circle at 50% 55%,#ffd08a,#e2662a)}
+  .bubble.appa b{background:#2f6fa8}
+  .bubble{pointer-events:none}
+  .pendulum{transform-box:view-box;transform-origin:0 46px;animation:pend 1.1s ease-in-out infinite alternate}
+  @keyframes pend{from{transform:rotate(14deg)}to{transform:rotate(-14deg)}}
+  .fan{transform-box:fill-box;transform-origin:50% 50%;animation:fan 2.4s linear infinite}
+  @keyframes fan{0%{transform:scaleX(1)}25%{transform:scaleX(.15)}50%{transform:scaleX(-1)}75%{transform:scaleX(.15)}100%{transform:scaleX(1)}}
+  .swingSlow{transform-box:view-box;transform-origin:930px -200px;animation:oonjal 4.6s ease-in-out infinite}
+  @keyframes oonjal{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+  .wick .fl{opacity:0;transition:opacity .5s}
+  .wick.lit .fl{opacity:1}
+  .wick .ping{transform-box:fill-box;transform-origin:50% 50%;animation:ping 1.6s ease-out infinite}
+  .wick.lit .ping{display:none}
+  @keyframes ping{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+  .hint b{color:#ffd36a}
+
+  /* scene 3 */
+  :root{--saree:#a01d42;--saree2:#c02f56;--blouse:#f0a830}
+  .saree{fill:var(--saree)} .saree2{fill:var(--saree2)} .blouse{fill:var(--blouse)} .a-blouse{stroke:var(--blouse)} .goldS{stroke:var(--gold-c);fill:none}
+  #pooja{position:relative;height:290svh;margin-top:-100svh}
+  #pooja>.sticky{visibility:hidden;background:#4a120c}
+  #poojaSvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .bubble.amma b{background:#a01d42}
+  .smoke{opacity:.35;animation:smoke 4s ease-in-out infinite}
+  .smoke.s2{animation-delay:-2s}
+  @keyframes smoke{0%{transform:translateY(6px);opacity:0}30%{opacity:.4}100%{transform:translateY(-14px);opacity:0}}
+  .bellSwing{transform-box:view-box;transform-origin:720px -100px}
+  .bellSwing.ring{animation:bell 1.6s ease-out}
+  @keyframes bell{0%{transform:rotate(0)}15%{transform:rotate(5deg)}35%{transform:rotate(-4deg)}55%{transform:rotate(2.5deg)}75%{transform:rotate(-1.2deg)}100%{transform:rotate(0)}}
+  .pdiya .fl{opacity:0;transition:opacity .5s}
+  .pdiya.lit .fl{opacity:1}
+  .pdiya .ping{transform-box:fill-box;transform-origin:50% 50%;animation:ping 1.6s ease-out infinite}
+  .pdiya.lit .ping{display:none}
+
+  /* scene 4 */
+  .prop-diya{display:var(--diya,inline)}
+  #kitchen{position:relative;height:290svh;margin-top:-100svh}
+  #kitchen>.sticky{visibility:hidden;background:#8a8678}
+  #kitchenSvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .warm.night{background:radial-gradient(circle at 50% 40%,#3a3a7a,#0b0a24)}
+  .sweet{cursor:pointer}
+  .sweet.gone{opacity:0;pointer-events:none;transition:opacity .4s}
+  .sweet .ring{transform-box:fill-box;transform-origin:50% 50%;animation:ping2 1.8s ease-out infinite}
+  @keyframes ping2{0%{transform:scale(.85);opacity:.8}100%{transform:scale(1.25);opacity:0}}
+  .steam{opacity:.35;animation:smoke 2.6s ease-in-out infinite}.steam.s2{animation-delay:-1.3s}
+  .bubbles circle{animation:tw 0.7s ease-in-out infinite}
+  .bubbles circle:nth-child(2){animation-delay:-.3s}.bubbles circle:nth-child(3){animation-delay:-.5s}
+  @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+  .burner{animation:tw 0.4s ease-in-out infinite}
+  .twinkle{animation:tw 2.4s ease-in-out infinite}
+  .eat{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(24,10,4,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;touch-action:none}
+  .eat[hidden]{display:none}
+  .eatStage{width:min(84vw,62vh);aspect-ratio:1;filter:drop-shadow(0 30px 40px #000a)}
+  .eatStage svg{width:100%;height:100%;display:block;overflow:visible}
+  .eatName{font-family:Fraunces,serif;font-size:28px;color:#ffd36a}
+  .eatHint{font-size:15px;color:#fff3dc;opacity:.9}
+  .crumb{position:fixed;width:7px;height:7px;border-radius:2px;pointer-events:none;z-index:51}
+
+  /* scene 5 */
+  :root{--shirt2:#3c8fc0;--collar:#eaf3f8;--pants:#2d3a5a}
+  .shirt2{fill:var(--shirt2)} .collar{fill:var(--collar)} .pants{fill:var(--pants)} .a-shirt2{stroke:var(--shirt2)}
+  .spark{transform-box:fill-box;transform-origin:50% 50%;animation:spark .45s linear infinite}
+  .spark.s2{animation-delay:-.22s}
+  @keyframes spark{0%{transform:scale(.5) rotate(0);opacity:1}100%{transform:scale(1.5) rotate(35deg);opacity:0}}
+  #terrace{position:relative;height:270svh;margin-top:-100svh}
+  #terrace>.sticky{visibility:hidden;background:#05061a}
+  #terraceSvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .bubble.anna b{background:#3c8fc0}
+  .serial{animation:blinkA 1s steps(2) infinite}.serial.s2{animation-delay:-.5s}
+  @keyframes blinkA{50%{opacity:.35}}
+  .bulb{animation:blinkA .9s steps(2) infinite}
+  .cracker{cursor:pointer}
+  .cracker .ring{transform-box:fill-box;transform-origin:50% 50%;animation:ping2 1.6s ease-out infinite}
+  .cracker.lit .ring{display:none}
+  .wheel{transform-box:fill-box;transform-origin:50% 50%}
+  @keyframes spinW{to{transform:rotate(360deg)}}
+  #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40}
+  #sparkLayer{position:fixed;inset:0;z-index:41;touch-action:none;cursor:none}
+  #sparkLayer[hidden]{display:none}
+  .sparkBtn{position:fixed;left:50%;bottom:calc(max(20px,env(safe-area-inset-bottom)) + 52px);transform:translateX(-50%);z-index:42;
+    font:600 16px Inter,system-ui,sans-serif;color:#2a1208;background:linear-gradient(#ffe08a,#f2b84b);border:0;border-radius:99px;padding:12px 22px;
+    box-shadow:0 6px 24px #f2b84b66,0 0 0 4px #f2b84b33;opacity:0;pointer-events:none;transition:opacity .3s}
+  .sparkBtn.show{opacity:1;pointer-events:auto}
+  .sparkBtn.on{background:#fff6e6}
+
+  /* scene 6 */
+  #finale{position:relative;height:200svh;margin-top:-100svh}
+  #finale>.sticky{visibility:hidden;background:#05061a}
+  #finaleSvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .rocketBtn{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);z-index:42;font:700 19px Inter,system-ui,sans-serif;color:#2a1208;
+    background:linear-gradient(#ffe08a,#f2a23b);border:0;border-radius:99px;padding:16px 28px;box-shadow:0 0 0 6px #f2b84b33,0 10px 40px #f2b84b88;cursor:pointer;animation:glowBtn 1.6s ease-in-out infinite;transition:opacity .4s}
+  .rocketBtn.gone{opacity:0;pointer-events:none}
+  @keyframes glowBtn{50%{box-shadow:0 0 0 14px #f2b84b18,0 10px 50px #f2b84baa}}
+  .panel{position:absolute;left:50%;bottom:max(24px,env(safe-area-inset-bottom));width:min(92vw,420px);transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:42;
+    background:#fff8ecee;color:#3a2216;border-radius:22px;padding:18px 18px 16px;box-shadow:0 20px 60px #0008;transition:.6s cubic-bezier(.2,.9,.3,1.1);backdrop-filter:blur(8px)}
+  .panel.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+  .pTitle{font-family:Fraunces,serif;font-size:24px;font-weight:700;color:#a01d42}
+  .pSub{font-size:14px;margin-top:4px;opacity:.8;line-height:1.45}
+  .pRow{display:flex;gap:8px;margin-top:12px}
+  .pRow input{flex:1;min-width:0;font:16px Inter,system-ui,sans-serif;padding:11px 14px;border-radius:12px;border:1.5px solid #e2c9a2;background:#fff;color:#3a2216}
+  .pRow button,.pRow2 button{font:600 15px Inter,system-ui,sans-serif;border:0;border-radius:12px;padding:11px 16px;cursor:pointer}
+  .pRow button{background:#a01d42;color:#fff}
+  .pRow2{display:flex;gap:8px;margin-top:10px}
+  .pRow2 .ghost{flex:1;background:#f3e3c4;color:#5a2f14}
+  .pMsg{font-size:13px;margin-top:8px;color:#2f6a3a;min-height:1em;word-break:break-all}
+  .muteBtn{position:fixed;top:max(12px,env(safe-area-inset-top));right:12px;z-index:60;width:40px;height:40px;border-radius:50%;border:0;background:#0006;color:#fff;font-size:18px;cursor:pointer;backdrop-filter:blur(6px)}
+
+  .musicHint{position:fixed;top:max(20px,calc(env(safe-area-inset-top) + 10px));right:60px;z-index:60;font:600 13px Inter,system-ui,sans-serif;color:#fff;
+    text-shadow:0 1px 8px #000a;pointer-events:none;transition:opacity .6s;animation:nudge 2s ease-in-out infinite}
+  .musicHint.gone{opacity:0}
+
+  /* ---------- floating text: no boxes ---------- */
+  .bubble{background:none;box-shadow:none;border-radius:0;padding:0;width:min(90vw,440px);text-align:center;color:#fff8ec;isolation:isolate}
+  .bubble::before{content:"";position:absolute;inset:-34px -40px;z-index:-1;background:radial-gradient(ellipse at 50% 50%,rgba(18,6,2,.55),rgba(18,6,2,0) 70%);pointer-events:none}
+  .bubble b,.bubble.appa b,.bubble.amma b,.bubble.anna b{background:none;padding:0;border-radius:0;font-size:12px;letter-spacing:.22em;margin-bottom:4px;text-shadow:0 1px 6px #000c}
+  .bubble b{color:#ff9ec0} .bubble.appa b{color:#9fd0ff} .bubble.amma b{color:#ffb3c8} .bubble.anna b{color:#9fdcff}
+  .bubble span{font-size:clamp(20px,5.6vw,26px);line-height:1.25;font-weight:600;text-shadow:0 2px 14px rgba(0,0,0,.75),0 0 2px rgba(0,0,0,.6)}
+  .hint{background:none;backdrop-filter:none;padding:0;font-weight:600;font-size:15px;color:#fff3dc;text-shadow:0 1px 10px #000,0 0 2px #000;white-space:normal;width:min(92vw,440px);text-align:center}
+  .panel{background:none;box-shadow:none;backdrop-filter:none;color:#fff8ec;text-align:center;padding:0;bottom:max(28px,env(safe-area-inset-bottom))}
+  .panel::before{content:"";position:absolute;inset:-60px -60px -40px;z-index:-1;background:radial-gradient(ellipse at 50% 60%,rgba(5,6,26,.85),rgba(5,6,26,0) 72%);pointer-events:none}
+  .pTitle{color:#ffd36a;font-size:28px;text-shadow:0 2px 14px #000a}
+  .pSub{opacity:.9;text-shadow:0 1px 8px #000a}
+  .pRow input{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,211,106,.5);color:#fff8ec}
+  .pRow input::placeholder{color:#fff8ec99}
+  .pRow button{background:linear-gradient(#ffe08a,#f2a23b);color:#2a1208}
+  .pRow2 .ghost{background:rgba(255,255,255,.1);color:#fff3dc;border:1px solid rgba(255,255,255,.18)}
+  .pMsg{color:#b6f0a8}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<script>
+/* ================= SHARED AUDIO + BACKGROUND MUSIC ================= */
+/* An original, gentle Carnatic-style loop made in code: tanpura drone, a veena-like
+   melody in raga Mohanam, soft temple bells and a light drum. Starts on the first tap. */
+(() => {
+  let ac, musicGain, out, started = false;
+  window.MUTED = false;
+  window.getAudio = () => {
+    if (window.MUTED) return null;
+    if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } }
+    if (ac.state === 'suspended') ac.resume();
+    return ac;
+  };
+  const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+  function setup(a) {
+    musicGain = a.createGain(); musicGain.gain.value = 0; musicGain.connect(a.destination);
+    const len = a.sampleRate * 2.6, ir = a.createBuffer(2, len, a.sampleRate);
+    for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3); }
+    const rev = a.createConvolver(); rev.buffer = ir; const wg = a.createGain(); wg.gain.value = .5;
+    rev.connect(wg).connect(musicGain);
+    out = a.createGain(); out.connect(musicGain); out.connect(rev);
+    musicGain.gain.linearRampToValueAtTime(.5, a.currentTime + 3);
+  }
+  function tanpura(a, t, m) {
+    // soft, round drone: triangle + sine, gently filtered (no buzzy high end)
+    for (const [type, det, mul, vol] of [['triangle', -3, 1, .018], ['triangle', 3, 1, .018], ['sine', 0, 2, .008]]) {
+      const o = a.createOscillator(), f = a.createBiquadFilter(), g = a.createGain();
+      o.type = type; o.frequency.value = mtof(m) * mul; o.detune.value = det;
+      f.type = 'lowpass'; f.frequency.setValueAtTime(1100, t); f.frequency.exponentialRampToValueAtTime(380, t + 3);
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + .06); g.gain.exponentialRampToValueAtTime(.0001, t + 3.6);
+      o.connect(f).connect(g).connect(out); o.start(t); o.stop(t + 3.8);
+    }
+  }
+  function veena(a, t, m, dur) {
+    const f0 = mtof(m), o = a.createOscillator(), o2 = a.createOscillator(), g = a.createGain(), g2 = a.createGain(), lp = a.createBiquadFilter();
+    o.type = 'triangle'; o.frequency.setValueAtTime(f0 * .985, t); o.frequency.exponentialRampToValueAtTime(f0, t + .08);
+    o2.type = 'sine'; o2.frequency.value = f0 * 2; g2.gain.value = .22;
+    lp.type = 'lowpass'; lp.frequency.value = 2600;
+    const end = t + Math.max(1, dur * 1.7);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.12, t + .012); g.gain.exponentialRampToValueAtTime(.0001, end);
+    o.connect(g); o2.connect(g2).connect(g); g.connect(lp).connect(out);
+    o.start(t); o2.start(t); o.stop(end + .05); o2.stop(end + .05);
+  }
+  function bell(a, t) {
+    for (const [f, v] of [[mtof(84), .022], [mtof(84) * 2.76, .008], [mtof(84) * 5.4, .004]]) {
+      const o = a.createOscillator(), g = a.createGain(); o.frequency.value = f;
+      g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + 3); o.connect(g).connect(out); o.start(t); o.stop(t + 3.1);
+    }
+  }
+  function drum(a, t, v) {
+    const o = a.createOscillator(), g = a.createGain();
+    o.frequency.setValueAtTime(160, t); o.frequency.exponentialRampToValueAtTime(70, t + .2);
+    g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + .3); o.connect(g).connect(out); o.start(t); o.stop(t + .35);
+  }
+  // raga Mohanam (S R2 G3 P D2) phrases, as [midi note, beats]; 0 is a rest
+  const PH = [
+    [[67, 1], [69, 1], [72, 2], [74, 1], [72, 1], [69, 2], [67, 2], [0, 2]],
+    [[64, 1], [67, 1], [69, 1], [72, 1], [74, 2], [76, 2], [74, 1], [72, 1], [69, 2], [0, 2]],
+    [[72, 1], [69, 1], [67, 1], [64, 1], [62, 2], [64, 1], [67, 1], [64, 2], [60, 2], [0, 2]],
+    [[60, 1], [62, 1], [64, 1], [67, 1], [69, 2], [67, 1], [64, 1], [62, 2], [60, 2], [0, 4]],
+  ];
+  const BEAT = .46, TAN = [55, 60, 60, 48], DRUM = [.07, 0, .03, .04, .07, 0, .03, 0];
+  let mel = 0, pi = 0, ni = 0, tanT = 0, tanI = 0, beatT = 0, beatN = 0;
+  function schedule() {
+    const a = ac, ahead = a.currentTime + .7;
+    while (tanT < ahead) { tanpura(a, tanT, TAN[tanI++ % 4]); tanT += BEAT * 2; }
+    while (mel < ahead) {
+      const ph = PH[pi % PH.length], [m, b] = ph[ni];
+      if (m) veena(a, mel, m, b * BEAT);
+      if (ni === 0 && pi % 2 === 0) bell(a, mel);
+      mel += b * BEAT; if (++ni >= ph.length) { ni = 0; pi++; }
+    }
+    while (beatT < ahead) { const v = DRUM[beatN++ % 8]; if (v) drum(a, beatT, v); beatT += BEAT; }
+  }
+  function start() {
+    if (started || window.MUTED) return;
+    const a = window.getAudio(); if (!a) return;
+    started = true; setup(a);
+    const t = a.currentTime + .1; tanT = t; mel = t + BEAT * 4; beatT = t + BEAT * 8;
+    setInterval(schedule, 150); schedule();
+    const h = document.getElementById('musicHint'); if (h) h.classList.add('gone');
+  }
+  window.Music = {
+    start,
+    setMuted(m) { if (m) { if (ac && musicGain) musicGain.gain.setTargetAtTime(0, ac.currentTime, .15); } else if (!started) start(); else { window.getAudio(); musicGain.gain.setTargetAtTime(.5, ac.currentTime, .3); } },
+  };
+  for (const ev of ['pointerdown', 'touchend', 'keydown']) addEventListener(ev, start, { passive: true });
+})();
+</script>
+<div class="musicHint" id="musicHint">🎵 Tap anywhere for music</div>
+
+<!-- ================= SCENE 1 · ARRIVAL ================= -->
+<section id="arrive" aria-label="Arriving at the family's house on Deepavali afternoon">
+  <div class="sticky">
+    <svg id="world" role="img" aria-label="A South Indian street at golden hour: a tiled-roof house with a verandah, a front yard with a kolam and tulsi plant, a gate, neighbours' houses, palm trees and a temple tower in the distance">
+      <defs>
+        <radialGradient id="glow"><stop offset="0" stop-color="#ffd98a" stop-opacity=".95"/><stop offset=".4" stop-color="#ffb84d" stop-opacity=".35"/><stop offset="1" stop-color="#ffb84d" stop-opacity="0"/></radialGradient>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop id="sk0" offset="0" stop-color="#5f9fd6"/><stop id="sk1" offset=".6" stop-color="#a8d0ea"/><stop id="sk2" offset="1" stop-color="#fbe0ad"/>
+        </linearGradient>
+        <radialGradient id="sunG"><stop offset="0" stop-color="#fffbe8"/><stop offset=".25" stop-color="#ffe9a8" stop-opacity=".85"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+        <pattern id="tiles" width="16" height="12" patternUnits="userSpaceOnUse">
+          <rect width="16" height="12" fill="#b4502e"/><path d="M0 12 Q8 1 16 12" fill="#cc6a3e"/><path d="M0 12 Q8 1 16 12" fill="none" stroke="#86331a" stroke-width="1.2"/>
+        </pattern>
+        <pattern id="tiles2" width="14" height="10" patternUnits="userSpaceOnUse">
+          <rect width="14" height="10" fill="#9c4a2c"/><path d="M0 10 Q7 1 14 10" fill="#b25a36"/>
+        </pattern>
+        <linearGradient id="roofShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".25"/><stop offset=".7" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#ffcf9a" stop-opacity=".18"/></linearGradient>
+        <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#efdcb8"/><stop offset=".7" stop-color="#fbeed4"/><stop offset="1" stop-color="#fff3dc"/></linearGradient>
+        <linearGradient id="eaveShadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a2a10" stop-opacity=".45"/><stop offset="1" stop-color="#5a2a10" stop-opacity="0"/></linearGradient>
+        <linearGradient id="wood" x1="0" x2="1"><stop offset="0" stop-color="#4a250e"/><stop offset=".55" stop-color="#7f4822"/><stop offset="1" stop-color="#4a250e"/></linearGradient>
+        <linearGradient id="brass" x1="0" x2="1"><stop offset="0" stop-color="#9a6a14"/><stop offset=".45" stop-color="#f2cf6a"/><stop offset="1" stop-color="#9a6a14"/></linearGradient>
+        <linearGradient id="yard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98f5e"/><stop offset="1" stop-color="#ddb07c"/></linearGradient>
+        <linearGradient id="street" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9855a"/><stop offset="1" stop-color="#8e5d3c"/></linearGradient>
+        <linearGradient id="cWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#e2d0ae"/></linearGradient>
+        <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe0ad" stop-opacity="0"/><stop offset="1" stop-color="#fbe0ad" stop-opacity=".55"/></linearGradient>
+        <radialGradient id="room" cx=".5" cy=".55" r=".65"><stop offset="0" stop-color="#ffe7b2"/><stop offset="1" stop-color="#d98a45"/></radialGradient>
+        <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="8"/></filter>
+
+        <!-- PAAPA (girl, 10) — native coords, feet at y 440 -->
+        <g id="ch-paapa">
+          <ellipse class="skin2" cx="648" cy="440" rx="11" ry="5"/><ellipse class="skin2" cx="672" cy="440" rx="11" ry="5"/>
+          <path class="pav" d="M624 330 Q660 324 696 330 L716 434 Q660 444 604 434Z"/>
+          <path class="pleat" d="M644 334 L634 434 M660 334 L660 434 M676 334 L686 434"/>
+          <path class="gold" d="M606 418 Q660 428 714 418 L716 434 Q660 444 604 434Z"/>
+          <path class="armS a-skin" stroke-width="16" d="M630 292 Q616 320 622 346"/>
+          <path class="armS a-blouse2" stroke-width="21" d="M630 290 Q624 300 622 306"/>
+          <circle class="skin" cx="622" cy="352" r="9"/>
+          <path class="blouse2" d="M628 284 Q660 274 692 284 L694 334 Q660 340 626 334Z"/>
+          <path class="gold" d="M626 324 Q660 330 694 324 L694 334 Q660 340 626 334Z"/>
+          <g class="raise">
+            <path class="armS a-skin" stroke-width="16" d="M690 292 Q712 266 716 240"/>
+            <path class="armS a-blouse2" stroke-width="21" d="M690 290 Q698 284 703 277"/>
+            <g class="prop-spark"><path stroke="#8d8d8d" stroke-width="3" d="M717 234 L742 166"/><circle cx="744" cy="160" r="48" fill="url(#glow)"/>
+              <g class="spark" stroke="#ffe7a0" stroke-width="2.6" stroke-linecap="round"><path d="M744 160 L744 132 M744 160 L770 150 M744 160 L766 182 M744 160 L722 140 M744 160 L720 172 M744 160 L752 186"/></g>
+              <g class="spark s2" stroke="#ffc65a" stroke-width="2" stroke-linecap="round"><path d="M744 160 L760 136 M744 160 L772 166 M744 160 L732 184 M744 160 L726 152"/></g>
+              <circle fill="#fffbe6" cx="744" cy="160" r="5"/></g>
+            <circle class="skin" cx="717" cy="234" r="9"/>
+          </g>
+          <rect class="skin2" x="652" y="262" width="16" height="22"/>
+          <path class="hairS" stroke-width="11" d="M628 230 Q612 272 618 314"/>
+          <path class="hairS" stroke-width="11" d="M692 230 Q708 272 702 314"/>
+          <circle class="blouse2" cx="618" cy="318" r="6"/><circle class="blouse2" cx="702" cy="318" r="6"/>
+          <circle class="skin" cx="624" cy="242" r="7"/><circle class="skin" cx="696" cy="242" r="7"/>
+          <circle class="skin" cx="660" cy="236" r="38"/>
+          <path class="hair" d="M622 236 Q618 192 660 190 Q702 192 698 236 Q694 212 668 208 Q662 220 646 214 Q630 214 622 236Z"/>
+          <g class="jas"><circle cx="682" cy="196" r="4"/><circle cx="692" cy="203" r="4"/><circle cx="698" cy="213" r="4"/></g>
+          <circle class="red" cx="660" cy="222" r="3"/>
+          <g class="blink"><ellipse class="eye" cx="648" cy="240" rx="6" ry="7.5"/><ellipse class="eye" cx="672" cy="240" rx="6" ry="7.5"/><circle class="hl" cx="650" cy="237" r="2.4"/><circle class="hl" cx="674" cy="237" r="2.4"/></g>
+          <ellipse class="cheek" cx="636" cy="254" rx="8" ry="4.5"/><ellipse class="cheek" cx="684" cy="254" rx="8" ry="4.5"/>
+          <path class="lip" d="M651 254 Q660 266 669 254Z"/>
+        </g>
+      </defs>
+
+      <!-- ===== LAYER: sky (very far) ===== -->
+      <g class="layer" data-k=".06">
+        <rect x="-3000" y="-2000" width="7400" height="1500" fill="#5f9fd6" id="skyTop"/>
+        <rect x="-3000" y="-520" width="7400" height="1300" fill="url(#sky)"/>
+        <g id="sun"><circle r="190" fill="url(#sunG)"/><circle r="30" fill="#fff6d6"/></g>
+        <g opacity=".9">
+          <g class="cloud"><g transform="translate(200 40)"><ellipse rx="70" ry="16" fill="#fff"/><ellipse cx="26" cy="-12" rx="38" ry="18" fill="#fff"/><ellipse cx="-22" cy="-6" rx="28" ry="12" fill="#fff"/></g></g>
+          <g class="cloud c2"><g transform="translate(500 180)" opacity=".75"><ellipse rx="90" ry="14" fill="#fff"/><ellipse cx="30" cy="-10" rx="40" ry="14" fill="#fff"/></g></g>
+          <g class="cloud c3"><g transform="translate(-100 110)" opacity=".6"><ellipse rx="60" ry="10" fill="#fff"/><ellipse cx="-14" cy="-8" rx="30" ry="11" fill="#fff"/></g></g>
+        </g>
+        <g fill="none" stroke="#3a2a3a" stroke-width="2.2" stroke-linecap="round">
+          <g class="bird"><g class="flap"><path d="M100 230 q7 -7 14 0 q7 -7 14 0"/></g></g>
+          <g class="bird b2"><g class="flap"><path d="M40 270 q6 -6 12 0 q6 -6 12 0"/></g></g>
+          <g class="bird b3"><g class="flap"><path d="M160 300 q5 -5 10 0 q5 -5 10 0"/></g></g>
+        </g>
+      </g>
+
+      <!-- ===== LAYER: distant hills, gopuram, palm grove ===== -->
+      <g class="layer" data-k=".4">
+        <path d="M-1200 640 Q-700 520 -200 600 Q200 540 520 590 Q820 520 1100 585 Q1500 520 2600 600 V760 H-1200Z" fill="#a8b49c"/>
+        <!-- temple gopuram -->
+        <g transform="translate(400 650) scale(1.7) translate(0 -650)" fill="#d3a882">
+          <rect x="-46" y="560" width="92" height="90"/>
+          <path d="M-42 560 L-36 520 H36 L42 560Z"/><path d="M-36 520 L-30 484 H30 L36 520Z"/><path d="M-30 484 L-24 452 H24 L30 484Z"/><path d="M-24 452 L-18 424 H18 L24 452Z"/>
+          <path d="M-26 424 Q0 396 26 424Z"/>
+          <g fill="#e2c08a"><rect x="-12" y="398" width="3" height="10"/><rect x="-1.5" y="394" width="3" height="12"/><rect x="9" y="398" width="3" height="10"/></g>
+          <path d="M-36 520 H36 M-30 484 H30 M-24 452 H24" stroke="#b88a66" stroke-width="2"/>
+        </g>
+        <g fill="#8a9a80">
+          <path d="M80 600 Q86 540 74 500 M74 500 q-20 -6 -34 6 M74 500 q16 -14 34 -6 M74 500 q-6 -18 -20 -22 M74 500 q10 -16 24 -18" stroke="#8a9a80" stroke-width="5" fill="none"/>
+          <path d="M1260 600 Q1266 540 1254 500 M1254 500 q-20 -6 -34 6 M1254 500 q16 -14 34 -6 M1254 500 q-6 -18 -20 -22" stroke="#8a9a80" stroke-width="5" fill="none"/>
+        </g>
+        <rect x="-1200" y="380" width="3800" height="300" fill="url(#haze)"/>
+      </g>
+
+      <!-- ===== LAYER: neighbours + palms behind ===== -->
+      <g class="layer" data-k=".88">
+        <!-- palms behind the house -->
+        <g class="sway"><path d="M930 700 Q920 520 950 380" stroke="#6b4a2a" stroke-width="12" fill="none"/>
+          <g fill="#2f7a3a"><path d="M950 380 Q890 350 850 400 Q900 372 951 384Z"/><path d="M950 380 Q980 320 1030 330 Q985 342 952 384Z"/><path d="M950 380 Q925 310 880 302 Q930 325 949 384Z"/><path d="M950 380 Q1010 385 1030 430 Q995 398 952 384Z"/><path d="M950 380 Q945 420 915 455 Q938 415 949 384Z"/></g>
+          <g fill="#7a5a2a"><circle cx="944" cy="392" r="6"/><circle cx="954" cy="394" r="6"/></g></g>
+        <g class="sway s2"><path d="M470 700 Q482 560 456 430" stroke="#6b4a2a" stroke-width="11" fill="none"/>
+          <g fill="#3a8a44"><path d="M456 430 Q500 405 534 440 Q495 420 457 434Z"/><path d="M456 430 Q440 380 400 378 Q436 392 455 434Z"/><path d="M456 430 Q470 380 506 372 Q472 395 457 434Z"/><path d="M456 430 Q420 440 404 480 Q428 450 455 434Z"/></g></g>
+
+        <!-- left neighbour: flat-roofed blue house -->
+        <g>
+          <rect x="40" y="420" width="400" height="290" fill="#bcd6e2"/>
+          <rect x="30" y="404" width="420" height="18" fill="#d6e6ee"/>
+          <g fill="#c9dde6"><rect x="40" y="392" width="10" height="14"/><rect x="90" y="392" width="10" height="14"/><rect x="140" y="392" width="10" height="14"/><rect x="190" y="392" width="10" height="14"/><rect x="240" y="392" width="10" height="14"/><rect x="290" y="392" width="10" height="14"/><rect x="340" y="392" width="10" height="14"/><rect x="390" y="392" width="10" height="14"/><rect x="430" y="392" width="10" height="14"/></g>
+          <rect x="30" y="386" width="420" height="8" fill="#d6e6ee"/>
+          <rect x="90" y="480" width="90" height="90" fill="#6b3a1e"/><rect x="98" y="488" width="74" height="74" fill="#ffd796"/>
+          <path d="M108 488 V562 M120 488 V562 M132 488 V562 M144 488 V562 M156 488 V562" stroke="#3a5a6a" stroke-width="3"/>
+          <rect x="290" y="540" width="80" height="160" fill="#2f6a5a"/><rect x="296" y="546" width="68" height="148" fill="#3a7a68"/>
+          <!-- star lantern -->
+          <g class="swing"><path d="M232 422 V470" stroke="#5a3a2a" stroke-width="2"/>
+            <g transform="translate(232 494)"><path d="M0 -26 L7 -8 L26 -8 L11 4 L17 24 L0 12 L-17 24 L-11 4 L-26 -8 L-7 -8Z" fill="#e8463a"/><circle r="8" fill="#ffd36a"/><path d="M-6 24 V40 M0 22 V44 M6 24 V40" stroke="#f2b84b" stroke-width="2"/></g></g>
+          <!-- little diyas on parapet -->
+          <g id="nbDiyas"></g>
+          <rect x="40" y="680" width="400" height="30" fill="#8aa6b3"/>
+        </g>
+
+        <!-- right neighbour: ochre house with tiled roof -->
+        <g>
+          <path d="M960 420 L1010 340 H1340 L1390 420Z" fill="url(#tiles2)"/>
+          <path d="M960 420 H1390 V428 H960Z" fill="#5a2410"/>
+          <rect x="970" y="428" width="410" height="282" fill="#f1c770"/>
+          <rect x="1030" y="490" width="90" height="100" fill="#5a2f14"/><rect x="1038" y="498" width="74" height="84" fill="#ffd796"/>
+          <path d="M1048 498 V582 M1060 498 V582 M1072 498 V582 M1084 498 V582 M1096 498 V582" stroke="#2f5f3a" stroke-width="3"/>
+          <rect x="1190" y="530" width="80" height="170" fill="#7a3a22"/>
+          <g fill="#3a8a44"><circle cx="1300" cy="520" r="20"/><circle cx="1320" cy="500" r="16"/><circle cx="1340" cy="530" r="18"/></g>
+          <g fill="#fff"><circle cx="1302" cy="512" r="3"/><circle cx="1322" cy="496" r="3"/><circle cx="1338" cy="526" r="3"/><circle cx="1314" cy="532" r="3"/></g>
+          <rect x="970" y="680" width="410" height="30" fill="#c99a52"/>
+        </g>
+        <rect x="-400" y="380" width="2200" height="340" fill="url(#haze)" opacity=".5"/>
+      </g>
+
+      <!-- ===== LAYER: our house + yard (main plane) ===== -->
+      <g class="layer" data-k="1">
+        <!-- yard ground -->
+        <rect x="-800" y="686" width="3000" height="500" fill="url(#yard)"/>
+        <ellipse cx="700" cy="694" rx="260" ry="16" fill="#5a2a10" opacity=".35" filter="url(#soft)"/>
+
+        <!-- upstairs terrace room (behind roof) -->
+        <rect x="590" y="168" width="220" height="90" fill="#f2e1bf"/>
+        <rect x="582" y="156" width="236" height="14" fill="#fff3dc"/>
+        <g fill="#efdcb8"><rect x="590" y="140" width="10" height="18"/><rect x="640" y="140" width="10" height="18"/><rect x="690" y="140" width="10" height="18"/><rect x="740" y="140" width="10" height="18"/><rect x="800" y="140" width="10" height="18"/></g>
+        <rect x="582" y="134" width="236" height="8" fill="#fff3dc"/>
+        <rect x="660" y="186" width="80" height="56" fill="#5a2f14"/><rect x="666" y="192" width="68" height="44" fill="#ffd796"/>
+        <path d="M676 192 V236 M688 192 V236 M700 192 V236 M712 192 V236 M724 192 V236" stroke="#2f5f3a" stroke-width="2.5"/>
+
+        <!-- interior seen through the doorway -->
+        <g id="interior">
+          <rect x="630" y="420" width="140" height="250" fill="url(#room)"/>
+          <rect x="630" y="618" width="140" height="52" fill="#9c3324"/>
+          <path d="M640 640 H760" stroke="#fff" opacity=".1" stroke-width="3"/>
+          <rect x="736" y="470" width="22" height="30" fill="#fffaf0"/><rect x="736" y="470" width="22" height="12" fill="#e8643a"/>
+          <g class="swing"><path d="M722 420 V470" stroke="#8a6420" stroke-width="2"/><path d="M712 470 Q722 484 732 470Z" fill="#d4a537"/></g>
+          <circle cx="722" cy="466" r="22" fill="url(#glow)"/>
+          <g id="paapa" style="--spk:none"><g transform="translate(375 437) scale(.5)"><use href="#ch-paapa"/></g></g>
+        </g>
+
+        <!-- wall with door opening -->
+        <path fill="url(#wall)" fill-rule="evenodd" d="M490 300 H910 V700 H490Z M640 430 H760 V660 H640Z"/>
+        <rect x="490" y="300" width="420" height="60" fill="url(#eaveShadow)"/>
+        <rect x="490" y="682" width="420" height="18" fill="#9c3324"/>
+        <!-- door frame + lintel -->
+        <path fill="url(#wood)" fill-rule="evenodd" d="M628 418 H772 V662 H628Z M640 430 H760 V660 H640Z"/>
+        <rect x="622" y="408" width="156" height="12" rx="2" fill="#5a2f14"/>
+        <path d="M664 408 Q700 386 736 408Z" fill="#6b3a1b"/><circle cx="700" cy="400" r="5" fill="#e7bf55"/>
+        <!-- turmeric & kumkum on the threshold -->
+        <rect x="640" y="656" width="120" height="6" fill="#e9b43a"/>
+        <g fill="#c8102e"><circle cx="656" cy="659" r="2.4"/><circle cx="684" cy="659" r="2.4"/><circle cx="716" cy="659" r="2.4"/><circle cx="744" cy="659" r="2.4"/></g>
+
+        <!-- doors (drawn in JS with perspective) -->
+        <g id="doors"></g>
+
+        <!-- windows -->
+        <g>
+          <rect x="516" y="436" width="88" height="108" fill="#5a2f14"/><rect x="524" y="444" width="72" height="92" fill="#ffd38a"/>
+          <rect x="524" y="444" width="72" height="92" fill="#7a3a1a" opacity=".22"/>
+          <path d="M533 444 V536 M542 444 V536 M551 444 V536 M560 444 V536 M569 444 V536 M578 444 V536 M587 444 V536" stroke="#2f5f3a" stroke-width="3"/>
+          <rect x="510" y="544" width="100" height="8" fill="#6b3a1b"/>
+          <rect x="796" y="436" width="88" height="108" fill="#5a2f14"/><rect x="804" y="444" width="72" height="92" fill="#ffd38a"/>
+          <rect x="804" y="444" width="72" height="92" fill="#7a3a1a" opacity=".22"/>
+          <path d="M813 444 V536 M822 444 V536 M831 444 V536 M840 444 V536 M849 444 V536 M858 444 V536 M867 444 V536" stroke="#2f5f3a" stroke-width="3"/>
+          <rect x="790" y="544" width="100" height="8" fill="#6b3a1b"/>
+        </g>
+
+        <!-- thinnai -->
+        <rect x="490" y="600" width="128" height="64" fill="#dcc29a"/><rect x="490" y="600" width="128" height="64" fill="url(#eaveShadow)" opacity=".3"/>
+        <rect x="488" y="594" width="132" height="10" fill="#a53a28"/>
+        <rect x="782" y="600" width="128" height="64" fill="#dcc29a"/><rect x="782" y="600" width="128" height="64" fill="url(#eaveShadow)" opacity=".3"/>
+        <rect x="780" y="594" width="132" height="10" fill="#a53a28"/>
+        <!-- potted crotons on thinnai -->
+        <g><path d="M526 594 L530 572 H554 L558 594Z" fill="#b8552a"/><g fill="#d9a321"><path d="M542 572 Q520 548 530 530 Q542 552 542 572Z"/><path d="M542 572 Q566 548 556 528 Q544 552 542 572Z"/></g><path d="M542 572 Q540 540 544 520 Q548 548 542 572Z" fill="#5a8a2a"/></g>
+        <g><path d="M842 594 L846 572 H870 L874 594Z" fill="#b8552a"/><g fill="#c0392b"><path d="M858 572 Q836 548 846 530 Q858 552 858 572Z"/><path d="M858 572 Q882 548 872 528 Q860 552 858 572Z"/></g><path d="M858 572 Q856 540 860 520 Q864 548 858 572Z" fill="#5a8a2a"/></g>
+
+        <!-- pillars -->
+        <g fill="url(#wood)"><rect x="500" y="318" width="12" height="278"/><rect x="602" y="318" width="12" height="278"/><rect x="786" y="318" width="12" height="278"/><rect x="888" y="318" width="12" height="278"/></g>
+        <g fill="#5a2f14"><rect x="496" y="586" width="20" height="10"/><rect x="598" y="586" width="20" height="10"/><rect x="782" y="586" width="20" height="10"/><rect x="884" y="586" width="20" height="10"/>
+          <rect x="496" y="318" width="20" height="10"/><rect x="598" y="318" width="20" height="10"/><rect x="782" y="318" width="20" height="10"/><rect x="884" y="318" width="20" height="10"/></g>
+        <!-- jasmine creeper on the first pillar -->
+        <path d="M506 596 Q490 540 512 500 Q526 460 504 420 Q494 380 512 340" stroke="#3f7a2c" stroke-width="3" fill="none"/>
+        <g fill="#4f9a38"><ellipse cx="498" cy="560" rx="7" ry="4" transform="rotate(-30 498 560)"/><ellipse cx="516" cy="512" rx="7" ry="4" transform="rotate(30 516 512)"/><ellipse cx="500" cy="460" rx="7" ry="4" transform="rotate(-20 500 460)"/><ellipse cx="514" cy="410" rx="7" ry="4"/><ellipse cx="500" cy="370" rx="7" ry="4" transform="rotate(-40 500 370)"/></g>
+        <g fill="#fffaf0"><circle cx="492" cy="548" r="3"/><circle cx="520" cy="500" r="3"/><circle cx="506" cy="448" r="3"/><circle cx="518" cy="402" r="3"/><circle cx="496" cy="380" r="3"/><circle cx="510" cy="352" r="3"/></g>
+
+        <!-- roof -->
+        <path d="M470 318 L556 230 H844 L930 318Z" fill="url(#tiles)"/>
+        <path d="M470 318 L556 230 H844 L930 318Z" fill="url(#roofShade)"/>
+        <path d="M556 230 H844" stroke="#7a2e14" stroke-width="6" stroke-linecap="round"/>
+        <path d="M466 318 H934 V328 H466Z" fill="#6b2a12"/>
+        <path d="M466 328 H934" stroke="#3a1608" stroke-width="2" opacity=".5"/>
+
+        <!-- hanging brass lamps on the verandah -->
+        <g class="swing"><path d="M560 328 V378" stroke="#7a5a1a" stroke-width="2" stroke-dasharray="3 2"/><path d="M546 378 Q560 396 574 378Z" fill="url(#brass)"/><path class="flame" d="M560 378 Q555 369 560 360 Q565 369 560 378Z" fill="#ffc94a"/><circle cx="560" cy="372" r="26" fill="url(#glow)"/></g>
+        <g class="swing" style="animation-delay:-1.2s"><path d="M840 328 V378" stroke="#7a5a1a" stroke-width="2" stroke-dasharray="3 2"/><path d="M826 378 Q840 396 854 378Z" fill="url(#brass)"/><path class="flame" d="M840 378 Q835 369 840 360 Q845 369 840 378Z" fill="#ffc94a"/><circle cx="840" cy="372" r="26" fill="url(#glow)"/></g>
+
+        <!-- step -->
+        <rect x="614" y="662" width="172" height="26" fill="#c9b79a"/><rect x="614" y="662" width="172" height="5" fill="#e6d7bc"/>
+        <rect x="596" y="688" width="208" height="14" fill="#b9a585"/>
+        <g id="stepDiyas"></g>
+
+        <!-- path to the gate -->
+        <path d="M604 702 H796 L830 1000 H570Z" fill="#e6c79c" opacity=".7"/>
+        <!-- big kolam -->
+        <g id="kolam" transform="translate(700 800) scale(1.25 .45)"></g>
+
+        <!-- tulsi maadam -->
+        <g transform="translate(470 840)">
+          <ellipse cx="0" cy="62" rx="40" ry="8" fill="#5a2a10" opacity=".25"/>
+          <path d="M-30 60 L-26 0 H26 L30 60Z" fill="#f4e6c8"/>
+          <rect x="-34" y="-10" width="68" height="12" fill="#a53a28"/>
+          <path d="M-18 20 Q0 4 18 20 V48 H-18Z" fill="#a53a28" opacity=".85"/>
+          <circle cx="0" cy="34" r="6" fill="#e9b43a"/>
+          <g fill="#3f8a3a"><ellipse cx="-12" cy="-26" rx="10" ry="16" transform="rotate(-25 -12 -26)"/><ellipse cx="12" cy="-28" rx="10" ry="16" transform="rotate(25 12 -28)"/><ellipse cx="0" cy="-38" rx="10" ry="18"/></g>
+          <g fill="#6a2a6a"><circle cx="0" cy="-58" r="3"/><circle cx="-14" cy="-44" r="2.5"/><circle cx="14" cy="-46" r="2.5"/></g>
+          <circle cx="40" cy="54" r="18" fill="url(#glow)"/><path d="M32 58 Q40 66 48 58Z" fill="#b8552a"/><path class="flame" d="M40 57 Q36 51 40 45 Q44 51 40 57Z" fill="#ffc94a"/>
+        </g>
+        <!-- banana plant -->
+        <g class="sway s3" transform="translate(960 700)">
+          <path d="M0 0 Q-4 -60 2 -110" stroke="#6a8a3a" stroke-width="14" fill="none"/>
+          <g fill="#4f9a38"><path d="M2 -110 Q-70 -150 -90 -100 Q-50 -120 2 -104Z"/><path d="M2 -110 Q60 -170 100 -130 Q50 -140 4 -104Z"/><path d="M2 -110 Q-20 -190 10 -210 Q10 -160 4 -108Z"/><path d="M2 -110 Q80 -100 96 -60 Q50 -96 4 -104Z" fill="#3f8a2c"/></g>
+        </g>
+        <!-- grass tufts -->
+        <g id="grass"></g>
+        <!-- floating golden dust in the light -->
+        <g fill="#fff3c4">
+          <circle class="mote" cx="560" cy="460" r="2"/><circle class="mote" style="animation-delay:-3s" cx="820" cy="420" r="1.6"/>
+          <circle class="mote" style="animation-delay:-5s" cx="620" cy="590" r="1.8"/><circle class="mote" style="animation-delay:-7s" cx="900" cy="520" r="2.2"/>
+          <circle class="mote" style="animation-delay:-2s" cx="620" cy="760" r="2"/><circle class="mote" style="animation-delay:-6s" cx="780" cy="700" r="1.5"/>
+        </g>
+        <!-- thoranam in front of the doors -->
+        <g id="thoranam"></g>
+      </g>
+
+      <!-- ===== LAYER: compound wall, gate, street (near) ===== -->
+      <g class="layer" data-k="1.5">
+        <rect x="-1200" y="950" width="3400" height="900" fill="url(#street)"/>
+        <path d="M-1200 1010 H2200" stroke="#7a4e30" stroke-width="3" opacity=".25" stroke-dasharray="40 30"/>
+        <!-- compound wall -->
+        <g>
+          <rect x="-1200" y="880" width="1820" height="70" fill="url(#cWall)"/>
+          <rect x="780" y="880" width="1420" height="70" fill="url(#cWall)"/>
+          <rect x="-1200" y="872" width="1820" height="10" fill="#a53a28"/><rect x="780" y="872" width="1420" height="10" fill="#a53a28"/>
+          <path d="M-1200 912 H620 M780 912 H2200" stroke="#a53a28" stroke-width="3" stroke-dasharray="14 10" opacity=".6"/>
+          <rect x="-1200" y="944" width="3400" height="8" fill="#000" opacity=".12"/>
+          <!-- gate pillars with diyas -->
+          <rect x="604" y="838" width="26" height="114" fill="#f4ead6"/><rect x="600" y="830" width="34" height="10" fill="#a53a28"/>
+          <rect x="770" y="838" width="26" height="114" fill="#f4ead6"/><rect x="766" y="830" width="34" height="10" fill="#a53a28"/>
+          <circle cx="617" cy="818" r="26" fill="url(#glow)"/><path d="M607 830 Q617 840 627 830Z" fill="#b8552a"/><path class="flame" d="M617 829 Q612 821 617 812 Q622 821 617 829Z" fill="#ffc94a"/>
+          <circle cx="783" cy="818" r="26" fill="url(#glow)"/><path d="M773 830 Q783 840 793 830Z" fill="#b8552a"/><path class="flame" d="M783 829 Q778 821 783 812 Q788 821 783 829Z" fill="#ffc94a"/>
+          <!-- bougainvillea -->
+          <g id="bougain"></g>
+        </g>
+        <!-- gates (drawn in JS) -->
+        <g id="gates"></g>
+        <!-- cycle leaning on the wall -->
+        <g transform="translate(420 940)" fill="none" stroke="#2a2a2a" stroke-width="3">
+          <circle cx="-34" cy="-22" r="22"/><circle cx="34" cy="-22" r="22"/>
+          <path d="M-34 -22 L-6 -22 L14 -52 L-14 -52 Z M-6 -22 L-18 -60 M34 -22 L14 -52 L18 -64 M-24 -62 H-10 M12 -64 H26" stroke="#1f5f8a"/>
+        </g>
+      </g>
+
+      <!-- ===== LAYER: overhanging tree branch (very near) ===== -->
+      <g class="layer" data-k="1.9">
+        <g transform="translate(1250 -90) scale(-1 1)">
+          <path d="M-200 -160 Q120 -40 360 40" stroke="#4a3020" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <path d="M200 -10 Q260 60 330 90" stroke="#4a3020" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <g id="leaves"></g>
+        </g>
+      </g>
+    </svg>
+
+    <div class="sunwash"></div>
+    <div class="vignette"></div>
+    <div class="warm" id="warm"></div>
+
+    <div class="intro" id="intro">
+      <small>Deepavali · 1996</small>
+      <h1 id="introTitle">You're invited home</h1>
+      <p id="introSub">Come celebrate with our family</p>
+    </div>
+    <div class="bubble" id="greet" role="status"><b>Paapa</b><span id="greetText">Vaanga! Happy Deepavali! Come in, come in!</span></div>
+    <div class="hint" id="hint">Scroll to walk in <i>↓</i></div>
+  </div>
+</section>
+
+<!-- ================= SCENE 2 · THE HALL ================= -->
+<section id="hall" aria-label="The hall: light the kuthu vilakku with Appa">
+  <div class="sticky">
+    <svg id="hallSvg" role="img" aria-label="A 1990s South Indian hall at golden hour: a window with the setting sun, a TV in a wooden cabinet, a wall clock, a wooden swing, and Appa beside a tall brass kuthu vilakku">
+      <defs>
+        <linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop id="hs0" offset="0" stop-color="#7c8fc4"/><stop id="hs1" offset=".6" stop-color="#f2b47e"/><stop id="hs2" offset="1" stop-color="#f68b4e"/>
+        </linearGradient>
+        <linearGradient id="h-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f3d39c"/><stop offset=".5" stop-color="#f8e2b4"/><stop offset="1" stop-color="#eccb92"/></linearGradient>
+        <linearGradient id="h-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e2c1e"/><stop offset=".4" stop-color="#a53a28"/><stop offset="1" stop-color="#7a2418"/></linearGradient>
+        <linearGradient id="h-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd89a" stop-opacity=".45"/><stop offset="1" stop-color="#ffd89a" stop-opacity="0"/></linearGradient>
+        <linearGradient id="h-ceil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1d0c"/><stop offset="1" stop-color="#5e3218"/></linearGradient>
+        <radialGradient id="h-curtain" cx=".5" cy=".6" r=".7"><stop offset="0" stop-color="#ffcf7a"/><stop offset="1" stop-color="#c8501e"/></radialGradient>
+
+        <!-- APPA — native coords, feet at y 440 -->
+        <g id="ch-appa">
+          <ellipse class="skin2" cx="132" cy="440" rx="15" ry="7"/><ellipse class="skin2" cx="168" cy="440" rx="15" ry="7"/>
+          <path class="veshti" d="M102 296 Q150 290 198 296 L210 434 Q150 442 90 434Z"/>
+          <path class="gold" d="M91 420 Q150 428 209 420 L210 434 Q150 442 90 434Z"/>
+          <path class="pleat" d="M150 300 L157 434"/>
+          <path class="armS a-shirt" stroke-width="26" d="M102 214 Q80 258 90 298"/>
+          <path class="armS a-shirt" stroke-width="26" d="M198 214 Q222 250 222 290"/>
+          <!-- lighting stick (thiri) -->
+          <path d="M224 300 L296 196" stroke="#7a5a3a" stroke-width="5" stroke-linecap="round"/>
+          <g class="appa-fire"><circle cx="298" cy="190" r="26" fill="url(#glow)"/><path class="flame" d="M298 196 Q291 186 298 172 Q305 186 298 196Z" fill="#ffc94a"/></g>
+          <circle class="skin" cx="90" cy="306" r="13"/><circle class="skin" cx="222" cy="298" r="13"/>
+          <path class="shirt" d="M98 206 Q150 190 202 206 Q212 250 204 304 Q150 312 96 304 Q88 250 98 206Z"/>
+          <path class="shirtD" d="M134 196 L150 218 L166 196Z"/>
+          <circle class="shirtD" cx="150" cy="240" r="3"/><circle class="shirtD" cx="150" cy="268" r="3"/>
+          <rect class="skin2" x="140" y="174" width="20" height="26"/>
+          <circle class="skin" cx="104" cy="146" r="9"/><circle class="skin" cx="196" cy="146" r="9"/>
+          <circle class="skin" cx="150" cy="140" r="46"/>
+          <path class="hair" d="M104 134 Q102 86 152 86 Q198 88 196 134 Q188 108 150 106 Q118 108 104 134Z"/>
+          <g class="blink"><ellipse class="eye" cx="134" cy="144" rx="6" ry="7.5"/><ellipse class="eye" cx="166" cy="144" rx="6" ry="7.5"/><circle class="hl" cx="136" cy="141" r="2.3"/><circle class="hl" cx="168" cy="141" r="2.3"/></g>
+          <ellipse class="cheek" cx="120" cy="160" rx="9" ry="5"/><ellipse class="cheek" cx="180" cy="160" rx="9" ry="5"/>
+          <path class="hair" d="M137 163 Q150 156 163 163 Q156 167 150 164 Q144 167 137 163Z"/>
+          <path class="lipS" d="M141 171 Q150 178 159 171"/>
+        </g>
+      </defs>
+
+      <!-- ===== back of the room ===== -->
+      <g class="layer" data-k=".85">
+        <!-- ceiling with wooden rafters -->
+        <rect x="-600" y="-400" width="2400" height="600" fill="url(#h-ceil)"/>
+        <g stroke="#7a4420" stroke-width="10"><path d="M-600 40 H1800"/><path d="M-600 120 H1800"/></g>
+        <g fill="#4a2510"><rect x="-600" y="180" width="2400" height="24"/></g>
+        <!-- wall -->
+        <rect x="-600" y="200" width="2400" height="400" fill="url(#h-wall)"/>
+        <rect x="-600" y="520" width="2400" height="80" fill="#e9c086"/>
+        <rect x="-600" y="516" width="2400" height="6" fill="#a53a28"/>
+
+        <!-- window with the setting sun -->
+        <g>
+          <rect x="110" y="290" width="200" height="200" fill="#5a2f14"/>
+          <rect x="122" y="302" width="176" height="176" fill="url(#h-sky)"/>
+          <g id="h-sun"><circle r="60" fill="url(#sunG)"/><circle r="17" fill="#fff0c8"/></g>
+          <path d="M122 450 Q170 430 210 446 Q250 432 298 448 V478 H122Z" fill="#7a5a6a" opacity=".55"/>
+          <g fill="#3a2a3a" opacity=".75"><path d="M250 478 Q246 420 262 380" stroke="#3a2a3a" stroke-width="5" fill="none"/><path d="M262 380 q-26 -6 -40 10 q24 -4 40 -6Z M262 380 q20 -18 42 -8 q-22 0 -42 10Z M262 380 q-6 -22 -24 -26 q14 10 24 28Z"/></g>
+          <path d="M140 302 V478 M158 302 V478 M176 302 V478 M194 302 V478 M212 302 V478 M230 302 V478 M248 302 V478 M266 302 V478 M284 302 V478" stroke="#2f5f3a" stroke-width="4"/>
+          <path d="M110 290 L80 300 V480 L110 490Z" fill="#6b3a1b"/><path d="M310 290 L340 300 V480 L310 490Z" fill="#6b3a1b"/>
+          <rect x="100" y="488" width="220" height="10" fill="#6b3a1b"/>
+        </g>
+
+        <!-- wall clock with swinging pendulum -->
+        <g transform="translate(430 236)">
+          <rect x="-22" y="0" width="44" height="98" rx="6" fill="#6b3a1b"/>
+          <circle cy="24" r="17" fill="#fff8e6" stroke="#e7bf55" stroke-width="2"/>
+          <path d="M0 24 V13 M0 24 L8 28" stroke="#2a1a10" stroke-width="2" stroke-linecap="round"/>
+          <rect x="-14" y="46" width="28" height="44" fill="#2a160a"/>
+          <g class="pendulum"><path d="M0 46 V78" stroke="#e7bf55" stroke-width="2"/><circle cy="80" r="6" fill="#e7bf55"/></g>
+        </g>
+
+        <!-- framed family photo with a small garland -->
+        <g transform="translate(560 262)">
+          <rect x="-46" y="0" width="92" height="70" fill="#6b3a1b"/><rect x="-38" y="8" width="76" height="54" fill="#d9b88a"/>
+          <g fill="#8a6a4a"><circle cx="-14" cy="28" r="8"/><circle cx="12" cy="26" r="8"/><path d="M-28 62 Q-14 40 0 62Z"/><path d="M-2 62 Q12 38 26 62Z"/></g>
+          <path d="M-46 4 Q0 30 46 4" stroke="#ff9a1a" stroke-width="5" fill="none" stroke-dasharray="1 5" stroke-linecap="round"/>
+        </g>
+
+        <!-- tube light -->
+        <rect x="660" y="226" width="160" height="9" rx="4" fill="#fffef6"/>
+        <rect x="652" y="224" width="10" height="13" rx="2" fill="#c9c2b0"/><rect x="818" y="224" width="10" height="13" rx="2" fill="#c9c2b0"/>
+
+        <!-- calendar -->
+        <g transform="translate(900 250)">
+          <path d="M0 -12 V2" stroke="#6b4a2a" stroke-width="1.5"/><circle cy="-12" r="2.5" fill="#6b4a2a"/>
+          <rect x="-36" y="0" width="72" height="104" fill="#fffaf0"/>
+          <rect x="-36" y="0" width="72" height="48" fill="#e8643a"/>
+          <circle cy="24" r="11" fill="#ffd23f"/><path d="M-10 36 Q0 46 10 36Z" fill="#8a3a1a"/>
+          <text y="60" text-anchor="middle" font-size="8" font-weight="700" fill="#8a1c1c" font-family="Inter,sans-serif">NOV 1996</text>
+          <g stroke="#d8c8b0" stroke-width="1"><path d="M-30 68 H30 M-30 78 H30 M-30 88 H30 M-30 98 H30"/></g>
+          <circle cx="4" cy="83" r="5" fill="none" stroke="#c8102e" stroke-width="1.5"/>
+        </g>
+
+        <!-- doorway to the pooja room, glowing -->
+        <g>
+          <rect x="1050" y="320" width="120" height="280" fill="#5a2f14"/>
+          <rect x="1062" y="332" width="96" height="268" fill="url(#h-curtain)"/>
+          <path d="M1062 332 Q1086 470 1072 600 H1062Z M1158 332 Q1134 470 1148 600 H1158Z" fill="#a8261e" opacity=".85"/>
+          <path d="M1062 340 Q1110 360 1158 340" stroke="#ffb000" stroke-width="5" fill="none" stroke-dasharray="1 7" stroke-linecap="round"/>
+        </g>
+      </g>
+
+      <!-- ===== room floor + furniture + people ===== -->
+      <g class="layer" data-k="1">
+        <rect x="-600" y="596" width="2400" height="600" fill="url(#h-floor)"/>
+        <path d="M-600 640 H1800 M-600 700 H1800 M-600 780 H1800" stroke="#fff" opacity=".05" stroke-width="2"/>
+        <!-- reed mat (korai paai) -->
+        <g transform="translate(560 760)">
+          <path d="M-150 -40 H150 L190 60 H-190Z" fill="#d9b56a"/>
+          <g stroke="#b88a3e" stroke-width="2" opacity=".7"><path d="M-160 -16 H162 M-170 8 H172 M-180 34 H182"/></g>
+          <path d="M-150 -40 H150 L190 60 H-190Z" fill="none" stroke="#a8261e" stroke-width="6"/>
+          <path d="M-136 -30 H136 L170 50 H-170Z" fill="none" stroke="#2f6a3a" stroke-width="3"/>
+          <!-- box of crackers waiting for the night -->
+          <g transform="translate(-60 0) rotate(-6)"><rect x="-30" y="-16" width="60" height="30" fill="#d8262f"/><rect x="-30" y="-16" width="60" height="8" fill="#f5b942"/><path d="M-18 0 l6 -6 l6 6 l6 -6 l6 6 l6 -6" stroke="#fff4e0" stroke-width="2" fill="none"/></g>
+          <!-- brass pot with marigolds -->
+          <g transform="translate(80 -6)"><ellipse cy="18" rx="22" ry="5" fill="#000" opacity=".2"/><path d="M-18 0 Q-22 18 0 20 Q22 18 18 0Z" fill="url(#brass)"/><ellipse rx="14" ry="4" fill="#9a6a14"/><g fill="#ff9a1a"><circle cx="-8" cy="-6" r="6"/><circle cx="6" cy="-8" r="6"/><circle cx="0" cy="-14" r="6" fill="#ffb800"/></g></g>
+        </g>
+        <!-- sunlight falling through the window -->
+        <path d="M110 490 L310 490 L620 900 L230 900Z" fill="url(#h-beam)"/>
+
+        <!-- ceiling fan -->
+        <g transform="translate(600 40)">
+          <rect x="-3" y="0" width="6" height="70" fill="#d8d0c0"/>
+          <ellipse cy="76" rx="20" ry="10" fill="#e8e0d0"/>
+          <g class="fan"><path d="M0 76 L-110 70 L-110 82Z M0 76 L110 70 L110 82Z" fill="#cfc6b4"/></g>
+        </g>
+
+        <!-- TV in a wooden cabinet -->
+        <g id="tv" style="cursor:pointer">
+          <ellipse cx="410" cy="618" rx="90" ry="8" fill="#000" opacity=".25"/>
+          <rect x="330" y="478" width="160" height="140" rx="4" fill="#6b3a1e"/>
+          <rect x="338" y="486" width="144" height="88" fill="#3d200f"/>
+          <rect x="350" y="492" width="112" height="78" rx="10" fill="#2a2522"/>
+          <rect x="358" y="498" width="78" height="64" rx="9" fill="#111"/>
+          <clipPath id="scr"><rect x="362" y="502" width="70" height="56" rx="8"/></clipPath>
+          <g clip-path="url(#scr)">
+            <g id="tvBars"><rect x="362" y="502" width="10" height="56" fill="#c0c0c0"/><rect x="372" y="502" width="10" height="56" fill="#c0c000"/><rect x="382" y="502" width="10" height="56" fill="#00c0c0"/><rect x="392" y="502" width="10" height="56" fill="#00c000"/><rect x="402" y="502" width="10" height="56" fill="#c000c0"/><rect x="412" y="502" width="10" height="56" fill="#c00000"/><rect x="422" y="502" width="10" height="56" fill="#0000c0"/></g>
+            <g id="tvFest" opacity="0"><rect x="362" y="502" width="70" height="56" fill="#1b2a6a"/><text x="397" y="526" text-anchor="middle" font-size="9" fill="#ffd23f" font-family="Fraunces,serif" font-weight="700">Deepavali</text><text x="397" y="538" text-anchor="middle" font-size="7" fill="#fff" font-family="Inter,sans-serif">Special</text><g fill="#ffd23f"><circle cx="372" cy="512" r="1.5"/><circle cx="424" cy="510" r="1.5"/><circle cx="418" cy="548" r="1.5"/><circle cx="376" cy="548" r="1.5"/></g></g>
+            <rect x="362" y="502" width="70" height="56" fill="#fff" opacity=".06"/>
+          </g>
+          <circle cx="449" cy="508" r="5" fill="#8a8a8a"/><circle cx="449" cy="526" r="5" fill="#8a8a8a"/>
+          <path d="M442 540 H456 M442 546 H456 M442 552 H456" stroke="#555" stroke-width="2"/>
+          <path d="M406 492 L384 452 M406 492 L430 450" stroke="#8a8a8a" stroke-width="2"/>
+          <rect x="338" y="580" width="144" height="32" fill="#5a2f17"/><circle cx="380" cy="596" r="3" fill="#e7bf55"/><circle cx="440" cy="596" r="3" fill="#e7bf55"/>
+          <!-- transistor radio on top -->
+          <rect x="440" y="458" width="40" height="22" rx="4" fill="#8a2a1a"/><circle cx="452" cy="469" r="6" fill="#d8c8a8"/><rect x="462" y="463" width="14" height="3" fill="#e7bf55"/>
+        </g>
+
+        <!-- wooden oonjal (swing) -->
+        <g class="swingSlow">
+          <path d="M860 -200 V612 M1000 -200 V612" stroke="#7a6a50" stroke-width="3" stroke-dasharray="6 3"/>
+          <rect x="840" y="606" width="180" height="14" fill="#7f4822"/><rect x="840" y="618" width="180" height="10" fill="#5a2f14"/>
+          <circle cx="860" cy="612" r="4" fill="#e7bf55"/><circle cx="1000" cy="612" r="4" fill="#e7bf55"/>
+          <!-- brass plate of sweets on the swing -->
+          <ellipse cx="930" cy="604" rx="28" ry="6" fill="#d4a537"/>
+          <circle cx="920" cy="598" r="7" fill="#f2a01b"/><circle cx="934" cy="597" r="7" fill="#f2a01b"/><rect x="940" y="594" width="12" height="8" fill="#e8b23c"/>
+        </g>
+
+        <!-- small kolam + wooden manai under the lamp -->
+        <g transform="translate(705 664) scale(.55 .2)" id="h-kolam"></g>
+        <rect x="655" y="640" width="100" height="10" rx="2" fill="#7f4822"/>
+        <rect x="662" y="650" width="8" height="10" fill="#5a2f14"/><rect x="740" y="650" width="8" height="10" fill="#5a2f14"/>
+
+        <!-- floor reflection of the lamp -->
+        <ellipse id="h-reflect" cx="705" cy="690" rx="70" ry="16" fill="url(#glow)" opacity="0"/>
+
+        <!-- Appa -->
+        <g transform="translate(525 440) scale(.5)"><use href="#ch-appa"/></g>
+
+        <!-- kuthu vilakku -->
+        <g id="vilakku">
+          <path d="M675 640 Q705 604 735 640Z" fill="url(#brass)"/>
+          <ellipse cx="705" cy="640" rx="32" ry="5" fill="#b8892a"/>
+          <rect x="701" y="546" width="8" height="70" fill="url(#brass)"/>
+          <ellipse cx="705" cy="602" rx="12" ry="4" fill="url(#brass)"/>
+          <ellipse cx="705" cy="578" rx="9" ry="3.5" fill="url(#brass)"/>
+          <ellipse cx="705" cy="558" rx="11" ry="4" fill="url(#brass)"/>
+          <rect x="703" y="492" width="4" height="48" fill="url(#brass)"/>
+          <path d="M705 470 Q716 480 711 492 H699 Q694 480 705 470Z" fill="url(#brass)"/>
+          <circle cx="705" cy="467" r="3.5" fill="#f2cf6a"/>
+          <path d="M665 540 Q705 574 745 540Z" fill="url(#brass)"/>
+          <ellipse cx="705" cy="540" rx="40" ry="7" fill="#e7c062"/>
+          <ellipse cx="705" cy="540" rx="34" ry="4.8" fill="#b9821a"/>
+          <g id="wicks"></g>
+          <rect id="lampHit" x="640" y="450" width="130" height="130" fill="transparent" style="cursor:pointer"/>
+        </g>
+      </g>
+
+      <!-- ===== near: cane chair and the door post we just came through ===== -->
+      <g class="layer" data-k="1.5">
+        <g transform="translate(790 760)">
+          <ellipse cx="60" cy="130" rx="90" ry="10" fill="#000" opacity=".25"/>
+          <path d="M0 0 Q60 -20 120 0 L130 60 H-10Z" fill="#c99a52"/>
+          <path d="M0 0 Q60 -20 120 0 L130 60 H-10Z" fill="none" stroke="#8a5a2a" stroke-width="3"/>
+          <g stroke="#a8783a" stroke-width="1.5"><path d="M10 10 L120 50 M20 4 L128 40 M0 30 L80 58 M110 6 L0 50 M90 0 L-6 40"/></g>
+          <path d="M-10 60 H130 L120 80 H0Z" fill="#b8843e"/>
+          <path d="M6 80 L-4 130 M114 80 L124 130" stroke="#7a4a1e" stroke-width="6"/>
+          <!-- folded newspaper -->
+          <path d="M20 58 L80 50 L96 64 L36 72Z" fill="#f2efe4"/><path d="M28 60 H70 M30 64 H76" stroke="#8a8a8a" stroke-width="1.5"/>
+        </g>
+        <rect x="-200" y="-400" width="230" height="1600" fill="url(#wood)"/>
+        <rect x="1230" y="-400" width="230" height="1600" fill="url(#wood)"/>
+      </g>
+    </svg>
+
+    <div class="dim" id="h-dim"></div>
+    <div class="warm" id="h-warmIn" style="opacity:1"></div>
+    <div class="warm orange" id="h-warmOut"></div>
+
+    <div class="bubble appa" id="h-bubble" role="status"><b>Appa</b><span id="h-text">Vaanga! Happy Deepavali! Come, let's light the kuthu vilakku together.</span></div>
+    <div class="hint" id="h-hint">Keep scrolling <i>↓</i></div>
+  </div>
+</section>
+
+<!-- ================= SCENE 3 · THE POOJA ROOM ================= -->
+<section id="pooja" class="scene" aria-label="The pooja room at sunset: light the diyas around the kolam with Amma">
+  <div class="sticky">
+    <svg id="poojaSvg" role="img" aria-label="A pooja room at sunset with a carved wooden shrine holding a brass kalasam, hanging bell, incense, a big colourful kolam on the floor ringed by clay diyas, and Amma holding a lamp">
+      <defs>
+        <linearGradient id="p-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop id="ps0" offset="0" stop-color="#5a5f9a"/><stop id="ps1" offset=".55" stop-color="#e88a6a"/><stop id="ps2" offset="1" stop-color="#e35f3a"/>
+        </linearGradient>
+        <linearGradient id="p-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9894a"/><stop offset="1" stop-color="#b8602e"/></linearGradient>
+        <linearGradient id="p-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6e1f16"/><stop offset="1" stop-color="#4a120c"/></linearGradient>
+        <radialGradient id="p-niche" cx=".5" cy=".62" r=".6"><stop offset="0" stop-color="#ffcf7a"/><stop offset=".5" stop-color="#c8641e"/><stop offset="1" stop-color="#3a1408"/></radialGradient>
+        <radialGradient id="p-kitchen" cx=".5" cy=".5" r=".7"><stop offset="0" stop-color="#fff2d0"/><stop offset="1" stop-color="#e8b878"/></radialGradient>
+        <clipPath id="p-win"><rect x="832" y="312" width="116" height="116"/></clipPath>
+
+        <!-- AMMA — native coords, feet at y 440 -->
+        <g id="ch-amma">
+          <ellipse class="skin2" cx="318" cy="440" rx="13" ry="6"/><ellipse class="skin2" cx="344" cy="440" rx="13" ry="6"/>
+          <path class="saree" d="M284 300 Q330 294 376 300 L392 434 Q330 442 268 434Z"/>
+          <path class="pleat" d="M314 302 L306 434 M330 302 L330 434 M346 302 L354 434"/>
+          <path class="gold" d="M270 420 Q330 428 390 420 L392 434 Q330 442 268 434Z"/>
+          <path class="saree2" d="M362 206 Q386 232 380 320 L366 320 Q370 242 350 214Z"/>
+          <path class="gold" d="M366 312 L380 312 L380 322 L366 322Z"/>
+          <path class="armS a-skin" stroke-width="20" d="M290 220 Q268 262 278 302"/>
+          <path class="armS a-blouse" stroke-width="25" d="M291 216 Q283 228 282 240"/>
+          <circle class="skin" cx="278" cy="308" r="11"/>
+          <path class="skin" d="M292 252 L368 252 Q372 276 376 302 L284 302 Q288 276 292 252Z"/>
+          <path class="blouse" d="M286 210 Q330 196 374 210 L370 256 Q330 262 290 256Z"/>
+          <path class="saree2" d="M348 202 L380 214 L314 306 L280 300Z"/>
+          <path class="gold" d="M282 298 L302 306 L306 300 L286 292Z"/>
+          <path class="armS a-skin" stroke-width="20" d="M370 220 Q398 246 392 270"/>
+          <path class="armS a-blouse" stroke-width="25" d="M369 216 Q380 226 384 236"/>
+          <g class="prop-diya">
+            <circle cx="392" cy="252" r="46" fill="url(#glow)"/>
+            <path fill="#c0612f" d="M372 264 Q392 284 412 264Z"/>
+            <path class="flame" fill="#ffc94a" d="M392 263 Q382 250 392 234 Q402 250 392 263Z"/>
+            <path class="flame" fill="#fff3c4" d="M392 262 Q388 254 392 246 Q396 254 392 262Z"/>
+          </g>
+          <circle class="skin" cx="392" cy="276" r="11"/>
+          <rect class="skin2" x="320" y="176" width="20" height="28"/>
+          <path class="goldS" stroke-width="3" d="M314 204 Q330 224 346 204"/>
+          <circle class="hair" cx="372" cy="114" r="22"/>
+          <g class="jas"><circle cx="356" cy="96" r="4.5"/><circle cx="366" cy="90" r="4.5"/><circle cx="378" cy="91" r="4.5"/><circle cx="388" cy="98" r="4.5"/><circle cx="393" cy="110" r="4.5"/><circle cx="392" cy="122" r="4.5"/></g>
+          <circle class="skin" cx="288" cy="148" r="8"/><circle class="skin" cx="372" cy="148" r="8"/>
+          <circle class="gold" cx="288" cy="162" r="4.5"/><circle class="gold" cx="372" cy="162" r="4.5"/>
+          <circle class="skin" cx="330" cy="142" r="44"/>
+          <path class="hair" d="M286 142 Q282 92 330 90 Q378 92 374 142 Q368 112 333 108 L330 100 L327 108 Q292 112 286 142Z"/>
+          <path stroke="var(--red)" stroke-width="3" d="M330 92 V104"/>
+          <circle class="red" cx="330" cy="122" r="4.6"/>
+          <g class="blink"><ellipse class="eye" cx="316" cy="144" rx="6" ry="7.5"/><ellipse class="eye" cx="344" cy="144" rx="6" ry="7.5"/><circle class="hl" cx="318" cy="141" r="2.3"/><circle class="hl" cx="346" cy="141" r="2.3"/></g>
+          <ellipse class="cheek" cx="301" cy="160" rx="9" ry="5"/><ellipse class="cheek" cx="359" cy="160" rx="9" ry="5"/>
+          <circle class="gold" cx="337" cy="157" r="2.2"/>
+          <path class="lipS" d="M320 167 Q330 176 340 167"/>
+        </g>
+      </defs>
+
+      <!-- ===== back of the room ===== -->
+      <g class="layer" data-k=".85">
+        <rect x="-700" y="-400" width="2500" height="600" fill="url(#h-ceil)"/>
+        <g stroke="#7a4420" stroke-width="10"><path d="M-700 60 H1800"/><path d="M-700 140 H1800"/></g>
+        <rect x="-700" y="180" width="2500" height="22" fill="#4a2510"/>
+        <rect x="-700" y="200" width="2500" height="400" fill="url(#p-wall)"/>
+        <!-- painted border frieze -->
+        <rect x="-700" y="214" width="2500" height="14" fill="#a8261e"/>
+        <path id="p-frieze" d="M-700 221 H1800" stroke="#f2c14b" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <rect x="-700" y="560" width="2500" height="40" fill="#9a4a22"/>
+
+        <!-- doorway to the kitchen (left) -->
+        <g>
+          <rect x="30" y="320" width="150" height="280" fill="#5a2f14"/>
+          <rect x="42" y="332" width="126" height="268" fill="url(#p-kitchen)"/>
+          <rect x="52" y="392" width="106" height="6" fill="#8a5a2a"/>
+          <g fill="#c9d0d4"><rect x="60" y="362" width="18" height="30" rx="3"/><rect x="84" y="368" width="14" height="24" rx="3"/><circle cx="118" cy="378" r="13"/><rect x="138" y="360" width="16" height="32" rx="3"/></g>
+          <path d="M42 340 Q105 360 168 340" stroke="#3f8f3a" stroke-width="5" fill="none" stroke-dasharray="6 6"/>
+        </g>
+
+        <!-- window with the sun going down -->
+        <g>
+          <rect x="820" y="300" width="140" height="140" fill="#5a2f14"/>
+          <g clip-path="url(#p-win)">
+            <rect x="832" y="312" width="116" height="116" fill="url(#p-sky)"/>
+            <g id="p-sun"><circle r="46" fill="url(#sunG)"/><circle r="14" fill="#ffe0a8"/></g>
+            <path d="M832 412 Q870 396 900 408 Q930 398 948 410 V428 H832Z" fill="#4a3050"/>
+            <path d="M920 428 Q916 390 930 362" stroke="#2a1830" stroke-width="4" fill="none"/>
+            <path d="M930 362 q-22 -4 -34 8 q20 -4 34 -5Z M930 362 q18 -16 36 -6 q-18 0 -36 9Z M930 362 q-4 -20 -20 -24 q12 8 20 26Z" fill="#2a1830"/>
+          </g>
+          <path d="M852 312 V428 M872 312 V428 M892 312 V428 M912 312 V428 M932 312 V428" stroke="#2f5f3a" stroke-width="4"/>
+          <rect x="810" y="438" width="160" height="10" fill="#6b3a1b"/>
+        </g>
+
+        <!-- big temple bell (tap it) -->
+        <g id="p-bell" style="cursor:pointer">
+          <g class="bellSwing">
+            <path d="M720 -100 V246" stroke="#8a6420" stroke-width="3" stroke-dasharray="5 3"/>
+            <path d="M700 290 Q700 248 720 246 Q740 248 740 290 Q744 296 720 296 Q696 296 700 290Z" fill="url(#brass)"/>
+            <ellipse cx="720" cy="292" rx="22" ry="5" fill="#b8892a"/>
+            <circle class="clapper" cx="720" cy="300" r="5" fill="#9a6a14"/>
+          </g>
+          <rect x="690" y="230" width="60" height="80" fill="transparent"/>
+        </g>
+      </g>
+
+      <!-- ===== shrine, floor, kolam, Amma ===== -->
+      <g class="layer" data-k="1">
+        <rect x="-700" y="596" width="2500" height="700" fill="url(#p-floor)"/>
+        <path d="M-700 640 H1800 M-700 720 H1800 M-700 830 H1800" stroke="#fff" opacity=".04" stroke-width="2"/>
+
+        <!-- carved wooden shrine (mandapam) -->
+        <g>
+          <ellipse cx="560" cy="604" rx="140" ry="10" fill="#000" opacity=".3"/>
+          <path d="M440 300 H680 V604 H440Z" fill="#5a2f14"/>
+          <path d="M430 300 H690 L670 270 H450Z" fill="#6b3a1b"/>
+          <path d="M470 270 L490 236 H630 L650 270Z" fill="#7a4420"/>
+          <path d="M510 236 L530 210 H590 L610 236Z" fill="#8a5028"/>
+          <path d="M546 210 Q560 186 574 210Z" fill="url(#brass)"/><circle cx="560" cy="184" r="5" fill="#f2cf6a"/>
+          <g fill="#e7bf55"><circle cx="460" cy="286" r="3"/><circle cx="500" cy="286" r="3"/><circle cx="540" cy="286" r="3"/><circle cx="580" cy="286" r="3"/><circle cx="620" cy="286" r="3"/><circle cx="660" cy="286" r="3"/></g>
+          <!-- glowing niche -->
+          <path d="M470 560 V390 Q560 300 650 390 V560Z" fill="url(#p-niche)"/>
+          <path d="M470 560 V390 Q560 300 650 390 V560" fill="none" stroke="#e7bf55" stroke-width="3"/>
+          <!-- marigold garland across the arch, strings down the sides -->
+          <path d="M478 380 Q560 420 642 380" stroke="#ff9a1a" stroke-width="8" fill="none" stroke-dasharray="1 9" stroke-linecap="round"/>
+          <path d="M476 384 V520 M644 384 V520" stroke="#ffb800" stroke-width="7" stroke-dasharray="1 8" stroke-linecap="round"/>
+          <!-- brass kalasam with coconut and mango leaves -->
+          <circle cx="560" cy="480" r="70" fill="url(#glow)"/>
+          <ellipse cx="560" cy="546" rx="44" ry="8" fill="#d4a537"/>
+          <path d="M530 540 Q520 500 545 488 H575 Q600 500 590 540Z" fill="url(#brass)"/>
+          <path d="M538 500 H582" stroke="#a8261e" stroke-width="3"/>
+          <g fill="#3f8f3a"><path d="M560 488 Q526 476 520 450 Q540 470 560 482Z"/><path d="M560 488 Q594 476 600 450 Q580 470 560 482Z"/><path d="M560 488 Q536 466 540 438 Q550 464 560 482Z"/><path d="M560 488 Q584 466 580 438 Q570 464 560 482Z"/></g>
+          <ellipse cx="560" cy="466" rx="18" ry="20" fill="#8a5a2a"/><path d="M548 452 Q560 444 572 452" stroke="#6b3a1b" stroke-width="3" fill="none"/>
+          <circle cx="560" cy="470" r="3" fill="#c8102e"/>
+          <!-- two little lamps already lit -->
+          <g><path d="M494 556 Q500 546 506 556Z" fill="url(#brass)"/><rect x="498" y="520" width="4" height="30" fill="url(#brass)"/><path d="M488 520 Q500 532 512 520Z" fill="url(#brass)"/><path class="flame" d="M500 519 Q495 510 500 500 Q505 510 500 519Z" fill="#ffc94a"/><circle cx="500" cy="512" r="22" fill="url(#glow)"/></g>
+          <g><path d="M614 556 Q620 546 626 556Z" fill="url(#brass)"/><rect x="618" y="520" width="4" height="30" fill="url(#brass)"/><path d="M608 520 Q620 532 632 520Z" fill="url(#brass)"/><path class="flame" d="M620 519 Q615 510 620 500 Q625 510 620 519Z" fill="#ffc94a"/><circle cx="620" cy="512" r="22" fill="url(#glow)"/></g>
+          <!-- incense with curling smoke -->
+          <g><rect x="644" y="566" width="8" height="12" fill="#6b3a1b"/><path d="M648 566 L654 520" stroke="#5a2a1a" stroke-width="1.6"/><circle cx="654" cy="520" r="1.6" fill="#ff6a2a"/>
+            <path class="smoke" d="M654 518 Q646 500 656 484 Q666 468 654 450 Q644 434 656 416" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path class="smoke s2" d="M654 518 Q662 502 652 486 Q642 470 654 452" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+          <!-- lower shelf: thamboolam plate -->
+          <rect x="452" y="566" width="216" height="6" fill="#7a4420"/>
+          <ellipse cx="520" cy="584" rx="34" ry="7" fill="#d4a537"/>
+          <g><path d="M498 582 Q510 566 528 572" stroke="#f2d23a" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M502 584 Q514 570 532 576" stroke="#e8c42a" stroke-width="6" fill="none" stroke-linecap="round"/><ellipse cx="538" cy="580" rx="9" ry="5" fill="#3f8f3a"/><circle cx="510" cy="580" r="4" fill="#ff7a1a"/></g>
+          <ellipse cx="600" cy="584" rx="26" ry="6" fill="#d4a537"/><g fill="#ff9a1a"><circle cx="592" cy="580" r="5"/><circle cx="602" cy="578" r="5" fill="#ffc21a"/><circle cx="610" cy="581" r="5"/></g>
+        </g>
+
+        <!-- Amma -->
+        <g transform="translate(262 440) scale(.5)"><use href="#ch-amma"/></g>
+
+        <!-- rangoli kolam + diyas -->
+        <g transform="translate(612 724) scale(.92 .33)" id="p-kolam"></g>
+        <g id="p-diyas"></g>
+        <ellipse id="p-kolamHit" cx="612" cy="724" rx="200" ry="80" fill="transparent" style="cursor:pointer"/>
+      </g>
+
+      <!-- ===== near: hanging marigold strings + aarti plate ===== -->
+      <g class="layer" data-k="1.5">
+        <g class="sway"><path d="M300 -300 V120" stroke="#ff9a1a" stroke-width="12" stroke-dasharray="1 13" stroke-linecap="round"/><path d="M300 120 l-6 18 h12z" fill="#3f8f3a"/></g>
+        <g class="sway s2"><path d="M830 -300 V80" stroke="#ffb800" stroke-width="12" stroke-dasharray="1 13" stroke-linecap="round"/><path d="M830 80 l-6 18 h12z" fill="#3f8f3a"/></g>
+        <g class="sway s3"><path d="M360 -300 V40" stroke="#ff7a00" stroke-width="10" stroke-dasharray="1 12" stroke-linecap="round"/></g>
+        <g transform="translate(470 880)">
+          <ellipse rx="70" ry="16" fill="#000" opacity=".3" cy="10"/>
+          <ellipse rx="66" ry="15" fill="url(#brass)"/>
+          <ellipse rx="56" ry="11" fill="#e7c062"/>
+          <g fill="#ff9a1a"><circle cx="-30" cy="-4" r="7"/><circle cx="-18" cy="-8" r="7" fill="#ffc21a"/><circle cx="20" cy="-6" r="7" fill="#e8463a"/><circle cx="32" cy="-2" r="7"/></g>
+          <path d="M-4 -10 Q0 -2 4 -10Z" fill="#c8102e"/><ellipse cx="0" cy="0" rx="10" ry="3" fill="#e9b43a"/>
+        </g>
+      </g>
+    </svg>
+
+    <div class="dim" id="p-dim"></div>
+    <div class="warm orange" id="p-warmIn" style="opacity:1"></div>
+    <div class="warm" id="p-warmOut"></div>
+
+    <div class="bubble amma" id="p-bubble" role="status"><b>Amma</b><span id="p-text">Vaanga! Help me light the agal vilakkus around the kolam.</span></div>
+    <div class="hint" id="p-hint">Keep scrolling <i>↓</i></div>
+  </div>
+</section>
+
+<!-- ================= SCENE 4 · THE KITCHEN ================= -->
+<section id="kitchen" aria-label="The kitchen at dusk: take a sweet from Amma's plate">
+  <div class="sticky">
+    <svg id="kitchenSvg" role="img" aria-label="A 1990s South Indian kitchen at dusk: Amma frying murukku at the stove, steel vessels on shelves, a window with the first stars, a staircase to the terrace, and Paapa beside a steel plate of sweets">
+      <defs>
+        <linearGradient id="k-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop id="ks0" offset="0" stop-color="#2a2a62"/><stop id="ks1" offset=".6" stop-color="#9a4a7a"/><stop id="ks2" offset="1" stop-color="#d8582e"/>
+        </linearGradient>
+        <linearGradient id="k-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e6c4"/><stop offset="1" stop-color="#ead2a2"/></linearGradient>
+        <pattern id="k-tiles" width="22" height="22" patternUnits="userSpaceOnUse">
+          <rect width="22" height="22" fill="#f4f8f6"/><rect x=".6" y=".6" width="20.8" height="20.8" fill="none" stroke="#b2d0cb" stroke-width="1.2"/><circle cx="11" cy="11" r="2.6" fill="#6aa0d0" opacity=".7"/>
+        </pattern>
+        <pattern id="k-floor" width="60" height="30" patternUnits="userSpaceOnUse">
+          <rect width="60" height="30" fill="#8a8678"/><rect width="30" height="15" fill="#958f80"/><rect x="30" y="15" width="30" height="15" fill="#958f80"/>
+        </pattern>
+        <linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#8d969b"/><stop offset=".45" stop-color="#f2f5f6"/><stop offset="1" stop-color="#7f888d"/></linearGradient>
+        <radialGradient id="plateG"><stop offset="0" stop-color="#f6f8f9"/><stop offset=".72" stop-color="#cfd5d8"/><stop offset="1" stop-color="#8d969b"/></radialGradient>
+        <clipPath id="k-win"><rect x="552" y="312" width="116" height="116"/></clipPath>
+
+        <!-- sweets (each drawn in a 100x100 box centred on 0,0) -->
+        <radialGradient id="g-laddu" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#ffd06a"/><stop offset=".6" stop-color="#f29a1e"/><stop offset="1" stop-color="#c8680a"/></radialGradient>
+        <linearGradient id="g-pak" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c47a1a"/><stop offset=".18" stop-color="#f2c050"/><stop offset="1" stop-color="#e2a234"/></linearGradient>
+        <radialGradient id="g-athi" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#9a5a2a"/><stop offset="1" stop-color="#5a2a10"/></radialGradient>
+        <symbol id="sw-laddu" viewBox="-50 -50 100 100"><circle r="40" fill="url(#g-laddu)"/><g id="boondi"></g><path d="M-6 -36 Q4 -44 12 -34 Q4 -38 -2 -32Z" fill="#fff0d0"/><circle cx="-14" cy="-28" r="3.5" fill="#5a2a1a"/></symbol>
+        <symbol id="sw-pak" viewBox="-50 -50 100 100"><rect x="-38" y="-30" width="76" height="60" rx="8" fill="url(#g-pak)"/><g id="pores"></g><rect x="-38" y="-30" width="76" height="60" rx="8" fill="none" stroke="#b86a14" stroke-width="2"/></symbol>
+        <symbol id="sw-jalebi" viewBox="-50 -50 100 100"><path id="jal1" fill="none" stroke="#e8740c" stroke-width="10" stroke-linecap="round"/><path id="jal2" fill="none" stroke="#ffc35a" stroke-width="3.5" stroke-linecap="round" opacity=".9"/></symbol>
+        <symbol id="sw-murukku" viewBox="-50 -50 100 100"><path id="mur1" fill="none" stroke="#b8792e" stroke-width="11" stroke-linecap="round"/><path id="mur2" fill="none" stroke="#7f4e18" stroke-width="11" stroke-dasharray="2 5" opacity=".55"/></symbol>
+        <symbol id="sw-athi" viewBox="-50 -50 100 100"><ellipse rx="40" ry="36" fill="url(#g-athi)"/><ellipse rx="40" ry="36" fill="none" stroke="#3a1a08" stroke-width="2"/><ellipse cx="-12" cy="-14" rx="14" ry="6" fill="#fff" opacity=".18" transform="rotate(-20)"/><g fill="#f2e6c8"><circle cx="-6" cy="4" r="2"/><circle cx="10" cy="-4" r="2"/><circle cx="4" cy="14" r="2"/><circle cx="-16" cy="12" r="2"/></g></symbol>
+      </defs>
+
+      <!-- ===== back of the kitchen ===== -->
+      <g class="layer" data-k=".85">
+        <rect x="-700" y="-400" width="2500" height="600" fill="url(#h-ceil)"/>
+        <g stroke="#7a4420" stroke-width="10"><path d="M-700 60 H1800"/><path d="M-700 140 H1800"/></g>
+        <rect x="-700" y="180" width="2500" height="22" fill="#4a2510"/>
+        <rect x="-700" y="200" width="2500" height="440" fill="url(#k-wall)"/>
+        <rect x="480" y="440" width="560" height="100" fill="url(#k-tiles)"/>
+
+        <!-- window: dusk and the first stars -->
+        <g>
+          <rect x="540" y="300" width="140" height="140" fill="#5a2f14"/>
+          <g clip-path="url(#k-win)">
+            <rect x="552" y="312" width="116" height="116" fill="url(#k-sky)"/>
+            <g id="k-stars" opacity="0"></g>
+            <path d="M552 412 Q590 398 620 410 Q650 398 668 410 V428 H552Z" fill="#2a1e3a"/>
+            <path d="M584 428 Q580 392 594 366" stroke="#1a1028" stroke-width="4" fill="none"/>
+            <path d="M594 366 q-22 -4 -34 8 q20 -4 34 -5Z M594 366 q18 -16 36 -6 q-18 0 -36 9Z" fill="#1a1028"/>
+          </g>
+          <path d="M572 312 V428 M592 312 V428 M612 312 V428 M632 312 V428 M652 312 V428" stroke="#2f5f3a" stroke-width="4"/>
+          <rect x="530" y="438" width="160" height="8" fill="#6b3a1b"/>
+        </g>
+
+        <!-- shelves with steel dabbas, jars, tumblers -->
+        <g>
+          <rect x="230" y="300" width="230" height="8" fill="#6b3a1b"/><rect x="230" y="390" width="230" height="8" fill="#6b3a1b"/>
+          <g fill="url(#steel)">
+            <rect x="240" y="256" width="36" height="44" rx="4"/><rect x="282" y="264" width="30" height="36" rx="4"/><rect x="318" y="250" width="40" height="50" rx="4"/>
+            <rect x="246" y="352" width="14" height="38" rx="2"/><rect x="264" y="352" width="14" height="38" rx="2"/><rect x="282" y="352" width="14" height="38" rx="2"/>
+          </g>
+          <g fill="#c9d0d4"><ellipse cx="258" cy="256" rx="18" ry="4"/><ellipse cx="297" cy="264" rx="15" ry="4"/><ellipse cx="338" cy="250" rx="20" ry="4"/></g>
+          <!-- ceramic pickle jars (bharani) -->
+          <g><path d="M370 300 Q362 270 378 258 H398 Q414 270 406 300Z" fill="#d9c6a0"/><rect x="380" y="250" width="16" height="10" fill="#8a3a1a"/><path d="M366 282 H410" stroke="#8a5a2a" stroke-width="3"/></g>
+          <g><path d="M416 300 Q410 278 422 268 H438 Q450 278 444 300Z" fill="#c9b080"/><rect x="424" y="262" width="12" height="8" fill="#8a3a1a"/></g>
+          <!-- brass pots -->
+          <g fill="url(#brass)"><circle cx="330" cy="372" r="18"/><rect x="322" y="350" width="16" height="6"/><circle cx="380" cy="374" r="16"/><circle cx="426" cy="370" r="20"/></g>
+        </g>
+
+        <!-- steel plate rack -->
+        <g>
+          <rect x="740" y="300" width="160" height="110" fill="none" stroke="#8a8a8a" stroke-width="3"/>
+          <path d="M740 380 H900" stroke="#8a8a8a" stroke-width="3"/>
+          <g fill="url(#steel)"><ellipse cx="760" cy="350" rx="8" ry="40"/><ellipse cx="778" cy="350" rx="8" ry="40"/><ellipse cx="796" cy="350" rx="8" ry="40"/><ellipse cx="814" cy="350" rx="8" ry="40"/><ellipse cx="832" cy="350" rx="8" ry="40"/></g>
+          <g fill="url(#steel)"><rect x="852" y="340" width="14" height="38" rx="2"/><rect x="872" y="344" width="14" height="34" rx="2"/></g>
+        </g>
+
+        <!-- staircase up to the terrace (left) -->
+        <g>
+          <rect x="40" y="200" width="160" height="440" fill="#d9c09a"/>
+          <rect x="70" y="210" width="100" height="70" fill="#151a45"/>
+          <g fill="#fff6d8"><circle cx="90" cy="230" r="1.6"/><circle cx="130" cy="244" r="1.2"/><circle cx="150" cy="226" r="1.5"/><circle cx="112" cy="262" r="1.1"/></g>
+          <g fill="#b89a74"><rect x="40" y="600" width="160" height="40"/><rect x="40" y="560" width="140" height="40"/><rect x="40" y="520" width="120" height="40"/><rect x="40" y="480" width="100" height="40"/><rect x="40" y="440" width="80" height="40"/><rect x="40" y="400" width="60" height="40"/><rect x="40" y="360" width="40" height="40"/></g>
+          <g fill="#cdb28a"><rect x="40" y="600" width="160" height="5"/><rect x="40" y="560" width="140" height="5"/><rect x="40" y="520" width="120" height="5"/><rect x="40" y="480" width="100" height="5"/><rect x="40" y="440" width="80" height="5"/><rect x="40" y="400" width="60" height="5"/></g>
+          <path d="M200 640 L60 340" stroke="#5a2f14" stroke-width="5"/>
+        </g>
+      </g>
+
+      <!-- ===== kitchen floor, counter, Amma, table, Paapa ===== -->
+      <g class="layer" data-k="1">
+        <rect x="-700" y="636" width="2500" height="700" fill="url(#k-floor)"/>
+        <rect x="-700" y="636" width="2500" height="40" fill="#000" opacity=".12"/>
+
+        <!-- Amma behind the counter -->
+        <g style="--diya:none" transform="translate(560 372) scale(.5)"><use href="#ch-amma"/></g>
+
+        <!-- counter -->
+        <rect x="480" y="532" width="560" height="14" fill="#2f3a36"/>
+        <rect x="480" y="546" width="560" height="96" fill="#efdcb8"/>
+        <rect x="480" y="546" width="560" height="6" fill="#000" opacity=".12"/>
+        <g fill="#c9a87a"><rect x="500" y="566" width="120" height="66"/><rect x="640" y="566" width="120" height="66"/><rect x="780" y="566" width="120" height="66"/><rect x="920" y="566" width="110" height="66"/></g>
+        <g fill="url(#steel)"><ellipse cx="560" cy="616" rx="40" ry="14"/><ellipse cx="700" cy="610" rx="30" ry="20"/><ellipse cx="840" cy="618" rx="44" ry="12"/></g>
+
+        <!-- gas stove with a kadai of murukku -->
+        <g>
+          <rect x="760" y="516" width="130" height="18" rx="3" fill="#3a3a3a"/>
+          <circle cx="784" cy="526" r="4" fill="#9a9a9a"/><circle cx="800" cy="526" r="4" fill="#9a9a9a"/>
+          <g class="burner"><path d="M826 516 q4 -6 8 0 q4 -6 8 0 q4 -6 8 0" fill="#4a8aff" opacity=".8"/></g>
+          <path d="M800 512 Q838 548 876 512Z" fill="#1f1f1f"/>
+          <ellipse cx="838" cy="512" rx="38" ry="6" fill="#3a3a3a"/>
+          <ellipse cx="838" cy="512" rx="33" ry="4" fill="#d8a02a"/>
+          <g fill="none" stroke="#b8792e" stroke-width="3"><circle cx="826" cy="511" r="6"/><circle cx="848" cy="512" r="5"/></g>
+          <g class="bubbles" fill="#ffe7a0"><circle cx="818" cy="511" r="1.4"/><circle cx="838" cy="513" r="1.2"/><circle cx="856" cy="511" r="1.5"/></g>
+          <path class="steam" d="M830 500 q-6 -10 2 -20 q8 -10 0 -20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path class="steam s2" d="M846 500 q6 -10 -2 -20 q-8 -10 0 -20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Amma's slotted ladle (jalli karandi) -->
+          <path d="M770 480 L826 508" stroke="#9a9a9a" stroke-width="3" stroke-linecap="round"/>
+          <!-- plate of fresh murukku -->
+          <ellipse cx="930" cy="528" rx="36" ry="7" fill="url(#plateG)"/>
+          <g fill="none" stroke="#b8792e" stroke-width="3"><circle cx="918" cy="522" r="8"/><circle cx="938" cy="520" r="8"/><circle cx="928" cy="514" r="8"/></g>
+        </g>
+
+        <!-- grinding stone (ammi kal) -->
+        <g transform="translate(300 664)">
+          <rect x="-40" y="-10" width="80" height="18" rx="3" fill="#8a8a82"/>
+          <rect x="-28" y="-20" width="56" height="12" rx="6" fill="#6f6f68"/>
+        </g>
+
+        <!-- Paapa, peeking over the table at the sweets -->
+        <g style="--spk:none" transform="translate(98 545) scale(.5)"><use href="#ch-paapa"/></g>
+
+        <!-- low wooden table with the plate of sweets -->
+        <g>
+          <ellipse cx="530" cy="826" rx="190" ry="14" fill="#000" opacity=".25"/>
+          <rect x="350" y="726" width="360" height="16" rx="3" fill="#9a6233"/>
+          <rect x="350" y="742" width="360" height="12" fill="#6b3a1b"/>
+          <path d="M370 754 V822 M690 754 V822" stroke="#5a2f14" stroke-width="10"/>
+          <!-- banana leaf under the plate -->
+          <path d="M380 730 Q530 690 690 728 Q530 742 380 730Z" fill="#3f9a3a"/>
+          <path d="M386 729 Q530 712 684 727" stroke="#2f7a2c" stroke-width="2" fill="none"/>
+          <ellipse cx="530" cy="722" rx="140" ry="22" fill="url(#plateG)"/>
+          <ellipse cx="530" cy="720" rx="124" ry="17" fill="#e4e9eb"/>
+          <g id="k-sweets"></g>
+        </g>
+
+      </g>
+
+      <!-- ===== near: brass water pot and vegetable basket ===== -->
+      <g class="layer" data-k="1.5">
+        <g transform="translate(250 960)">
+          <ellipse rx="50" ry="10" cy="40" fill="#000" opacity=".3"/>
+          <path d="M-40 30 Q-56 -10 -22 -24 H22 Q56 -10 40 30 Q0 46 -40 30Z" fill="url(#brass)"/>
+          <rect x="-16" y="-40" width="32" height="18" fill="url(#brass)"/><ellipse cy="-40" rx="22" ry="5" fill="#b8892a"/>
+        </g>
+        <g transform="translate(830 970)">
+          <ellipse rx="70" ry="12" cy="26" fill="#000" opacity=".3"/>
+          <path d="M-60 0 Q0 50 60 0Z" fill="#b8843e"/>
+          <g fill="#6a2a7a"><ellipse cx="-30" cy="-6" rx="16" ry="10" transform="rotate(-20 -30 -6)"/><ellipse cx="-6" cy="-10" rx="16" ry="10" transform="rotate(15 -6 -10)"/></g>
+          <g fill="#e8463a"><circle cx="20" cy="-8" r="10"/><circle cx="38" cy="-4" r="9"/></g>
+          <g fill="#4f9a38"><path d="M-46 -2 l14 -26 l4 4 z"/><path d="M4 -6 l8 -28 l5 3z"/></g>
+          <path d="M-60 0 Q0 50 60 0" fill="none" stroke="#8a5a2a" stroke-width="3"/>
+        </g>
+      </g>
+    </svg>
+
+    <div class="dim" id="k-dim" style="opacity:.25"></div>
+    <div class="warm" id="k-warmIn" style="opacity:1"></div>
+    <div class="warm night" id="k-warmOut"></div>
+
+    <div class="bubble amma" id="k-bubble" role="status"><b>Amma</b><span id="k-text">Saapdunga! Take a sweet, everything is homemade.</span></div>
+    <div class="hint" id="k-hint">Keep scrolling <i>↓</i></div>
+  </div>
+</section>
+
+<!-- the sweet you picked, up close -->
+<div id="eat" class="eat" hidden>
+  <div class="eatStage" id="eatStage">
+    <svg viewBox="-50 -50 100 100" aria-hidden="true">
+      <defs><mask id="biteMask" maskUnits="userSpaceOnUse" x="-60" y="-60" width="120" height="120"><rect x="-60" y="-60" width="120" height="120" fill="#fff"/><g id="bites"></g></mask></defs>
+      <g mask="url(#biteMask)"><use id="eatUse" href="#sw-laddu" x="-50" y="-50" width="100" height="100"/></g>
+    </svg>
+  </div>
+  <p class="eatName" id="eatName">Laddu</p>
+  <p class="eatHint" id="eatHint">Tap to take a bite</p>
+</div>
+
+<!-- ================= SCENE 5 · THE TERRACE ================= -->
+<section id="terrace" aria-label="The terrace at night: crackers with the family">
+  <div class="sticky">
+    <svg id="terraceSvg" role="img" aria-label="The family's terrace on Deepavali night: stars, neighbours' fireworks over the town, a temple tower outlined in lights, serial lights, the whole family with sparklers, and flower pots ready to light">
+      <defs>
+        <linearGradient id="t-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05061a"/><stop offset=".55" stop-color="#121640"/><stop offset=".85" stop-color="#2a1f4e"/><stop offset="1" stop-color="#4a2a4e"/></linearGradient>
+        <linearGradient id="t-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3240"/><stop offset="1" stop-color="#241e2a"/></linearGradient>
+        <linearGradient id="t-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a4a5a"/><stop offset="1" stop-color="#3e3242"/></linearGradient>
+
+        <!-- ANNA (boy, 15) — native coords; his right arm reaches to Paapa's shoulder when drawn with her -->
+        <g id="ch-anna">
+          <ellipse class="skin2" cx="486" cy="440" rx="14" ry="6"/><ellipse class="skin2" cx="514" cy="440" rx="14" ry="6"/>
+          <path class="pants" d="M470 316 L530 316 L528 436 L506 436 L500 360 L494 436 L472 436Z"/>
+          <!-- sparkler in his left hand -->
+          <path stroke="#8d8d8d" stroke-width="3" d="M458 322 L430 250"/>
+          <circle cx="428" cy="244" r="44" fill="url(#glow)"/>
+          <g class="spark" stroke="#ffe7a0" stroke-width="2.4" stroke-linecap="round"><path d="M428 244 L428 218 M428 244 L452 236 M428 244 L448 266 M428 244 L406 226 M428 244 L404 256"/></g>
+          <g class="spark s2" stroke="#ffc65a" stroke-width="2" stroke-linecap="round"><path d="M428 244 L442 222 M428 244 L454 252 M428 244 L414 266"/></g>
+          <circle fill="#fffbe6" cx="428" cy="244" r="4.5"/>
+          <path class="armS a-shirt2" stroke-width="22" d="M470 240 Q452 280 460 318"/>
+          <circle class="skin" cx="460" cy="324" r="11"/>
+          <path class="shirt2" d="M466 234 Q500 222 534 234 Q542 280 534 324 Q500 330 466 324 Q458 280 466 234Z"/>
+          <path class="collar" d="M486 226 L500 246 L514 226Z"/>
+          <path class="pleat" d="M500 246 L500 324"/>
+          <rect class="collar" opacity=".35" x="508" y="258" width="16" height="14" rx="2"/>
+          <path class="armS a-shirt2" stroke-width="22" d="M530 240 Q574 252 612 280"/>
+          <circle class="skin" cx="619" cy="286" r="11"/>
+          <rect class="skin2" x="490" y="204" width="20" height="26"/>
+          <circle class="skin" cx="462" cy="178" r="8"/><circle class="skin" cx="538" cy="178" r="8"/>
+          <circle class="skin" cx="500" cy="172" r="40"/>
+          <path class="hair" d="M460 170 Q456 124 502 122 Q546 124 540 168 Q532 146 512 142 Q520 154 506 158 Q498 144 478 146 Q466 152 460 170Z"/>
+          <g class="blink"><ellipse class="eye" cx="486" cy="176" rx="5.5" ry="7"/><ellipse class="eye" cx="514" cy="176" rx="5.5" ry="7"/><circle class="hl" cx="488" cy="173" r="2.2"/><circle class="hl" cx="516" cy="173" r="2.2"/></g>
+          <path class="ln" stroke-width="3.5" d="M476 164 L490 162 M510 162 L524 164"/>
+          <ellipse class="cheek" cx="472" cy="190" rx="8" ry="4.5"/><ellipse class="cheek" cx="528" cy="190" rx="8" ry="4.5"/>
+          <path class="lip" d="M488 194 Q500 208 512 194Z"/>
+        </g>
+      </defs>
+
+      <!-- ===== sky ===== -->
+      <g class="layer" data-k=".05">
+        <rect x="-3000" y="-2600" width="7000" height="2000" fill="#05061a"/>
+        <rect x="-3000" y="-620" width="7000" height="1300" fill="url(#t-sky)"/>
+        <g id="t-stars"></g>
+      </g>
+
+      <!-- ===== the town at night ===== -->
+      <g class="layer" data-k=".35">
+        <g fill="#1a1530">
+          <path d="M-900 560 V470 H-820 V440 H-760 V480 H-680 V430 H-600 V470 H-520 V450 H-430 V490 H-360 V440 H-290 V470 H-220 V420 H-150 V480 H-60 V450 H20 V470 H100 V430 H180 V480 H260 V455 H340 V470 H420 V440 H520 V480 H600 V460 H700 V470 H780 V430 H860 V480 H1000 V450 H1080 V470 H1180 V440 H1260 V480 H1360 V450 H1460 V470 H1560 V440 H1660 V480 H2000 V560Z"/>
+        </g>
+        <g id="t-windows"></g>
+        <!-- temple gopuram outlined in serial lights -->
+        <g transform="translate(980 0)">
+          <path d="M-60 560 V470 L-52 430 H52 L60 470 V560Z M-52 430 L-44 396 H44 L52 430Z M-44 396 L-36 366 H36 L44 396Z M-36 366 L-28 340 H28 L36 366Z M-30 340 Q0 310 30 340Z" fill="#241a3a"/>
+          <path d="M-60 470 L-52 430 L-44 396 L-36 366 L-28 340 Q0 310 28 340 L36 366 L44 396 L52 430 L60 470" fill="none" stroke="#ffcf5a" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round" class="serial"/>
+          <path d="M-52 430 H52 M-44 396 H44 M-36 366 H36" stroke="#ff7a5a" stroke-width="2.5" stroke-dasharray="1 7" stroke-linecap="round" class="serial s2"/>
+        </g>
+        <g fill="#140f26">
+          <path d="M120 560 Q130 470 112 420" stroke="#140f26" stroke-width="6" fill="none"/><path d="M112 420 q-30 -6 -46 12 q28 -6 46 -8Z M112 420 q24 -22 50 -10 q-26 0 -50 12Z M112 420 q-8 -26 -30 -30 q18 12 30 32Z"/>
+          <path d="M1240 560 Q1232 480 1250 430" stroke="#140f26" stroke-width="6" fill="none"/><path d="M1250 430 q-30 -6 -46 12 q28 -6 46 -8Z M1250 430 q24 -22 50 -10 q-26 0 -50 12Z"/>
+        </g>
+      </g>
+
+      <!-- ===== neighbour's terrace ===== -->
+      <g class="layer" data-k=".7">
+        <rect x="-500" y="470" width="560" height="120" fill="#2a2236"/>
+        <rect x="-500" y="462" width="560" height="10" fill="#3a3046"/>
+        <g id="t-nbDiyas"></g>
+        <g class="swing"><path d="M-40 380 V420" stroke="#5a3a2a" stroke-width="2"/><g transform="translate(-40 440)"><path d="M0 -20 L5 -6 L20 -6 L8 3 L13 18 L0 9 L-13 18 L-8 3 L-20 -6 L-5 -6Z" fill="#e8463a"/><circle r="6" fill="#ffd36a"/></g></g>
+      </g>
+
+      <!-- ===== our terrace ===== -->
+      <g class="layer" data-k="1">
+        <!-- upstairs room we came out of -->
+        <g>
+          <rect x="100" y="330" width="240" height="250" fill="#4a3c4c"/>
+          <rect x="92" y="320" width="256" height="14" fill="#5a4a5a"/>
+          <rect x="170" y="400" width="80" height="180" fill="#ffcf8a"/>
+          <path d="M170 400 L140 410 V590 L170 580Z" fill="#6b3a1b"/>
+          <rect x="270" y="410" width="50" height="50" fill="#ffd796"/><path d="M280 410 V460 M292 410 V460 M304 410 V460" stroke="#2f5f3a" stroke-width="3"/>
+          <ellipse cx="210" cy="590" rx="70" ry="10" fill="#ffcf8a" opacity=".25"/>
+        </g>
+        <!-- water tank -->
+        <g><rect x="930" y="380" width="120" height="110" rx="6" fill="#2e2a32"/><ellipse cx="990" cy="380" rx="60" ry="10" fill="#3a3640"/><rect x="940" y="490" width="10" height="70" fill="#2e2a32"/><rect x="1030" y="490" width="10" height="70" fill="#2e2a32"/></g>
+
+        <!-- back parapet with diyas -->
+        <rect x="-600" y="500" width="2400" height="70" fill="url(#t-wall)"/>
+        <rect x="-600" y="492" width="2400" height="10" fill="#6a5a6a"/>
+        <g id="t-parapetDiyas"></g>
+
+        <!-- serial lights strung across -->
+        <path d="M340 330 Q640 440 930 380" stroke="#2a2a2a" stroke-width="1.5" fill="none"/>
+        <g id="t-bulbs"></g>
+
+        <!-- floor -->
+        <rect x="-600" y="568" width="2400" height="700" fill="url(#t-floor)"/>
+        <rect x="-600" y="568" width="2400" height="16" fill="#000" opacity=".25"/>
+        <ellipse id="t-floorGlow" cx="620" cy="770" rx="300" ry="70" fill="url(#glow)" opacity="0"/>
+
+        <!-- the family -->
+        <g transform="translate(345 450) scale(.5)"><use href="#ch-appa"/></g>
+        <g transform="translate(372 450) scale(.5)"><use href="#ch-amma"/></g>
+        <g transform="translate(398 452) scale(.5)"><use href="#ch-paapa"/><use href="#ch-anna"/></g>
+
+        <!-- crackers waiting on the floor -->
+        <g id="t-crackers"></g>
+      </g>
+
+      <!-- ===== near: bucket of water, cracker box, front parapet ===== -->
+      <g class="layer" data-k="1.45">
+        <rect x="-900" y="940" width="3000" height="400" fill="#1c1720"/>
+        <rect x="-900" y="930" width="3000" height="14" fill="#2c2530"/>
+        <g transform="translate(330 920)"><path d="M-36 -50 L-30 10 H30 L36 -50Z" fill="#2f6a9a"/><ellipse cy="-50" rx="36" ry="8" fill="#5a9acd"/><ellipse cy="-50" rx="30" ry="6" fill="#1f4a7a"/><path d="M-36 -46 Q0 -100 36 -46" stroke="#555" stroke-width="3" fill="none"/></g>
+        <g transform="translate(880 910) rotate(-8)"><rect x="-56" y="-30" width="112" height="44" fill="#c8262f"/><rect x="-56" y="-30" width="112" height="12" fill="#f5b942"/><text y="2" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="15" fill="#fff4e0">Pattasu</text></g>
+      </g>
+    </svg>
+
+    <div class="dim" id="t-dim" style="opacity:.2"></div>
+    <div class="warm night" id="t-warmIn" style="opacity:1"></div>
+
+    <div class="bubble anna" id="t-bubble" role="status"><b>Anna</b><span id="t-text">Pattasu time! Grab a sparkler and light the flower pots!</span></div>
+    <button class="sparkBtn" id="sparkBtn" type="button">🎇 Hold a sparkler</button>
+    <div class="hint" id="t-hint">Keep scrolling <i>↓</i></div>
+  </div>
+</section>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="sparkLayer" hidden></div>
+
+<!-- ================= SCENE 6 · THE FINALE ================= -->
+<section id="finale" aria-label="The finale: light the big rocket">
+  <div class="sticky">
+    <svg id="finaleSvg" viewBox="0 0 420 760" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="f-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05061a"/><stop offset=".7" stop-color="#121640"/><stop offset="1" stop-color="#2a1f4e"/></linearGradient>
+      </defs>
+      <rect width="420" height="760" fill="url(#f-sky)"/>
+      <g id="f-stars"></g>
+      <!-- the town below -->
+      <path d="M-200 700 V650 H-140 V630 H-90 V655 H-40 V620 H20 V650 H70 V640 H120 V660 H170 V625 H230 V655 H290 V635 H350 V650 H400 V630 H460 V660 H620 V760 H-200Z" fill="#120d22"/>
+      <g id="f-windows"></g>
+      <!-- our parapet, with the family watching the sky from behind -->
+      <rect x="-200" y="700" width="820" height="60" fill="#241e2a"/>
+      <rect x="-200" y="694" width="820" height="8" fill="#3a3046"/>
+      <g id="f-diyas"></g>
+      <g fill="#0c0914">
+        <!-- Appa -->
+        <circle cx="128" cy="640" r="14"/><path d="M106 700 Q106 660 128 656 Q150 660 150 700Z"/>
+        <!-- Amma, with her bun -->
+        <circle cx="170" cy="645" r="13"/><circle cx="178" cy="636" r="7"/><path d="M150 700 Q150 666 170 660 Q190 666 190 700Z"/>
+        <!-- Anna -->
+        <circle cx="236" cy="650" r="12"/><path d="M218 700 Q218 668 236 664 Q254 668 254 700Z"/>
+        <!-- Paapa with braids, arm up pointing at the sky -->
+        <circle cx="276" cy="662" r="10"/><path d="M266 664 l-3 16 M286 664 l3 16" stroke="#0c0914" stroke-width="4"/><path d="M262 700 Q262 676 276 672 Q290 676 290 700Z"/>
+        <path d="M286 680 L304 640" stroke="#0c0914" stroke-width="6" stroke-linecap="round"/>
+      </g>
+    </svg>
+
+    <div class="warm night" id="f-warmIn" style="opacity:1"></div>
+    <h2 class="sr-only" id="f-sr">Happy Diwali</h2>
+
+    <button class="rocketBtn" id="rocketBtn" type="button">🚀 Light the big rocket</button>
+
+    <div class="panel" id="panel" aria-live="polite">
+      <p class="pTitle" id="pTitle">Happy Deepavali! 🪔</p>
+      <p class="pSub">From our family to yours. Send this celebration to someone you love:</p>
+      <form class="pRow" id="shareForm">
+        <input id="toName" maxlength="24" placeholder="Their name (optional)" autocomplete="off" aria-label="Their name">
+        <button type="submit">Share</button>
+      </form>
+      <p class="pMsg" id="pMsg"></p>
+      <div class="pRow2">
+        <button type="button" class="ghost" id="moreBtn">🎆 More fireworks</button>
+        <button type="button" class="ghost" id="againBtn">↺ Celebrate again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<button class="muteBtn" id="muteBtn" type="button" aria-label="Mute sound">🔊</button>
+
+<script>
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const $ = id => document.getElementById(id);
+  const rnd = (a, b) => a + Math.random() * (b - a);
+
+  // ---------- personalisation: ?to=Name ----------
+  const name = (new URLSearchParams(location.search).get('to') || '').replace(/[<>]/g, '').trim().slice(0, 24);
+  if (name) {
+    $('introTitle').textContent = `${name}, you're invited home`;
+    $('greetText').textContent = `Vaanga ${name}! Happy Deepavali! Come in, come in!`;
+  }
+
+  // ---------- generated decoration ----------
+  const th = $('thoranam');
+  th.append(el('path', { d: 'M626 424 Q700 446 774 424', stroke: '#6b4a2a', 'stroke-width': 2, fill: 'none' }));
+  for (let i = 0; i <= 14; i++) {
+    const t = i / 14, x = 626 + 148 * t, y = 424 + 20 * Math.sin(Math.PI * t);
+    if (i % 2) th.append(el('path', { d: `M${x} ${y} q-6 14 0 28 q6 -14 0 -28Z`, fill: i % 4 === 1 ? '#3f8f3a' : '#2f7a2c' }));
+    else th.append(el('circle', { cx: x, cy: y + 4, r: 5.5, fill: i % 4 ? '#ffb000' : '#ff7a00' }));
+  }
+
+  const k = $('kolam'), ws = { stroke: '#fffaf0', 'stroke-width': 3, fill: 'none' };
+  for (let i = 0; i < 8; i++) k.append(el('ellipse', { cx: 0, cy: -30, rx: 11, ry: 28, ...ws, fill: i % 2 ? '#ff6f91' : '#ffd23f', 'fill-opacity': .6, transform: `rotate(${i * 45})` }));
+  k.append(el('circle', { r: 9, fill: '#ffd23f' }));
+  for (let i = 0; i < 24; i++) { const a = i / 24 * Math.PI * 2; k.append(el('circle', { cx: Math.cos(a) * 72, cy: Math.sin(a) * 72, r: 3.2, fill: '#fffaf0' })); }
+  for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2; k.append(el('circle', { cx: Math.cos(a) * 98, cy: Math.sin(a) * 98, r: 13, ...ws })); }
+  for (let i = 0; i < 16; i++) { const a = (i + .5) / 16 * Math.PI * 2; k.append(el('circle', { cx: Math.cos(a) * 124, cy: Math.sin(a) * 124, r: 4, fill: i % 2 ? '#ff8a3d' : '#7fd1c7' })); }
+
+  const diya = (g, x, y, s = 1) => {
+    g.append(el('circle', { cx: x, cy: y - 8 * s, r: 22 * s, fill: 'url(#glow)' }));
+    g.append(el('path', { d: `M${x - 10 * s} ${y} Q${x} ${y + 11 * s} ${x + 10 * s} ${y}Z`, fill: '#b8552a' }));
+    g.append(el('path', { class: 'flame', d: `M${x} ${y - 1} Q${x - 5 * s} ${y - 9 * s} ${x} ${y - 17 * s} Q${x + 5 * s} ${y - 9 * s} ${x} ${y - 1}Z`, fill: '#ffc94a' }));
+  };
+  diya($('stepDiyas'), 626, 662); diya($('stepDiyas'), 774, 662);
+  for (let x = 60; x <= 420; x += 60) diya($('nbDiyas'), x, 386, .7);
+
+  const grass = $('grass');
+  for (let i = 0; i < 40; i++) {
+    const x = rnd(-200, 1600), y = rnd(700, 860);
+    if (x > 560 && x < 840) continue;
+    grass.append(el('path', { d: `M${x} ${y} l-4 -10 M${x} ${y} l0 -13 M${x} ${y} l4 -10`, stroke: '#7a8a3a', 'stroke-width': 2, 'stroke-linecap': 'round' }));
+  }
+
+  const bg = $('bougain');
+  for (const [cx, cy, n] of [[300, 876, 22], [520, 872, 14], [920, 874, 18], [1150, 878, 20]]) {
+    for (let i = 0; i < n; i++) {
+      const x = cx + rnd(-60, 60), y = cy + rnd(-30, 14);
+      bg.append(el('circle', { cx: x, cy: y, r: rnd(6, 11), fill: Math.random() < .35 ? '#3f7a2c' : (Math.random() < .5 ? '#d6337a' : '#e8569a') }));
+    }
+  }
+
+  const lv = $('leaves');
+  const branchPts = [[-120, -110], [-40, -80], [40, -50], [120, -20], [200, 0], [260, 30], [320, 50], [300, 90], [240, 50], [160, -40], [80, -70]];
+  for (const [bx, by] of branchPts) {
+    for (let i = 0; i < 7; i++) {
+      const x = bx + rnd(-40, 40), y = by + rnd(-30, 40), r = rnd(0, 180);
+      lv.append(el('ellipse', { cx: x, cy: y, rx: rnd(14, 22), ry: rnd(6, 9), fill: ['#2f6a2a', '#3a7a30', '#264f22', '#4a8a3a'][i % 4], transform: `rotate(${r} ${x} ${y})` }));
+    }
+  }
+
+  // ---------- gate halves (iron grill, swing open) ----------
+  function drawGates(t) {
+    const g = $('gates'); g.textContent = '';
+    const c = Math.cos(t * Math.PI * .46);
+    for (const side of [-1, 1]) {
+      const hx = side < 0 ? 630 : 770, w = 70 * c * -side;  // left gate hinged at 630 grows right; right hinged at 770 grows left
+      const x0 = hx, x1 = hx - w * -1 * 1;              // free edge
+      const fx = side < 0 ? hx + 70 * c : hx - 70 * c;
+      const grp = el('g', {});
+      grp.append(el('path', { d: `M${hx} 952 V872 Q${(hx + fx) / 2} ${858 + 6 * (1 - c)} ${fx} ${872 + 4 * (1 - c)} V${952 - 3 * (1 - c)}`, fill: 'none', stroke: '#1f4a3a', 'stroke-width': 4 }));
+      for (let i = 1; i < 7; i++) {
+        const x = hx + (fx - hx) * i / 7;
+        grp.append(el('path', { d: `M${x} ${950} V${870 - 4 * Math.sin(i / 7 * Math.PI)}`, stroke: '#1f4a3a', 'stroke-width': 2.6 }));
+      }
+      grp.append(el('path', { d: `M${hx} 912 H${fx}`, stroke: '#1f4a3a', 'stroke-width': 3 }));
+      grp.append(el('circle', { cx: (hx + fx) / 2, cy: 912, r: 7 * Math.max(c, .2), fill: 'none', stroke: '#e7bf55', 'stroke-width': 2 }));
+      g.append(grp);
+    }
+  }
+
+  // ---------- wooden doors with fake perspective ----------
+  function drawDoors(t) {
+    const g = $('doors'); g.textContent = '';
+    const th = t * Math.PI * .47, c = Math.cos(th), s = Math.sin(th);
+    const y0 = 430, y1 = 660, ym = (y0 + y1) / 2, H = y1 - y0;
+    for (const side of [-1, 1]) {
+      const hx = side < 0 ? 640 : 760, W = 60 * side * -1;   // left: +60, right: -60
+      const P = (u, v) => [hx + W * u * c, ym + (v - .5) * H * (1 - .2 * s * u)];
+      const quad = (u0, v0, u1, v1) => { const a = P(u0, v0), b = P(u1, v0), d = P(u1, v1), e = P(u0, v1); return `M${a} L${b} L${d} L${e}Z`; };
+      const shade = .25 * s;
+      g.append(el('path', { d: quad(0, 0, 1, 1), fill: '#6a3818' }));
+      g.append(el('path', { d: quad(.04, .02, .96, .98), fill: '#7f4822' }));
+      for (const [v0, v1] of [[.07, .45], [.55, .93]]) {
+        g.append(el('path', { d: quad(.16, v0, .84, v1), fill: '#5e3016', stroke: '#3b1d0a', 'stroke-width': 1.6 }));
+        g.append(el('path', { d: quad(.22, v0 + .03, .78, v1 - .03), fill: '#8a5028' }));
+      }
+      for (let i = 0; i < 3; i++) for (let j = 0; j < 9; j++) {
+        const [x, y] = P(.25 + i * .25, .1 + j * .1);
+        g.append(el('ellipse', { cx: x, cy: y, rx: Math.max(.4, 1.7 * c), ry: 1.7, fill: '#e7bf55' }));
+      }
+      const [kx, ky] = P(.86, .5);
+      g.append(el('ellipse', { cx: kx, cy: ky, rx: Math.max(.6, 5 * c), ry: 5, fill: 'none', stroke: '#e7bf55', 'stroke-width': 1.8 }));
+      g.append(el('path', { d: quad(0, 0, 1, 1), fill: '#000', opacity: shade }));
+    }
+  }
+
+  // ---------- camera ----------
+  const svg = $('world'), layers = [...document.querySelectorAll('.layer')].map(g => ({ g, k: +g.dataset.k }));
+  const KEYS = [
+    { p: 0,   cx: 700, cy: 470, w: 640, h: 960 },   // wide: street, gate, house, sky
+    { p: .3,  cx: 700, cy: 520, w: 420, h: 600 },   // through the gate, in the yard
+    { p: .55, cx: 700, cy: 548, w: 220, h: 320 },   // at the door
+    { p: 1,   cx: 712, cy: 548, w: 26,  h: 40 },    // into the house
+  ];
+  let VW = 420, VH = 760;
+  const fit = k => Math.min(VW / k.w, VH / k.h);
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a, b, t) => { const A = hex(a), B = hex(b); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * t)).join(',')})`; };
+
+  function camera(p) {
+    let i = 0; while (i < KEYS.length - 2 && p > KEYS[i + 1].p) i++;
+    const a = KEYS[i], b = KEYS[i + 1], t = ease(seg(p, a.p, b.p));
+    const za = fit(a), zb = fit(b);
+    return { cx: a.cx + (b.cx - a.cx) * t, cy: a.cy + (b.cy - a.cy) * t, z: za * Math.pow(zb / za, t) };
+  }
+
+  const SKY_A = ['#5f9fd6', '#a8d0ea', '#fbe0ad'];
+  const SKY_B = ['#6a86c0', '#efbe8c', '#f8a75c'];
+  const sk = ['sk0', 'sk1', 'sk2'].map($);
+  const sec = $('arrive'), warm = $('warm'), intro = $('intro'), greet = $('greet'), hint = $('hint'), paapa = $('paapa'), sun = $('sun');
+  let lastGate = -1, lastDoor = -1;
+
+  function render() {
+    VW = 760 * innerWidth / innerHeight; VH = 760;
+    svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
+    const r = sec.getBoundingClientRect();
+    // glide towards the scroll position instead of jumping with each wheel step
+    const pT = clamp(-r.top / (r.height - innerHeight));
+    const p = render.ps = (render.ps == null || Math.abs(pT - render.ps) > .5) ? pT : render.ps + (pT - render.ps) * .14;
+    if (Math.abs(pT - p) > .0005 && !render.raf) render.raf = requestAnimationFrame(() => { render.raf = 0; render(); });
+    // wide screens: show more sky so the title doesn't sit on the roof
+    const wide = VW > VH * .8;
+    KEYS[0].h = wide ? 1180 : 960; KEYS[0].cy = wide ? 400 : 470;
+
+    const cam = camera(p), c0 = { cx: KEYS[0].cx, cy: KEYS[0].cy, z: fit(KEYS[0]) };
+    for (const { g, k } of layers) {
+      const zk = c0.z * Math.pow(cam.z / c0.z, k);
+      const cx = c0.cx + (cam.cx - c0.cx) * k, cy = c0.cy + (cam.cy - c0.cy) * k;
+      g.setAttribute('transform', `translate(${VW / 2} ${VH / 2}) scale(${zk}) translate(${-cx} ${-cy})`);
+    }
+
+    // the sun sinks and the sky warms as you walk in
+    sk.forEach((s, i) => s.setAttribute('stop-color', mix(SKY_A[i], SKY_B[i], p)));
+    $('skyTop').setAttribute('fill', mix(SKY_A[0], SKY_B[0], p));
+    sun.setAttribute('transform', `translate(${960 - 30 * p} ${150 + 150 * p})`);
+
+    const gate = seg(p, .06, .24), door = ease(seg(p, .4, .6));
+    if (Math.abs(gate - lastGate) > .001) { drawGates(ease(gate)); lastGate = gate; }
+    if (Math.abs(door - lastDoor) > .001) { drawDoors(door); lastDoor = door; }
+
+    // Paapa steps aside to let you in
+    paapa.setAttribute('transform', `translate(${-70 * ease(seg(p, .7, .86))} 0)`);
+    warm.style.opacity = seg(p, .86, 1);
+
+    intro.style.opacity = 1 - seg(p, .02, .12);
+    intro.style.transform = `translateY(${-seg(p, 0, .12) * 30}px)`;
+    greet.classList.toggle('show', p > .5 && p < .8);
+    hint.style.opacity = (p < .04 || (p > .62 && p < .7)) ? 1 : 0;
+    hint.innerHTML = p < .3 ? 'Scroll to walk in <i>↓</i>' : 'Keep scrolling to step inside <i>↓</i>';
+  }
+
+  let ticking = false;
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { render(); ticking = false; }); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  scrollTo(0, 0);
+  render();
+})();
+</script>
+
+<script>
+/* ================= SCENE 2 · THE HALL ================= */
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const $ = id => document.getElementById(id);
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a, b, t) => { const A = hex(a), B = hex(b); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * t)).join(',')})`; };
+  const name = (new URLSearchParams(location.search).get('to') || '').replace(/[<>]/g, '').trim().slice(0, 24);
+
+  // ---- tiny sound engine (unlocked on first tap) ----
+  let ac;
+  const audio = () => window.getAudio();
+  function chime(f = 1320) {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime;
+    for (const [freq, vol] of [[f, .14], [f * 1.5, .06], [f * 2.01, .03]]) {
+      const o = a.createOscillator(), g = a.createGain();
+      o.type = 'sine'; o.frequency.value = freq;
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + .01); g.gain.exponentialRampToValueAtTime(.0001, t + 1.2);
+      o.connect(g).connect(a.destination); o.start(t); o.stop(t + 1.3);
+    }
+  }
+  function whoosh() {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime, n = a.createBufferSource(), b = a.createBuffer(1, a.sampleRate * .4, a.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+    n.buffer = b; const f = a.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = 2400; const g = a.createGain(); g.gain.value = .08;
+    n.connect(f).connect(g).connect(a.destination); n.start(t);
+  }
+
+  if (name) $('h-text').textContent = `Vaanga ${name}! Happy Deepavali! Come, let's light the kuthu vilakku together.`;
+
+  // ---- small kolam under the lamp ----
+  const k = $('h-kolam');
+  for (let i = 0; i < 8; i++) k.append(el('ellipse', { cx: 0, cy: -30, rx: 11, ry: 28, stroke: '#fffaf0', 'stroke-width': 4, fill: i % 2 ? '#ff6f91' : '#ffd23f', 'fill-opacity': .6, transform: `rotate(${i * 45})` }));
+  for (let i = 0; i < 20; i++) { const a = i / 20 * Math.PI * 2; k.append(el('circle', { cx: Math.cos(a) * 80, cy: Math.sin(a) * 80, r: 5, fill: '#fffaf0' })); }
+
+  // ---- the five wicks ----
+  const WICKS = [[671, 542], [688, 545.5], [705, 546.5], [722, 545.5], [739, 542]];
+  const wg = $('wicks'), wickEls = [];
+  WICKS.forEach(([x, y], i) => {
+    const w = el('g', { class: 'wick', transform: `translate(${x} ${y})` });
+    w.append(el('circle', { class: 'ping', r: 6, fill: 'none', stroke: '#fff3c4', 'stroke-width': 1.5 }));
+    w.append(el('ellipse', { rx: 3.2, ry: 1.6, fill: '#e8dcc0' }));
+    const fl = el('g', { class: 'fl' });
+    fl.append(el('circle', { cy: -10, r: 30, fill: 'url(#glow)' }));
+    fl.append(el('path', { class: 'flame', d: 'M0 -1 Q-6.5 -10 0 -26 Q6.5 -10 0 -1Z', fill: '#ffb83a' }));
+    fl.append(el('path', { class: 'flame', d: 'M0 -2 Q-3 -8 0 -15 Q3 -8 0 -2Z', fill: '#fff3c4' }));
+    w.append(fl); wg.append(w); wickEls.push(w);
+  });
+
+  let lit = 0;
+  const hint = $('h-hint'), text = $('h-text');
+  function lightWick(i) {
+    if (wickEls[i].classList.contains('lit')) return;
+    wickEls[i].classList.add('lit'); lit++;
+    chime(1046 * Math.pow(2, [0, 2, 4, 7, 9][lit - 1] / 12));
+    navigator.vibrate && navigator.vibrate(15);
+    if (lit === 5) {
+      text.textContent = 'Aaha! Now the house feels like Deepavali. Go, Amma is waiting in the pooja room!';
+      setTimeout(() => whoosh(), 200);
+    }
+    render();
+  }
+  // tap anywhere on the lamp: light the nearest wick that isn't lit yet
+  const svg = $('hallSvg');
+  $('lampHit').addEventListener('click', e => {
+    const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+    const lp = pt.matrixTransform($('vilakku').getScreenCTM().inverse());
+    let best = -1, bd = 1e9;
+    WICKS.forEach(([x, y], i) => { if (wickEls[i].classList.contains('lit')) return; const d = (x - lp.x) ** 2 + (y - lp.y) ** 2; if (d < bd) { bd = d; best = i; } });
+    if (best >= 0) lightWick(best);
+  });
+
+  // TV flips channels on its own, and when tapped
+  let fest = false;
+  const flip = () => { fest = !fest; $('tvFest').setAttribute('opacity', fest ? 1 : 0); };
+  $('tv').addEventListener('click', () => { flip(); whoosh(); });
+  setInterval(flip, 3500);
+
+  // ---- camera ----
+  const layers = [...svg.querySelectorAll('.layer')].map(g => ({ g, k: +g.dataset.k }));
+  const KEYS = [
+    { p: 0,   cx: 640, cy: 500, w: 560, h: 720 },  // step in: the whole hall
+    { p: .2,  cx: 380, cy: 470, w: 440, h: 560 },  // look left: window, sunset, TV, clock
+    { p: .42, cx: 655, cy: 560, w: 250, h: 300 },  // Appa and the vilakku
+    { p: .78, cx: 655, cy: 560, w: 250, h: 300 },  // ...stay while you light it
+    { p: 1,   cx: 1110, cy: 470, w: 110, h: 180 }, // walk towards the glowing pooja room
+  ];
+  let VW = 420, VH = 760;
+  const fit = k => Math.min(VW / k.w, VH / k.h);
+  function camera(p) {
+    let i = 0; while (i < KEYS.length - 2 && p > KEYS[i + 1].p) i++;
+    const a = KEYS[i], b = KEYS[i + 1], t = ease(seg(p, a.p, b.p)), za = fit(a), zb = fit(b);
+    return { cx: a.cx + (b.cx - a.cx) * t, cy: a.cy + (b.cy - a.cy) * t, z: za * Math.pow(zb / za, t) };
+  }
+
+  const sec = $('hall'), bubble = $('h-bubble'), dim = $('h-dim'), warmIn = $('h-warmIn'), warmOut = $('h-warmOut');
+  const hs = ['hs0', 'hs1', 'hs2'].map($), sun = $('h-sun'), reflect = $('h-reflect');
+  const SKY_A = ['#7c8fc4', '#f2b47e', '#f68b4e'], SKY_B = ['#5a5f9a', '#e88a6a', '#e35f3a'];
+
+  function render() {
+    VW = 760 * innerWidth / innerHeight; VH = 760;
+    svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
+    const r = sec.getBoundingClientRect();
+    // glide towards the scroll position instead of jumping with each wheel step
+    const pT = clamp(-r.top / (r.height - innerHeight));
+    const p = render.ps = (render.ps == null || Math.abs(pT - render.ps) > .5) ? pT : render.ps + (pT - render.ps) * .14;
+    if (Math.abs(pT - p) > .0005 && !render.raf) render.raf = requestAnimationFrame(() => { render.raf = 0; render(); });
+    sec.firstElementChild.style.visibility = r.top > 0.5 ? 'hidden' : 'visible';
+    const cam = camera(p), c0 = { cx: KEYS[0].cx, cy: KEYS[0].cy, z: fit(KEYS[0]) };
+    for (const { g, k } of layers) {
+      const zk = c0.z * Math.pow(cam.z / c0.z, k);
+      const cx = c0.cx + (cam.cx - c0.cx) * k, cy = c0.cy + (cam.cy - c0.cy) * k;
+      g.setAttribute('transform', `translate(${VW / 2} ${VH / 2}) scale(${zk}) translate(${-cx} ${-cy})`);
+    }
+    // sunset continues outside the window
+    hs.forEach((s, i) => s.setAttribute('stop-color', mix(SKY_A[i], SKY_B[i], p)));
+    sun.setAttribute('transform', `translate(${200 + 20 * p} ${380 + 80 * p})`);
+
+    // the room brightens as wicks are lit
+    dim.style.opacity = .5 - lit * .09;
+    reflect.setAttribute('opacity', lit / 5);
+    warmIn.style.opacity = 1 - seg(p, 0, .035);
+    warmOut.style.opacity = seg(p, .9, 1);
+
+    const atLamp = p > .4 && p < .8;
+    bubble.classList.toggle('show', atLamp);
+    if (p < .4) { hint.innerHTML = 'Keep scrolling <i>↓</i>'; hint.style.opacity = p < .05 || (p > .3 && p < .4) ? 1 : 0; }
+    else if (atLamp && lit < 5) { hint.innerHTML = `Tap the lamp to light the wicks · <b>${lit}/5</b>`; hint.style.opacity = 1; }
+    else if (atLamp) { hint.innerHTML = 'Beautiful! Scroll on to the pooja room <i>↓</i>'; hint.style.opacity = 1; }
+    else hint.style.opacity = 0;
+  }
+
+  let ticking = false;
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { render(); ticking = false; }); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  render();
+})();
+</script>
+
+<script>
+/* ================= SCENE 3 · THE POOJA ROOM ================= */
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const $ = id => document.getElementById(id);
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a, b, t) => { const A = hex(a), B = hex(b); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * t)).join(',')})`; };
+  const name = (new URLSearchParams(location.search).get('to') || '').replace(/[<>]/g, '').trim().slice(0, 24);
+
+  // ---- sound ----
+  let ac;
+  const audio = () => window.getAudio();
+  function tone(partials, decay) {
+    const a = audio(); if (!a) return; const t = a.currentTime;
+    for (const [f, v] of partials) {
+      const o = a.createOscillator(), g = a.createGain(); o.type = 'sine'; o.frequency.value = f;
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .008); g.gain.exponentialRampToValueAtTime(.0001, t + decay);
+      o.connect(g).connect(a.destination); o.start(t); o.stop(t + decay + .1);
+    }
+  }
+  const chime = f => tone([[f, .13], [f * 1.5, .05], [f * 2.01, .03]], 1.2);
+  const templeBell = () => tone([[523, .16], [527, .12], [1046, .07], [1318, .05], [1568, .035], [2093, .02]], 3.5);
+
+  if (name) $('p-text').textContent = `Vaanga ${name}! Help me light the agal vilakkus around the kolam.`;
+
+  // ---- rangoli kolam ----
+  const k = $('p-kolam');
+  const ring = (r, n, mk) => { for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; mk(Math.cos(a) * r, Math.sin(a) * r, a, i); } };
+  k.append(el('circle', { r: 150, fill: '#3a0e0a', opacity: .35 }));
+  ring(0, 1, () => {});
+  for (let i = 0; i < 12; i++) k.append(el('ellipse', { cx: 0, cy: -95, rx: 22, ry: 42, fill: ['#e8463a', '#ffb800', '#2f9a6a', '#e64f84'][i % 4], transform: `rotate(${i * 30})` }));
+  for (let i = 0; i < 12; i++) k.append(el('ellipse', { cx: 0, cy: -95, rx: 22, ry: 42, fill: 'none', stroke: '#fffaf0', 'stroke-width': 3, transform: `rotate(${i * 30})` }));
+  for (let i = 0; i < 8; i++) k.append(el('ellipse', { cx: 0, cy: -38, rx: 14, ry: 32, fill: i % 2 ? '#ff8a3d' : '#ffd23f', stroke: '#fffaf0', 'stroke-width': 3, transform: `rotate(${i * 45 + 22.5})` }));
+  k.append(el('circle', { r: 16, fill: '#e8463a', stroke: '#fffaf0', 'stroke-width': 3 }));
+  k.append(el('circle', { r: 6, fill: '#ffd23f' }));
+  ring(64, 24, (x, y) => k.append(el('circle', { cx: x, cy: y, r: 3.5, fill: '#fffaf0' })));
+  ring(146, 36, (x, y) => k.append(el('circle', { cx: x, cy: y, r: 4, fill: '#fffaf0' })));
+  ring(166, 18, (x, y) => k.append(el('circle', { cx: x, cy: y, r: 10, fill: 'none', stroke: '#fffaf0', 'stroke-width': 2.5 })));
+
+  // ---- nine clay diyas around the kolam ----
+  const CX = 612, CY = 724, RX = 182, RY = 64;
+  const spots = [];
+  for (let i = 0; i < 9; i++) { const a = -Math.PI / 2 + i / 9 * Math.PI * 2; spots.push([CX + Math.cos(a) * RX, CY + Math.sin(a) * RY]); }
+  spots.sort((a, b) => a[1] - b[1]);
+  const dg = $('p-diyas'), diyas = [];
+  for (const [x, y] of spots) {
+    const g = el('g', { class: 'pdiya', transform: `translate(${x} ${y})` });
+    g.append(el('ellipse', { class: 'fl', cy: 6, rx: 30, ry: 9, fill: 'url(#glow)' }));
+    g.append(el('circle', { class: 'ping', r: 10, fill: 'none', stroke: '#fff3c4', 'stroke-width': 1.5, cy: -2 }));
+    g.append(el('path', { d: 'M-13 -2 Q0 12 13 -2 Q6 -6 0 -6 Q-6 -6 -13 -2Z', fill: '#b8552a' }));
+    g.append(el('path', { d: 'M-13 -2 Q0 2 13 -2', stroke: '#d97a3f', 'stroke-width': 2, fill: 'none' }));
+    g.append(el('path', { d: 'M10 -4 L16 -7', stroke: '#b8552a', 'stroke-width': 4, 'stroke-linecap': 'round' }));
+    const fl = el('g', { class: 'fl' });
+    fl.append(el('circle', { cx: 14, cy: -16, r: 26, fill: 'url(#glow)' }));
+    fl.append(el('path', { class: 'flame', d: 'M15 -7 Q9 -15 15 -27 Q21 -15 15 -7Z', fill: '#ffb83a' }));
+    fl.append(el('path', { class: 'flame', d: 'M15 -8 Q12 -13 15 -19 Q18 -13 15 -8Z', fill: '#fff3c4' }));
+    g.append(fl); dg.append(g); diyas.push({ g, x, y });
+  }
+
+  let lit = 0;
+  const scale = [0, 2, 4, 7, 9, 12, 14, 16, 19];
+  const text = $('p-text'), hint = $('p-hint');
+  function light(d) {
+    if (d.g.classList.contains('lit')) return;
+    d.g.classList.add('lit'); lit++;
+    chime(784 * Math.pow(2, scale[lit - 1] / 12));
+    navigator.vibrate && navigator.vibrate(12);
+    if (lit === diyas.length) { text.textContent = 'Romba azhagu! So beautiful. Now come to the kitchen, I made sweets for you!'; setTimeout(templeBell, 250); }
+    render();
+  }
+  const svg = $('poojaSvg');
+  $('p-kolamHit').addEventListener('click', e => {
+    const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+    const lp = pt.matrixTransform($('p-diyas').getScreenCTM().inverse());
+    let best = null, bd = 1e9;
+    for (const d of diyas) { if (d.g.classList.contains('lit')) continue; const dd = (d.x - lp.x) ** 2 + ((d.y - lp.y) * 2.5) ** 2; if (dd < bd) { bd = dd; best = d; } }
+    if (best) light(best);
+  });
+
+  // ring the temple bell
+  const bell = svg.querySelector('.bellSwing');
+  $('p-bell').addEventListener('click', () => { bell.classList.remove('ring'); void bell.getBBox(); bell.classList.add('ring'); templeBell(); });
+
+  // ---- camera ----
+  const layers = [...svg.querySelectorAll('.layer')].map(g => ({ g, k: +g.dataset.k }));
+  const KEYS = [
+    { p: 0,   cx: 560, cy: 470, w: 560, h: 740 },  // the whole pooja room
+    { p: .18, cx: 830, cy: 380, w: 320, h: 440 },  // the bell and the setting sun
+    { p: .38, cx: 600, cy: 600, w: 460, h: 470 },  // Amma, the shrine and the kolam
+    { p: .8,  cx: 600, cy: 600, w: 460, h: 470 },  // ...stay while you light the diyas
+    { p: 1,   cx: 105, cy: 470, w: 100, h: 170 },  // through the doorway to the kitchen
+  ];
+  let VW = 420, VH = 760;
+  const fit = k => Math.min(VW / k.w, VH / k.h);
+  function camera(p) {
+    let i = 0; while (i < KEYS.length - 2 && p > KEYS[i + 1].p) i++;
+    const a = KEYS[i], b = KEYS[i + 1], t = ease(seg(p, a.p, b.p)), za = fit(a), zb = fit(b);
+    return { cx: a.cx + (b.cx - a.cx) * t, cy: a.cy + (b.cy - a.cy) * t, z: za * Math.pow(zb / za, t) };
+  }
+
+  const sec = $('pooja'), bubble = $('p-bubble'), dim = $('p-dim'), warmIn = $('p-warmIn'), warmOut = $('p-warmOut');
+  const ps = ['ps0', 'ps1', 'ps2'].map($), sun = $('p-sun');
+  const SKY_A = ['#5a5f9a', '#e88a6a', '#e35f3a'], SKY_B = ['#2a2a62', '#9a4a7a', '#d8582e'];
+
+  function render() {
+    VW = 760 * innerWidth / innerHeight; VH = 760;
+    svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
+    const r = sec.getBoundingClientRect();
+    // glide towards the scroll position instead of jumping with each wheel step
+    const pT = clamp(-r.top / (r.height - innerHeight));
+    const p = render.ps = (render.ps == null || Math.abs(pT - render.ps) > .5) ? pT : render.ps + (pT - render.ps) * .14;
+    if (Math.abs(pT - p) > .0005 && !render.raf) render.raf = requestAnimationFrame(() => { render.raf = 0; render(); });
+    sec.firstElementChild.style.visibility = r.top > 0.5 ? 'hidden' : 'visible';
+    const cam = camera(p), c0 = { cx: KEYS[0].cx, cy: KEYS[0].cy, z: fit(KEYS[0]) };
+    for (const { g, k } of layers) {
+      const zk = c0.z * Math.pow(cam.z / c0.z, k);
+      const cx = c0.cx + (cam.cx - c0.cx) * k, cy = c0.cy + (cam.cy - c0.cy) * k;
+      g.setAttribute('transform', `translate(${VW / 2} ${VH / 2}) scale(${zk}) translate(${-cx} ${-cy})`);
+    }
+    // the sun slips below the horizon
+    ps.forEach((s, i) => s.setAttribute('stop-color', mix(SKY_A[i], SKY_B[i], p)));
+    sun.setAttribute('transform', `translate(${880 + 10 * p} ${392 + 60 * p})`);
+
+    dim.style.opacity = .6 - lit * .055;
+    warmIn.style.opacity = 1 - seg(p, 0, .035);
+    warmOut.style.opacity = seg(p, .9, 1);
+
+    const atKolam = p > .36 && p < .82;
+    bubble.classList.toggle('show', atKolam);
+    if (p < .36) { hint.innerHTML = p > .1 && p < .3 ? 'Tap the bell to ring it 🔔' : 'Keep scrolling <i>↓</i>'; hint.style.opacity = p < .04 || (p > .1 && p < .3) ? 1 : 0; }
+    else if (atKolam && lit < diyas.length) { hint.innerHTML = `Tap around the kolam to light the diyas · <b>${lit}/${diyas.length}</b>`; hint.style.opacity = 1; }
+    else if (atKolam) { hint.innerHTML = 'Lovely! Scroll on to the kitchen <i>↓</i>'; hint.style.opacity = 1; }
+    else hint.style.opacity = 0;
+  }
+
+  let ticking = false;
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { render(); ticking = false; }); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  render();
+})();
+</script>
+
+<script>
+/* ================= SCENE 4 · THE KITCHEN ================= */
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const $ = id => document.getElementById(id);
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a, b, t) => { const A = hex(a), B = hex(b); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * t)).join(',')})`; };
+  const name = (new URLSearchParams(location.search).get('to') || '').replace(/[<>]/g, '').trim().slice(0, 24);
+
+  // ---- sound ----
+  let ac;
+  const audio = () => window.getAudio();
+  function noise(dur, freq, q, vol, type = 'bandpass', delay = 0) {
+    const a = audio(); if (!a) return; const t = a.currentTime + delay;
+    const b = a.createBuffer(1, Math.ceil(a.sampleRate * dur), a.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2);
+    const s = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+    s.buffer = b; f.type = type; f.frequency.value = freq; f.Q.value = q; g.gain.value = vol;
+    s.connect(f).connect(g).connect(a.destination); s.start(t);
+  }
+  const crunch = () => { for (let i = 0; i < 5; i++) noise(.06, rnd(1400, 4200), .9, .5, 'bandpass', i * .05 + rnd(0, .02)); };
+  const swoosh = () => noise(.35, 1800, .6, .12);
+  const pling = () => { const a = audio(); if (!a) return; const t = a.currentTime; for (const f of [1318, 1760]) { const o = a.createOscillator(), g = a.createGain(); o.frequency.value = f; g.gain.setValueAtTime(.08, t); g.gain.exponentialRampToValueAtTime(.0001, t + .5); o.connect(g).connect(a.destination); o.start(t); o.stop(t + .6); } };
+
+  if (name) $('k-text').textContent = `Saapdunga ${name}! Take a sweet, everything is homemade.`;
+
+  // ---- sweet artwork details ----
+  const bo = $('boondi');
+  for (let i = 0; i < 70; i++) { const a = rnd(0, Math.PI * 2), r = Math.sqrt(Math.random()) * 36; bo.append(el('circle', { cx: Math.cos(a) * r, cy: Math.sin(a) * r, r: rnd(2.2, 3.6), fill: Math.random() < .5 ? '#ffc04a' : '#e0800e', opacity: .8 })); }
+  const po = $('pores');
+  for (let i = 0; i < 40; i++) po.append(el('ellipse', { cx: rnd(-32, 32), cy: rnd(-20, 26), rx: rnd(1, 2.6), ry: rnd(.8, 1.8), fill: '#b8741a', opacity: .7 }));
+  const spiral = (turns, r0, r1, n = 120) => { let d = ''; for (let i = 0; i <= n; i++) { const t = i / n, a = t * turns * Math.PI * 2, r = r0 + (r1 - r0) * t; d += (i ? 'L' : 'M') + (Math.cos(a) * r).toFixed(1) + ' ' + (Math.sin(a) * r).toFixed(1); } return d; };
+  const jd = spiral(2.6, 4, 36); $('jal1').setAttribute('d', jd); $('jal2').setAttribute('d', jd);
+  const md = spiral(2.2, 6, 36); $('mur1').setAttribute('d', md); $('mur2').setAttribute('d', md);
+
+  // ---- stars appearing in the kitchen window ----
+  const st = $('k-stars');
+  for (let i = 0; i < 22; i++) { const c = el('circle', { cx: rnd(554, 666), cy: rnd(314, 396), r: rnd(.6, 1.6), fill: '#fff6d8', class: 'twinkle' }); c.style.animationDelay = -rnd(0, 2.4) + 's'; st.append(c); }
+
+  // ---- sweets on the plate ----
+  const SWEETS = [
+    { id: 'laddu', name: 'Laddu', crumbs: ['#f29a1e', '#ffc04a', '#e0800e'] },
+    { id: 'pak', name: 'Mysore pak', crumbs: ['#f2c050', '#e2a234', '#c47a1a'] },
+    { id: 'jalebi', name: 'Jalebi', crumbs: ['#e8740c', '#ffc35a'] },
+    { id: 'murukku', name: 'Murukku', crumbs: ['#b8792e', '#d8a050', '#7f4e18'] },
+    { id: 'athi', name: 'Athirasam', crumbs: ['#7a3a14', '#9a5a2a'] },
+  ];
+  const sg = $('k-sweets'), S = 44;
+  SWEETS.forEach((s, i) => {
+    const x = 430 + i * 50, y = 708 - (i % 2) * 6;
+    const g = el('g', { class: 'sweet', role: 'button', tabindex: 0, 'aria-label': `Take a ${s.name}` });
+    g.append(el('ellipse', { cx: x, cy: y + S * .38, rx: S * .42, ry: 5, fill: '#000', opacity: .18 }));
+    g.append(el('circle', { class: 'ring', cx: x, cy: y, r: S * .5, fill: 'none', stroke: '#fff3c4', 'stroke-width': 1.5 }));
+    g.append(el('use', { href: `#sw-${s.id}`, x: x - S / 2, y: y - S / 2, width: S, height: S }));
+    g.append(el('rect', { x: x - S / 2 - 3, y: y - S / 2 - 3, width: S + 6, height: S + 6, fill: 'transparent' }));
+    s.g = g; sg.append(g);
+    g.addEventListener('click', () => pick(s));
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(s); } });
+  });
+
+  // ---- pick up a sweet: it flies to your face, then you bite it ----
+  const eat = $('eat'), stage = $('eatStage'), bites = $('bites'), eatUse = $('eatUse'), eatName = $('eatName'), eatHint = $('eatHint');
+  let current = null, biteN = 0, busy = false, eaten = 0;
+  const BITES = [[30, -28, 20], [42, 6, 22], [24, 34, 22]];
+
+  function pick(s) {
+    if (busy || current) return;
+    current = s; biteN = 0; busy = true;
+    bites.textContent = '';
+    eatUse.setAttribute('href', `#sw-${s.id}`);
+    eatName.textContent = s.name; eatHint.textContent = 'Tap to take a bite';
+    const from = s.g.querySelector('use').getBoundingClientRect();
+    eat.hidden = false;
+    const to = stage.getBoundingClientRect();
+    const dx = from.left + from.width / 2 - (to.left + to.width / 2), dy = from.top + from.height / 2 - (to.top + to.height / 2);
+    s.g.style.opacity = 0;
+    swoosh();
+    eat.animate([{ background: 'rgba(24,10,4,0)' }, { background: 'rgba(24,10,4,.6)' }], { duration: 500, fill: 'forwards' });
+    stage.animate([
+      { transform: `translate(${dx}px,${dy}px) scale(${from.width / to.width}) rotate(-25deg)` },
+      { transform: 'translate(0,0) scale(1.18) rotate(6deg)', offset: .72 },
+      { transform: 'translate(0,0) scale(1) rotate(0)' }
+    ], { duration: 800, easing: 'cubic-bezier(.2,.8,.25,1)' }).onfinish = () => { busy = false; };
+  }
+
+  function bite(e) {
+    if (!current || busy) return;
+    const [bx, by, br] = BITES[biteN];
+    const g = el('g', {});
+    g.append(el('circle', { cx: bx, cy: by, r: br, fill: '#000' }));
+    for (let i = -1; i <= 1; i++) { const a = Math.atan2(-by, -bx) + i * .55; g.append(el('circle', { cx: bx + Math.cos(a) * br * .95, cy: by + Math.sin(a) * br * .95, r: br * .32, fill: '#000' })); }
+    bites.append(g);
+    biteN++;
+    crunch(); navigator.vibrate && navigator.vibrate(25);
+    stage.animate([{ transform: 'scale(1) rotate(0)' }, { transform: 'scale(.94) rotate(-3deg)' }, { transform: 'scale(1) rotate(0)' }], { duration: 220 });
+    // crumbs fly out from the bite
+    const r = stage.getBoundingClientRect(), u = r.width / 100;
+    const cx = r.left + r.width / 2 + bx * u, cy = r.top + r.height / 2 + by * u;
+    for (let i = 0; i < 14; i++) {
+      const c = document.createElement('div'); c.className = 'crumb';
+      c.style.left = cx + 'px'; c.style.top = cy + 'px';
+      c.style.background = current.crumbs[i % current.crumbs.length];
+      const sz = rnd(4, 10); c.style.width = c.style.height = sz + 'px';
+      document.body.append(c);
+      c.animate([{ transform: 'translate(0,0) rotate(0)', opacity: 1 }, { transform: `translate(${rnd(-90, 120)}px,${rnd(140, 380)}px) rotate(${rnd(-400, 400)}deg)`, opacity: 0 }],
+        { duration: rnd(700, 1200), easing: 'cubic-bezier(.3,.1,.7,1)' }).onfinish = () => c.remove();
+    }
+    if (biteN === 1) eatHint.textContent = 'Mmm! Another bite';
+    if (biteN === 2) eatHint.textContent = 'Last bite!';
+    if (biteN >= BITES.length) finish();
+  }
+
+  function finish() {
+    busy = true;
+    eatName.textContent = ['Aaha! Semma taste!', 'Super! 😋', 'Romba nalla irukku!'][eaten % 3];
+    eatHint.textContent = '';
+    pling();
+    stage.animate([{ transform: 'scale(1)', opacity: 1 }, { transform: 'scale(.3) translateY(80px)', opacity: 0 }], { duration: 650, delay: 350, easing: 'ease-in', fill: 'forwards' });
+    eat.animate([{ background: 'rgba(24,10,4,.6)' }, { background: 'rgba(24,10,4,0)' }], { duration: 400, delay: 900, fill: 'forwards' }).onfinish = () => {
+      eat.hidden = true; stage.getAnimations().forEach(a => a.cancel()); eat.getAnimations().forEach(a => a.cancel());
+      current.g.classList.add('gone'); current.g.style.opacity = '';
+      current = null; busy = false; eaten++;
+      $('k-text').textContent = eaten === 1 ? 'Innum onnu? Have one more!' : eaten < 4 ? 'Careful, save some room for the crackers!' : 'Aiyo, you finished the plate! Go, the kids are waiting on the terrace!';
+      render();
+    };
+  }
+  eat.addEventListener('click', bite);
+  eat.addEventListener('wheel', e => e.preventDefault(), { passive: false });
+
+  // ---- camera ----
+  const svg = $('kitchenSvg');
+  const layers = [...svg.querySelectorAll('.layer')].map(g => ({ g, k: +g.dataset.k }));
+  const KEYS = [
+    { p: 0,   cx: 560, cy: 470, w: 560, h: 740 },  // the whole kitchen
+    { p: .18, cx: 740, cy: 440, w: 330, h: 420 },  // Amma at the stove, stars in the window
+    { p: .38, cx: 530, cy: 660, w: 380, h: 420 },  // the plate of sweets
+    { p: .8,  cx: 530, cy: 660, w: 380, h: 420 },  // ...stay while you eat
+    { p: 1,   cx: 120, cy: 250, w: 100, h: 170 },  // up the stairs to the terrace
+  ];
+  let VW = 420, VH = 760;
+  const fit = k => Math.min(VW / k.w, VH / k.h);
+  function camera(p) {
+    let i = 0; while (i < KEYS.length - 2 && p > KEYS[i + 1].p) i++;
+    const a = KEYS[i], b = KEYS[i + 1], t = ease(seg(p, a.p, b.p)), za = fit(a), zb = fit(b);
+    return { cx: a.cx + (b.cx - a.cx) * t, cy: a.cy + (b.cy - a.cy) * t, z: za * Math.pow(zb / za, t) };
+  }
+
+  const sec = $('kitchen'), bubble = $('k-bubble'), hint = $('k-hint'), warmIn = $('k-warmIn'), warmOut = $('k-warmOut'), dim = $('k-dim');
+  const ks = ['ks0', 'ks1', 'ks2'].map($);
+  const SKY_A = ['#2a2a62', '#9a4a7a', '#d8582e'], SKY_B = ['#0f1238', '#2e2458', '#6a2e4a'];
+
+  function render() {
+    VW = 760 * innerWidth / innerHeight; VH = 760;
+    svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
+    const r = sec.getBoundingClientRect();
+    // glide towards the scroll position instead of jumping with each wheel step
+    const pT = clamp(-r.top / (r.height - innerHeight));
+    const p = render.ps = (render.ps == null || Math.abs(pT - render.ps) > .5) ? pT : render.ps + (pT - render.ps) * .14;
+    if (Math.abs(pT - p) > .0005 && !render.raf) render.raf = requestAnimationFrame(() => { render.raf = 0; render(); });
+    sec.firstElementChild.style.visibility = r.top > 0.5 ? 'hidden' : 'visible';
+    const cam = camera(p), c0 = { cx: KEYS[0].cx, cy: KEYS[0].cy, z: fit(KEYS[0]) };
+    for (const { g, k } of layers) {
+      const zk = c0.z * Math.pow(cam.z / c0.z, k);
+      const cx = c0.cx + (cam.cx - c0.cx) * k, cy = c0.cy + (cam.cy - c0.cy) * k;
+      g.setAttribute('transform', `translate(${VW / 2} ${VH / 2}) scale(${zk}) translate(${-cx} ${-cy})`);
+    }
+    ks.forEach((s, i) => s.setAttribute('stop-color', mix(SKY_A[i], SKY_B[i], p)));
+    $('k-stars').setAttribute('opacity', seg(p, .05, .6));
+    dim.style.opacity = .1 + .3 * p;
+    warmIn.style.opacity = 1 - seg(p, 0, .035);
+    warmOut.style.opacity = seg(p, .9, 1);
+
+    const atPlate = p > .36 && p < .82;
+    bubble.classList.toggle('show', atPlate);
+    if (p < .36) { hint.innerHTML = 'Keep scrolling <i>↓</i>'; hint.style.opacity = p < .04 || (p > .26 && p < .36) ? 1 : 0; }
+    else if (atPlate && eaten === 0) { hint.innerHTML = 'Tap a sweet to pick it up'; hint.style.opacity = 1; }
+    else if (atPlate) { hint.innerHTML = `Yum! <b>${eaten}</b> eaten · scroll on to the terrace <i>↓</i>`; hint.style.opacity = 1; }
+    else hint.style.opacity = 0;
+  }
+
+  let ticking = false;
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { render(); ticking = false; }); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  render();
+})();
+</script>
+
+<script>
+/* ================= SCENE 5 · THE TERRACE ================= */
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const $ = id => document.getElementById(id);
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const name = (new URLSearchParams(location.search).get('to') || '').replace(/[<>]/g, '').trim().slice(0, 24);
+  if (name) $('t-text').textContent = `Vaa ${name}! Pattasu time! Grab a sparkler and light the flower pots!`;
+
+  // ---------- sound ----------
+  const audio = () => window.getAudio();
+  function noise(dur, freq, q, vol, type = 'bandpass', delay = 0, shape = 2) {
+    const a = audio(); if (!a) return; const t = a.currentTime + delay;
+    const b = a.createBuffer(1, Math.ceil(a.sampleRate * dur), a.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, shape);
+    const s = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+    s.buffer = b; f.type = type; f.frequency.value = freq; f.Q.value = q; g.gain.value = vol;
+    s.connect(f).connect(g).connect(a.destination); s.start(t);
+  }
+  const fountainSound = () => { noise(4.8, 3200, .4, .16, 'highpass', 0, .6); for (let i = 0; i < 26; i++) noise(.03, rnd(2000, 6000), 1, .25, 'bandpass', rnd(0, 4.5)); };
+  const chakraSound = () => { noise(4, 1800, 4, .16, 'bandpass', 0, .5); noise(4, 4200, .5, .07, 'highpass', 0, .5); };
+  const distantBoom = (v = .22) => { noise(.9, 180, .8, v, 'lowpass', 0, 3); for (let i = 0; i < 8; i++) noise(.03, rnd(2500, 5000), 1, v * .5, 'bandpass', .3 + rnd(0, .5)); };
+
+  // ---------- scenery generated in code ----------
+  const stars = $('t-stars');
+  for (let i = 0; i < 170; i++) { const c = el('circle', { cx: rnd(-700, 1900), cy: rnd(-400, 470), r: rnd(.5, 1.8), fill: '#fff6d8', class: 'twinkle' }); c.style.animationDelay = -rnd(0, 2.4) + 's'; stars.append(c); }
+  const win = $('t-windows');
+  for (let i = 0; i < 70; i++) win.append(el('rect', { x: rnd(-880, 1980), y: rnd(470, 548), width: 4, height: 5, fill: pick(['#ffcf6a', '#ffb84a', '#fff0b0']), opacity: rnd(.4, .9) }));
+  const tinyDiya = (g, x, y, s = .6) => {
+    g.append(el('circle', { cx: x, cy: y - 6 * s, r: 18 * s, fill: 'url(#glow)' }));
+    g.append(el('path', { d: `M${x - 9 * s} ${y} Q${x} ${y + 9 * s} ${x + 9 * s} ${y}Z`, fill: '#b8552a' }));
+    const f = el('path', { class: 'flame', d: `M${x} ${y - 1} Q${x - 4 * s} ${y - 8 * s} ${x} ${y - 15 * s} Q${x + 4 * s} ${y - 8 * s} ${x} ${y - 1}Z`, fill: '#ffc94a' });
+    f.style.animationDelay = -rnd(0, 1) + 's'; g.append(f);
+  };
+  for (let x = -560; x <= 1760; x += 64) tinyDiya($('t-parapetDiyas'), x, 494, .8);
+  for (let x = -480; x <= 40; x += 52) tinyDiya($('t-nbDiyas'), x, 464, .55);
+  const bulbs = $('t-bulbs');
+  for (let i = 0; i <= 24; i++) {
+    const t = i / 24, x = (1 - t) ** 2 * 340 + 2 * (1 - t) * t * 640 + t * t * 930, y = (1 - t) ** 2 * 330 + 2 * (1 - t) * t * 440 + t * t * 380;
+    const c = el('circle', { cx: x, cy: y + 4, r: 3.4, fill: ['#ff4a4a', '#4aff7a', '#ffd23f', '#4ac2ff'][i % 4], class: 'bulb' });
+    c.style.animationDelay = (i % 2 ? -.45 : 0) + 's'; bulbs.append(c);
+  }
+
+  // ---------- crackers on the floor ----------
+  const CR = [
+    { kind: 'pot', x: 460, y: 770 }, { kind: 'chakra', x: 560, y: 850 },
+    { kind: 'pot', x: 650, y: 800 }, { kind: 'pot', x: 820, y: 770 },
+  ];
+  const cg = $('t-crackers');
+  for (const c of CR) {
+    const g = el('g', { class: 'cracker', transform: `translate(${c.x} ${c.y})`, role: 'button', tabindex: 0, 'aria-label': c.kind === 'pot' ? 'Light the flower pot' : 'Light the ground chakkaram' });
+    g.append(el('ellipse', { cy: 2, rx: 22, ry: 6, fill: '#000', opacity: .35 }));
+    if (c.kind === 'pot') {
+      g.append(el('circle', { class: 'ring', cy: -18, r: 28, fill: 'none', stroke: '#fff3c4', 'stroke-width': 1.6 }));
+      g.append(el('path', { d: 'M-16 0 L16 0 L7 -38 L-7 -38Z', fill: '#d8262f' }));
+      g.append(el('path', { d: 'M-13 -10 L13 -10 L11 -18 L-11 -18Z M-9 -26 L9 -26 L8 -31 L-8 -31Z', fill: '#f5b942' }));
+      g.append(el('ellipse', { cy: -38, rx: 7, ry: 2.4, fill: '#7a1a14' }));
+      g.append(el('path', { d: 'M0 -38 q3 -6 0 -10', stroke: '#c9b07a', 'stroke-width': 1.6, fill: 'none' }));
+      c.mouth = el('circle', { cy: -40, r: 1, fill: 'transparent' }); g.append(c.mouth);
+    } else {
+      g.append(el('circle', { class: 'ring', r: 28, fill: 'none', stroke: '#fff3c4', 'stroke-width': 1.6 }));
+      const wheel = el('g', { class: 'wheel' });
+      wheel.append(el('circle', { r: 15, fill: 'none', stroke: '#2f8a4a', 'stroke-width': 7 }));
+      wheel.append(el('circle', { r: 15, fill: 'none', stroke: '#f5b942', 'stroke-width': 2.5, 'stroke-dasharray': '6 6' }));
+      wheel.append(el('circle', { r: 4, fill: '#d8262f' }));
+      wheel.append(el('path', { d: 'M15 0 l8 -3', stroke: '#c9b07a', 'stroke-width': 1.6 }));
+      g.append(wheel); c.wheel = wheel; c.g0 = g;
+      g.setAttribute('transform', `translate(${c.x} ${c.y}) scale(1 .45)`);
+      c.mouth = el('circle', { r: 1, fill: 'transparent' }); g.append(c.mouth);
+    }
+    g.append(el('rect', { x: -30, y: c.kind === 'pot' ? -60 : -30, width: 60, height: c.kind === 'pot' ? 70 : 60, fill: 'transparent' }));
+    c.g = g; cg.append(g);
+    g.addEventListener('click', () => light(c));
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); light(c); } });
+  }
+
+  // ---------- particle engine ----------
+  const fx = $('fx'), ctx = fx.getContext('2d');
+  let W = 0, H = 0;
+  function size() { const d = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; fx.width = W * d; fx.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); }
+  size(); addEventListener('resize', size);
+  const P = [], emitters = [], rockets = [];
+  const add = p => { if (P.length < 2600) P.push(p); };
+  const GOLD = ['#fff6c8', '#ffd36a', '#ffb83a', '#ffffff'];
+  const PALETTES = [['#ff4a6a', '#ffd0d8', '#fff'], ['#4ad0ff', '#c8f2ff', '#fff'], ['#7aff6a', '#e0ffd0', '#fff'], ['#ffd23f', '#fff3b0', '#ff9a1a'], ['#c06aff', '#f0d8ff', '#fff']];
+  function burst(x, y, n = 80, cols = pick(PALETTES), sp = 3.4) {
+    for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, s = sp * (.35 + Math.random() * .65); add({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: rnd(45, 80), max: 80, c: pick(cols), w: 1.6, g: .035, d: .975 }); }
+  }
+  const FINE = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  let sparkler = { on: false, show: false, moved: false, x: 0, y: 0 }, nextSky = 0;
+  const ambient = new Set();
+  const T = [];   // particles that spell out text
+
+  function textParticles(lines, ox, oy) {
+    const c = document.createElement('canvas'); c.width = W; c.height = H;
+    const t = c.getContext('2d'); t.fillStyle = '#fff'; t.textAlign = 'center'; t.textBaseline = 'middle';
+    let fs = Math.min(W * .16, 110); const font = (w, s) => `${w} ${s}px Fraunces, Georgia, serif`;
+    t.font = font(700, fs); while (t.measureText(lines[0]).width > W * .9) { fs *= .92; t.font = font(700, fs); }
+    const y0 = H * .28; t.fillText(lines[0], W / 2, y0);
+    if (lines[1]) { let f2 = fs * .5; t.font = font(600, f2); while (t.measureText(lines[1]).width > W * .88) { f2 *= .92; t.font = font(600, f2); } t.fillText(lines[1], W / 2, y0 + fs * .9); }
+    const d = t.getImageData(0, 0, W, H).data, step = W < 520 ? 3 : 4;
+    for (let y = 0; y < H; y += step) for (let x = 0; x < W; x += step) if (d[(y * W + x) * 4 + 3] > 140)
+      T.push({ x: ox, y: oy, tx: x, ty: y, c: pick(['#ffd36a', '#fff6c8', '#ffb83a', '#ffe9a8']), ph: rnd(0, 6.28), wait: rnd(0, 25) });
+  }
+
+  function frame(now) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'lighter';
+    // fireworks in the sky, from the neighbours
+    if (ambient.size && now > nextSky) {
+      nextSky = now + rnd(900, 2200);
+      rockets.push({ x: rnd(.1, .9) * W, y: H * .62, vy: -rnd(6, 8), ty: rnd(.08, .32) * H });
+    }
+    for (let i = rockets.length - 1; i >= 0; i--) {
+      const r = rockets[i]; r.y += r.vy;
+      for (let j = 0; j < (r.big ? 4 : 1); j++) add({ x: r.x + rnd(-1, 1), y: r.y, vx: rnd(-.5, .5), vy: rnd(.5, 2), life: r.big ? 30 : 16, max: 30, c: r.big ? pick(GOLD) : '#ffcf8a', w: r.big ? 2 : 1.4, g: .02, d: .96 });
+      if (r.y <= r.ty) { rockets.splice(i, 1); if (r.onBurst) r.onBurst(r); else { burst(r.x, r.y, 90); distantBoom(.14); } }
+    }
+    // text made of sparks
+    if (T.length) {
+      for (const t of T) {
+        if (t.wait > 0) { t.wait--; continue; }
+        t.x += (t.tx - t.x) * .07; t.y += (t.ty - t.y) * .07;
+        ctx.globalAlpha = .65 + .35 * Math.sin(now / 260 + t.ph);
+        ctx.fillStyle = t.c; ctx.fillRect(t.x - 1, t.y - 1, 2.2, 2.2);
+      }
+      ctx.globalAlpha = 1;
+    }
+    // flower pots and the chakkaram
+    for (const e of emitters) {
+      if (now > e.until) continue;
+      const b = e.c.mouth.getBoundingClientRect(), x = b.left, y = b.top;
+      if (y < -50 || y > H + 50) continue;
+      const k = e.scale();
+      if (e.c.kind === 'pot') {
+        for (let i = 0; i < 14; i++) add({ x, y, vx: rnd(-1.3, 1.3) * k, vy: -rnd(4.5, 9.5) * k, life: rnd(35, 65), max: 65, c: pick(GOLD), w: 1.5, g: .17 * k, d: .99 });
+        const gr = ctx.createRadialGradient(x, y, 0, x, y, 60 * k); gr.addColorStop(0, 'rgba(255,220,140,.55)'); gr.addColorStop(1, 'rgba(255,180,80,0)');
+        ctx.globalAlpha = 1; ctx.fillStyle = gr; ctx.fillRect(x - 60 * k, y - 60 * k, 120 * k, 120 * k);
+      } else {
+        e.ang += .5;
+        for (let i = 0; i < 6; i++) { const a = e.ang + i * Math.PI / 3, rx = Math.cos(a) * 12 * k, ry = Math.sin(a) * 5 * k; add({ x: x + rx, y: y + ry, vx: -Math.sin(a) * 5 * k, vy: Math.cos(a) * 2 * k - rnd(0, 1.5), life: rnd(18, 30), max: 30, c: pick(['#7aff6a', '#d8ff9a', '#fff6c8', '#ffd36a']), w: 1.4, g: .06, d: .95 }); }
+      }
+    }
+    // the sparkler in your hand
+    if (sparkler.on || sparkler.show) {
+      if (!sparkler.moved) { sparkler.x = W * .8; sparkler.y = H * .5; }
+      const { x, y } = sparkler;
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.strokeStyle = '#9a9a9a'; ctx.lineWidth = 3; ctx.globalAlpha = 1;
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 34, y + 120); ctx.stroke();
+      ctx.globalCompositeOperation = 'lighter';
+      const gr = ctx.createRadialGradient(x, y, 0, x, y, 70); gr.addColorStop(0, 'rgba(255,240,190,.9)'); gr.addColorStop(.3, 'rgba(255,200,110,.35)'); gr.addColorStop(1, 'rgba(255,180,80,0)');
+      ctx.fillStyle = gr; ctx.fillRect(x - 70, y - 70, 140, 140);
+      for (let i = 0; i < 12; i++) { const a = Math.random() * Math.PI * 2, s = rnd(1.5, 6); add({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: rnd(8, 22), max: 22, c: pick(GOLD), w: 1.3, g: .08, d: .93 }); }
+    }
+    // draw every spark as a short streak
+    for (let i = P.length - 1; i >= 0; i--) {
+      const p = P[i];
+      p.vx *= p.d; p.vy = p.vy * p.d + p.g; p.x += p.vx; p.y += p.vy;
+      if (--p.life <= 0) { P.splice(i, 1); continue; }
+      ctx.globalAlpha = Math.min(1, p.life / p.max * 1.4);
+      ctx.strokeStyle = p.c; ctx.lineWidth = p.w;
+      ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx * 2.2, p.y - p.vy * 2.2); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // ---------- lighting crackers ----------
+  let litCount = 0;
+  const text = $('t-text'), hint = $('t-hint'), floorGlow = $('t-floorGlow'), dim = $('t-dim');
+  function light(c) {
+    if (c.lit) return;
+    c.lit = true; c.g.classList.add('lit'); litCount++;
+    const e = { c, until: performance.now() + (c.kind === 'pot' ? 4800 : 4000), ang: 0, scale: () => clamp(c.g.getBoundingClientRect().width / 60, .5, 2.2) };
+    emitters.push(e);
+    if (c.kind === 'pot') fountainSound(); else { chakraSound(); c.wheel.style.animation = 'spinW .25s linear 16'; }
+    navigator.vibrate && navigator.vibrate(30);
+    floorGlow.setAttribute('opacity', .8);
+    setTimeout(() => { floorGlow.setAttribute('opacity', litCount === CR.length ? .25 : 0); c.g.style.opacity = .55; }, c.kind === 'pot' ? 4800 : 4000);
+    if (litCount === CR.length) { text.textContent = 'Semma! Now for the biggest one. Look up at the sky!'; }
+    render();
+  }
+
+  // ---------- hold-a-sparkler mode ----------
+  const btn = $('sparkBtn'), layer = $('sparkLayer');
+  function setSparkler(on) {
+    sparkler.on = on; layer.hidden = !on;
+    btn.classList.toggle('on', on);
+    btn.textContent = on ? 'Done ✓' : '🎇 Move your sparkler';
+    render();
+  }
+  btn.textContent = '🎇 Move your sparkler';
+  btn.addEventListener('click', () => setSparkler(!sparkler.on));
+  // on a laptop the sparkler simply follows the mouse
+  addEventListener('mousemove', e => {
+    if (!FINE || !sparkler.show) return;
+    sparkler.x = e.clientX; sparkler.y = e.clientY - 10; sparkler.moved = true;
+    touchCrackers(sparkler.x, sparkler.y + 10);
+  });
+  function touchCrackers(x, y) {
+    for (const c of CR) {
+      if (c.lit) continue;
+      const b = c.g.getBoundingClientRect();
+      if (x > b.left - 24 && x < b.right + 24 && y > b.top - 30 && y < b.bottom + 20) light(c);
+    }
+  }
+  const move = e => { sparkler.x = e.clientX; sparkler.y = e.clientY - 20; sparkler.moved = true; touchCrackers(sparkler.x, sparkler.y + 10); };
+  layer.addEventListener('pointerdown', move);
+  layer.addEventListener('pointermove', move);
+  layer.addEventListener('wheel', e => e.preventDefault(), { passive: false });
+
+  // shared with the finale
+  window.FX = { burst, rockets, add, textParticles, clearText: () => { T.length = 0; }, ambient, noise, distantBoom, audio, get W() { return W; }, get H() { return H; }, GOLD, PALETTES };
+
+  // ---------- camera ----------
+  const svg = $('terraceSvg');
+  const layers = [...svg.querySelectorAll('.layer')].map(g => ({ g, k: +g.dataset.k }));
+  const KEYS = [
+    { p: 0,   cx: 612, cy: 560, w: 600, h: 700 },  // out onto the terrace: family, crackers, sky
+    { p: .1,  cx: 612, cy: 650, w: 500, h: 520 },  // straight to the crackers
+    { p: .84, cx: 612, cy: 650, w: 500, h: 520 },  // ...stay while you play
+    { p: 1,   cx: 620, cy: 160, w: 640, h: 900 },  // look up at the sky
+  ];
+  let VW = 420, VH = 760;
+  const fit = k => Math.min(VW / k.w, VH / k.h);
+  function camera(p) {
+    let i = 0; while (i < KEYS.length - 2 && p > KEYS[i + 1].p) i++;
+    const a = KEYS[i], b = KEYS[i + 1], t = ease(seg(p, a.p, b.p)), za = fit(a), zb = fit(b);
+    return { cx: a.cx + (b.cx - a.cx) * t, cy: a.cy + (b.cy - a.cy) * t, z: za * Math.pow(zb / za, t) };
+  }
+  const sec = $('terrace'), bubble = $('t-bubble'), warmIn = $('t-warmIn');
+
+  function render() {
+    VW = 760 * innerWidth / innerHeight; VH = 760;
+    svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
+    const r = sec.getBoundingClientRect();
+    // glide towards the scroll position instead of jumping with each wheel step
+    const pT = clamp(-r.top / (r.height - innerHeight));
+    const p = render.ps = (render.ps == null || Math.abs(pT - render.ps) > .5) ? pT : render.ps + (pT - render.ps) * .14;
+    if (Math.abs(pT - p) > .0005 && !render.raf) render.raf = requestAnimationFrame(() => { render.raf = 0; render(); });
+    const visible = r.top <= 0.5 && r.bottom > 0;
+    sec.firstElementChild.style.visibility = visible ? 'visible' : 'hidden';
+    if (visible) ambient.add('terrace'); else ambient.delete('terrace');
+    const cam = camera(p), c0 = { cx: KEYS[0].cx, cy: KEYS[0].cy, z: fit(KEYS[0]) };
+    for (const { g, k } of layers) {
+      const zk = c0.z * Math.pow(cam.z / c0.z, k);
+      const cx = c0.cx + (cam.cx - c0.cx) * k, cy = c0.cy + (cam.cy - c0.cy) * k;
+      g.setAttribute('transform', `translate(${VW / 2} ${VH / 2}) scale(${zk}) translate(${-cx} ${-cy})`);
+    }
+    warmIn.style.opacity = 1 - seg(p, 0, .035);
+    dim.style.opacity = .2 - litCount * .04;
+
+    const atPlay = visible && p > .04 && p < .86;
+    sparkler.show = atPlay;
+    sec.firstElementChild.style.cursor = atPlay && FINE ? 'none' : '';
+    bubble.classList.toggle('show', atPlay && !sparkler.on);
+    btn.classList.toggle('show', (atPlay && !FINE) || sparkler.on);
+    if (!visible) { hint.style.opacity = 0; return; }
+    if (!atPlay && p < .5) { hint.style.opacity = 0; }
+    else if (atPlay && sparkler.on) { hint.innerHTML = `Drag the sparkler onto a cracker · <b>${litCount}/${CR.length}</b>`; hint.style.opacity = 1; }
+    else if (atPlay && litCount < CR.length) { hint.innerHTML = FINE ? `The sparkler is in your hand. Touch a cracker · <b>${litCount}/${CR.length}</b>` : `Tap a cracker, or move your sparkler · <b>${litCount}/${CR.length}</b>`; hint.style.opacity = 1; }
+    else if (atPlay) { hint.innerHTML = 'Look up! Scroll for the grand finale <i>↓</i>'; hint.style.opacity = 1; }
+    else hint.style.opacity = 0;
+  }
+
+  let ticking = false;
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { render(); ticking = false; }); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  render();
+})();
+</script>
+
+<script>
+/* ================= SCENE 6 · THE FINALE ================= */
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const $ = id => document.getElementById(id);
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  const FX = window.FX;
+  const name = (new URLSearchParams(location.search).get('to') || '').replace(/[<>]/g, '').trim().slice(0, 24);
+  const line2 = name ? `${name}!` : 'from our family to yours';
+  $('f-sr').textContent = `Happy Diwali, ${line2}`;
+  if (name) $('pTitle').textContent = `Happy Deepavali, ${name}! 🪔`;
+
+  // scenery
+  const st = $('f-stars');
+  for (let i = 0; i < 120; i++) { const c = el('circle', { cx: rnd(-200, 620), cy: rnd(0, 620), r: rnd(.4, 1.5), fill: '#fff6d8', class: 'twinkle' }); c.style.animationDelay = -rnd(0, 2.4) + 's'; st.append(c); }
+  for (let i = 0; i < 40; i++) $('f-windows').append(el('rect', { x: rnd(-180, 600), y: rnd(640, 690), width: 3, height: 4, fill: pick(['#ffcf6a', '#ffb84a']), opacity: rnd(.4, .9) }));
+  for (let x = -180; x <= 600; x += 40) {
+    const g = $('f-diyas');
+    g.append(el('circle', { cx: x, cy: 690, r: 12, fill: 'url(#glow)' }));
+    const f = el('path', { class: 'flame', d: `M${x} 695 Q${x - 3} 690 ${x} 684 Q${x + 3} 690 ${x} 695Z`, fill: '#ffc94a' }); f.style.animationDelay = -rnd(0, 1) + 's'; g.append(f);
+  }
+
+  // rising whoosh for the big rocket
+  function whoosh() {
+    const a = FX.audio(); if (!a) return; const t = a.currentTime;
+    const b = a.createBuffer(1, a.sampleRate * 1.3, a.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    const s = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+    s.buffer = b; f.type = 'bandpass'; f.Q.value = 3; f.frequency.setValueAtTime(400, t); f.frequency.exponentialRampToValueAtTime(3500, t + 1.2);
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.25, t + .9); g.gain.exponentialRampToValueAtTime(.0001, t + 1.3);
+    s.connect(f).connect(g).connect(a.destination); s.start(t);
+  }
+  const bigBoom = () => { FX.noise(1.6, 120, .8, .7, 'lowpass', 0, 2.5); FX.noise(.4, 900, .7, .3, 'bandpass', 0, 3); for (let i = 0; i < 30; i++) FX.noise(.03, rnd(2500, 6500), 1, .2, 'bandpass', .4 + rnd(0, 1.6)); };
+
+  const btn = $('rocketBtn'), panel = $('panel');
+  let launched = false;
+  function launch() {
+    if (launched) return; launched = true;
+    btn.classList.add('gone');
+    whoosh();
+    FX.rockets.push({
+      big: true, x: FX.W / 2, y: FX.H * .95, vy: -11, ty: FX.H * .3,
+      onBurst: r => {
+        bigBoom(); navigator.vibrate && navigator.vibrate([40, 30, 60]);
+        FX.burst(r.x, r.y, 260, FX.GOLD, 9);
+        FX.burst(r.x, r.y, 160, ['#ff4a6a', '#ffd0d8', '#fff'], 6);
+        FX.burst(r.x, r.y, 120, ['#4ad0ff', '#c8f2ff'], 4);
+        FX.textParticles(['Happy Diwali', line2], r.x, r.y);
+        // a crown of rockets around the words
+        for (let i = 0; i < 6; i++) setTimeout(() => FX.rockets.push({ x: rnd(.08, .92) * FX.W, y: FX.H * .9, vy: -rnd(8, 10), ty: rnd(.06, .5) * FX.H }), 900 + i * 380);
+        setTimeout(() => panel.classList.add('show'), 2600);
+      }
+    });
+  }
+  btn.addEventListener('click', launch);
+  $('moreBtn').addEventListener('click', () => {
+    for (let i = 0; i < 8; i++) setTimeout(() => FX.rockets.push({ x: rnd(.08, .92) * FX.W, y: FX.H * .9, vy: -rnd(8, 11), ty: rnd(.06, .45) * FX.H }), i * 260);
+  });
+  $('againBtn').addEventListener('click', () => { location.href = location.href.split('#')[0]; });
+
+  // share a personalised link
+  $('shareForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const who = $('toName').value.replace(/[<>]/g, '').trim().slice(0, 24);
+    const base = location.href.split('?')[0].split('#')[0];
+    const url = who ? `${base}?to=${encodeURIComponent(who)}` : base;
+    const text = who ? `${who}, come celebrate Deepavali with our family 🪔✨` : 'Come celebrate Deepavali with our family 🪔✨';
+    const msg = $('pMsg');
+    try {
+      if (navigator.share) { await navigator.share({ title: 'Happy Deepavali!', text, url }); msg.textContent = 'Sent! 🎉'; return; }
+    } catch (err) { if (err && err.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(`${text}\n${url}`); msg.textContent = 'Link copied! Paste it into WhatsApp or anywhere.'; }
+    catch { msg.textContent = url; }
+  });
+
+  // scroll: fade in from the terrace's sky, keep neighbours' fireworks going
+  const sec = $('finale'), warmIn = $('f-warmIn');
+  function render() {
+    const r = sec.getBoundingClientRect();
+    const visible = r.top <= 0.5 && r.bottom > 0;
+    sec.firstElementChild.style.visibility = visible ? 'visible' : 'hidden';
+    if (visible) FX.ambient.add('finale'); else FX.ambient.delete('finale');
+    const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+    warmIn.style.opacity = 1 - Math.min(1, p / .08);
+  }
+  addEventListener('scroll', () => requestAnimationFrame(render), { passive: true });
+  addEventListener('resize', render);
+  render();
+
+  // mute
+  const mute = $('muteBtn');
+  mute.addEventListener('click', () => {
+    window.MUTED = !window.MUTED;
+    mute.textContent = window.MUTED ? '🔇' : '🔊';
+    mute.setAttribute('aria-label', window.MUTED ? 'Unmute sound' : 'Mute sound');
+    window.Music.setMuted(window.MUTED);
+  });
+})();
+</script>
+</body>
+</html>
