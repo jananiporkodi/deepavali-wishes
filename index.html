@@ -1512,6 +1512,7 @@
   let lastGate = -1, lastDoor = -1;
 
   function render() {
+    if (!innerWidth || !innerHeight) return;   // not laid out yet (e.g. opening inside another app)
     VW = 760 * innerWidth / innerHeight; VH = 760;
     svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
     const r = sec.getBoundingClientRect();
@@ -1666,6 +1667,7 @@
   const SKY_A = ['#7c8fc4', '#f2b47e', '#f68b4e'], SKY_B = ['#5a5f9a', '#e88a6a', '#e35f3a'];
 
   function render() {
+    if (!innerWidth || !innerHeight) return;   // not laid out yet (e.g. opening inside another app)
     VW = 760 * innerWidth / innerHeight; VH = 760;
     svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
     const r = sec.getBoundingClientRect();
@@ -1815,6 +1817,7 @@
   const SKY_A = ['#5a5f9a', '#e88a6a', '#e35f3a'], SKY_B = ['#2a2a62', '#9a4a7a', '#d8582e'];
 
   function render() {
+    if (!innerWidth || !innerHeight) return;   // not laid out yet (e.g. opening inside another app)
     VW = 760 * innerWidth / innerHeight; VH = 760;
     svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
     const r = sec.getBoundingClientRect();
@@ -2010,6 +2013,7 @@
   const SKY_A = ['#2a2a62', '#9a4a7a', '#d8582e'], SKY_B = ['#0f1238', '#2e2458', '#6a2e4a'];
 
   function render() {
+    if (!innerWidth || !innerHeight) return;   // not laid out yet (e.g. opening inside another app)
     VW = 760 * innerWidth / innerHeight; VH = 760;
     svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
     const r = sec.getBoundingClientRect();
@@ -2286,6 +2290,7 @@
   const sec = $('terrace'), bubble = $('t-bubble'), warmIn = $('t-warmIn');
 
   function render() {
+    if (!innerWidth || !innerHeight) return;   // not laid out yet (e.g. opening inside another app)
     VW = 760 * innerWidth / innerHeight; VH = 760;
     svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
     const r = sec.getBoundingClientRect();
